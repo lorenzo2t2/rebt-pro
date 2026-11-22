@@ -1,9 +1,9 @@
 {
- "version": "1.15.1",
+ "version": "1.15.2",
  "minApk": 4,
  "files": {
   "apple-touch-icon.png": "aa69b88802e7",
-  "css/style.css": "23642d5ee11e",
+  "css/style.css": "40cb71e27a47",
   "data/rebt.txt": "d1ef5d28541f",
   "icon-192.png": "00ec0fe72877",
   "icon-512.png": "0e3a1c0757a7",
@@ -56,7 +56,7 @@
   "js/simbolos.js": "c9915f7ea69a",
   "js/solar.js": "8bb4ac358af6",
   "js/temario.js": "c0af08e25fe7",
-  "js/temas.js": "8ee25a003ce0",
+  "js/temas.js": "8714e7bc8a7c",
   "js/temavis.js": "7226547f9dab",
   "js/tipicos.js": "ae8b043e372f",
   "js/update.js": "7baf10c133e1",

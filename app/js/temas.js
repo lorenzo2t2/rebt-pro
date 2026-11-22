@@ -5,9 +5,9 @@
   const root = document.documentElement;
   const ESTILOS = [
     { id: 'futurista', t: 'Futurista', d: 'Cristal, profundidad 3D, brillos contenidos y la hélice trifásica animada del inicio.' },
-    { id: 'control', t: 'Control (opción A)', d: 'Denso y técnico: etiquetas en monoespaciada, cifras alineadas y mucha información a la vista.', pv: { ac: '#38bdf8', r: 6, mono: 1 } },
-    { id: 'consola', t: 'Consola (opción B)', d: 'Plano de ingeniería: rejilla fina, bordes cian y estética de panel de instrumentos.', pv: { ac: '#06b6d4', r: 4, grid: 1 } },
-    { id: 'limpia', t: 'Limpia (opción C)', d: 'Amplia y tranquila: esquinas redondeadas, menú con el activo en azul y más aire.', pv: { ac: '#2563eb', r: 12 } },
+    { id: 'control', t: 'Control (opción A)', d: 'Denso y técnico: etiquetas en monoespaciada, cifras alineadas y mucha información a la vista.', pv: { ac: '#f59e0b', r: 6, mono: 1 }, modo: 'dark' },
+    { id: 'consola', t: 'Consola (opción B)', d: 'Plano de ingeniería: rejilla fina, bordes cian y estética de panel de instrumentos.', pv: { ac: '#22d3ee', r: 0, grid: 1, mono: 1, black: 1 }, modo: 'dark' },
+    { id: 'limpia', t: 'Limpia (opción C)', d: 'Amplia y tranquila: esquinas redondeadas, menú con el activo en azul y más aire.', pv: { ac: '#2563eb', r: 12 }, modo: 'light' },
     { id: 'sobrio', t: 'Sobrio', d: 'Plano y limpio: sin efectos ni animaciones, máxima legibilidad y menos consumo de batería.' },
   ];
   const MODOS = [{ id: 'dark', t: 'Oscuro' }, { id: 'light', t: 'Claro' }];
@@ -15,7 +15,7 @@
     const dk = modo === 'dark';
     const E = ESTILOS.find(x => x.id === id);
     if (E && E.pv) {
-      const bg = dk ? '#0b0f17' : '#f4f6fa', pn = dk ? '#172235' : '#fff', bd = dk ? '#334155' : '#d6dce6', tx = dk ? '#cfd8e6' : '#27324a';
+      const bg = E.pv.black ? (dk ? '#04080b' : '#f4f6fa') : (dk ? '#10141b' : '#f7f8fb'), pn = E.pv.black ? (dk ? '#09131a' : '#fff') : (dk ? '#1a2029' : '#fff'), bd = E.pv.black ? (dk ? '#143441' : '#d6dce6') : (dk ? '#323c4a' : '#e3e8f0'), tx = dk ? '#cfd8e6' : '#27324a';
       const grid = E.pv.grid && dk ? 'background-image:linear-gradient(rgba(51,65,85,.35) 1px,transparent 1px),linear-gradient(90deg,rgba(51,65,85,.35) 1px,transparent 1px);background-size:10px 10px;' : '';
       const blk = `background:${pn};border:1px solid ${bd};border-radius:${E.pv.r}px;`;
       return `<div style="background:${bg};${grid}border-radius:10px;padding:12px;height:124px;display:grid;gap:8px;grid-template-columns:44px 1fr;border:1px solid ${bd}">
@@ -60,7 +60,7 @@
     <div class="chips"><button class="chip ${store.get('contraste', false) ? 'on' : ''}" id="hc" aria-pressed="${!!store.get('contraste', false)}">Alto contraste ${store.get('contraste', false) ? 'activado' : 'desactivado'}</button></div>
     <p class="mini muted">Bordes y textos de máximo contraste y sin transparencias: pensado para leer la pantalla a pleno sol. Combínalo con el modo claro o el oscuro.</p>
     <p class="mini muted" style="margin-top:18px">El modo claro es útil a pleno sol en obra. El estilo sobrio consume menos batería porque no anima nada.</p>`;
-    $$('.tema').forEach(b => b.onclick = () => { store.set('estilo', b.dataset.e); aplicar(); A.go(); });
+    $$('.tema').forEach(b => b.onclick = () => { store.set('estilo', b.dataset.e); { const E = ESTILOS.find(x => x.id === b.dataset.e); if (E && E.modo) store.set('theme', E.modo); } aplicar(); A.go(); });
     $('#hc').onclick = () => { store.set('contraste', !store.get('contraste', false)); aplicar(); A.go(); };
     $$('[data-m]').forEach(b => b.onclick = () => { store.set('theme', b.dataset.m); aplicar(); A.go(); });
   });

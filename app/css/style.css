@@ -532,3 +532,44 @@ div.pa-box{display:block}
 .pc-list i{color:var(--muted);font-style:normal;font-size:22px}
 @media (max-width:860px){.pc-big{grid-template-columns:1fr 1fr}.pc-prog{grid-template-columns:1fr}}
 @media (max-width:520px){.pc-big{grid-template-columns:1fr}}
+
+/* ===== Diferenciación fuerte entre estilos ===== */
+/* A · Control: pizarra + ámbar, denso */
+:root[data-estilo="control"]:not([data-theme="light"]){--bg:#10141b;--panel:#1a2029;--panel2:#232b37;--line:#323c4a;--glassb:#323c4a;--accent:#f59e0b;--brand:#d97706;--brand2:#fbbf24;--side:#0c1016}
+:root[data-estilo="control"][data-theme="light"]{--accent:#b45309;--brand:#d97706;--brand2:#b45309}
+:root[data-estilo="control"] body{font-size:14px}
+:root[data-estilo="control"] #app{grid-template-columns:224px minmax(0,1fr)}
+:root[data-estilo="control"] .btn.pri,:root[data-estilo="control"] .chip.on{background:#d97706;color:#111}
+:root[data-estilo="control"] .pc-chip b{color:#fbbf24}
+:root[data-estilo="control"] .logo i{background:#d97706;color:#111}
+:root[data-estilo="control"] #view a:not(.btn):not(.tile):not(.card):not(.chip){color:#fbbf24}
+:root[data-estilo="control"] .pa-rows a,:root[data-estilo="control"] .pa-box{color:var(--text)}
+
+/* B · Consola: casi negro, monoespaciada, esquinas rectas, cian */
+:root[data-estilo="consola"]:not([data-theme="light"]){--bg:#04080b;--panel:#09131a;--panel2:#0e1d26;--line:#143441;--glassb:#143441;--accent:#22d3ee;--brand:#0891b2;--brand2:#67e8f9;--side:#030609;--text:#d7f3f8;--muted:#6fa3b3;--sidetx:#9fd0dc}
+:root[data-estilo="consola"] body,:root[data-estilo="consola"] input,:root[data-estilo="consola"] select,:root[data-estilo="consola"] textarea,:root[data-estilo="consola"] .btn,:root[data-estilo="consola"] .chip{font-family:var(--mono)}
+:root[data-estilo="consola"] body{font-size:13.5px;letter-spacing:-.01em}
+:root[data-estilo="consola"] #app{grid-template-columns:250px minmax(0,1fr)}
+:root[data-estilo="consola"] .card,:root[data-estilo="consola"] .tile,:root[data-estilo="consola"] .tiles .tile,:root[data-estilo="consola"] .kpis>div,:root[data-estilo="consola"] .q,:root[data-estilo="consola"] .result,:root[data-estilo="consola"] .tw,:root[data-estilo="consola"] .top,:root[data-estilo="consola"] .pb-hero,:root[data-estilo="consola"] .pb-gauges>div,:root[data-estilo="consola"] .pb-mods a,:root[data-estilo="consola"] .pb-quick a,:root[data-estilo="consola"] .ti,:root[data-estilo="consola"] #nav a,:root[data-estilo="consola"] .logo i{border-radius:0}
+:root[data-estilo="consola"] #nav a{border-left:2px solid transparent}
+:root[data-estilo="consola"] #nav a.on{border-left-color:var(--accent);box-shadow:none;background:rgba(34,211,238,.08);color:var(--accent)}
+:root[data-estilo="consola"] #nav a::before{content:"> ";opacity:0}
+:root[data-estilo="consola"] #nav a.on::before{opacity:1}
+:root[data-estilo="consola"] h1{letter-spacing:-.04em}
+:root[data-estilo="consola"] .btn.pri,:root[data-estilo="consola"] .chip.on{background:#0891b2;color:#001014}
+:root[data-estilo="consola"] .pb-hero{background:linear-gradient(90deg,rgba(34,211,238,.06),transparent 60%),var(--panel)}
+
+/* C · Limpia: clara, blanca, tipografía grande y aire */
+:root[data-estilo="limpia"][data-theme="light"]{--bg:#f7f8fb;--panel:#fff;--panel2:#f1f4f9;--line:#e3e8f0;--glassb:#e3e8f0;--accent:#2563eb;--brand:#2563eb;--brand2:#2563eb;--text:#0b1220;--muted:#5b6679}
+:root[data-estilo="limpia"] body{font-size:16px}
+:root[data-estilo="limpia"] #app{grid-template-columns:272px minmax(0,1fr)}
+:root[data-estilo="limpia"][data-theme="light"] #nav{background:#fff;border-right:1px solid var(--line)}
+:root[data-estilo="limpia"][data-theme="light"] #nav a.on{background:#2563eb;color:#fff}
+:root[data-estilo="limpia"][data-theme="light"] .logo{color:#0b1220}
+:root[data-estilo="limpia"][data-theme="light"] .pc-big a,:root[data-estilo="limpia"][data-theme="light"] .pc-card{box-shadow:0 1px 2px rgba(15,23,42,.05),0 8px 24px -12px rgba(15,23,42,.12)}
+:root[data-estilo="limpia"][data-theme="light"] .pc-big .ti{background:#eaf1ff;color:#2563eb}
+:root[data-estilo="limpia"][data-theme="light"] .pc-big u,:root[data-estilo="limpia"][data-theme="light"] #view a:not(.btn):not(.tile):not(.card):not(.chip){color:#2563eb}
+:root[data-estilo="limpia"][data-theme="light"] .pc-bar .sbox input{background:#fff;box-shadow:0 1px 2px rgba(15,23,42,.06)}
+:root[data-estilo="limpia"] .pc h1{font-size:38px;letter-spacing:-.03em}
+:root[data-estilo="limpia"] .pc-big a{padding:26px}
+:root[data-estilo="limpia"] .pc-big b{font-size:19px}
