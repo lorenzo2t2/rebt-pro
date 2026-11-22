@@ -228,6 +228,7 @@
     <h1 style="margin-top:8px">${esc(f.titulo)}</h1>
     <ul>${f.puntos.map(p => `<li>${p}</li>`).join('')}</ul>
     ${f.tabla ? `<div class="tw"><table><thead><tr>${f.tabla.head.map(h => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${f.tabla.rows.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : ''}
+    ${window.TEMVIS ? window.TEMVIS(f.id) : ''}
     ${f.clave && f.clave.length ? `<div class="clave"><b>Para memorizar</b><ul>${f.clave.map(c => `<li>${esc(c)}</li>`).join('')}</ul></div>` : ''}
     </div>
     <div class="row noprint" style="margin-top:18px">

@@ -353,3 +353,10 @@ th{background:var(--panel2)}
 .rtext mark,.lrow mark{background:var(--warnbg);color:var(--text);border-radius:3px}
 .rnav{display:flex;justify-content:space-between;gap:8px;margin:10px 0}
 @media (max-width:860px){#fx3d{display:none}.top{padding:16px}}
+
+/* ilustraciones del temario */
+.tvis{margin:18px 0}.tvis h3{margin:0 0 8px}.fig{overflow-x:auto;margin:0 0 18px;padding:12px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+.fig figcaption{margin-bottom:6px;color:var(--text)}.tv{width:100%;min-width:600px;height:auto;display:block}.fignote{margin:6px 0 0;font-size:13px;color:var(--muted)}
+.tv .tb{fill:var(--panel2);stroke:var(--accent);stroke-width:1.4}.tv .tb.ok{stroke:var(--ok);fill:var(--okbg)}.tv .tb.warn{stroke:var(--warn);fill:var(--warnbg)}.tv .tb.bad{stroke:var(--bad);fill:var(--badbg)}
+.tv .tt{fill:var(--text);font:600 12px system-ui,sans-serif}.tv .ts{fill:var(--muted);font:11px system-ui,sans-serif}.tv .big{fill:var(--text);font:700 15px system-ui,sans-serif}.tv .wt{fill:#fff;font:700 11px system-ui,sans-serif;text-anchor:middle}
+.tv .tm{fill:var(--accent);font:600 11px system-ui,sans-serif}.tv .ln{stroke:var(--text);stroke-width:1.6;fill:none}.tv .ln.ac{stroke:var(--accent);stroke-width:1.8}.tv .dm{stroke:var(--accent);stroke-width:1.2;fill:none;stroke-dasharray:4 3}.tv .pc{stroke:var(--text);stroke-width:3}
