@@ -19,7 +19,7 @@
   }
 
   /* ---------- dibujo del cuadro: aparamenta y cableado como en un cuadro real ---------- */
-  const MW = 28, ROW = 12, MH = 84, X0 = 30;
+  const MW = 28, ROW = 12, MH = 84, X0 = 48;
   const SH = { C1: 'Luz', C2: 'Tomas', C3: 'Cocina', C4: 'Lavad.', C5: 'Baño', C6: 'Luz+', C7: 'Tomas+', C8: 'Calef.', C9: 'Aire', C10: 'Secad.', C11: 'Domót.', C12: 'Adic.', C12b: 'Adic.', C13: 'VE', AL: 'Luz', EM: 'Emerg.', TC: 'Tomas', CL: 'Clima', OC: 'Otras' };
   const corto = cod => SH[cod] || SH[cod.split('.')[0]] || SH[cod.replace(/\d+$/, '')] || '';
   /* colores de los conductores (ITC-BT-19, 2.2.4): neutro azul claro, protección verde-amarillo, fases marrón / negro / gris */
@@ -59,16 +59,15 @@
     const pol = o.sis === 'tri' ? 4 : 2, tri = pol === 4, POL = tri ? ['N', 'L1', 'L2', 'L3'] : ['N', 'L'];
     const Wd = ROW * MW + 2 * X0, cap = ROW - pol, PL = Wd - 12;
     const px = i => X0 + i * MW + MW / 2;                  /* x del polo i de un aparato situado en X0 */
-    const lane = i => 8 + i * 5;                            /* carriles de la canaleta izquierda: neutro el más externo */
+    const lane = i => 8 + i * 5, llane = i => 26 + i * 4, rlane = i => X0 + ROW * MW + 8 + i * 5;                            /* carriles de la canaleta izquierda: neutro el más externo */
     const rows = [{ k: 'ent' }];
     o.grupos.forEach(g => {
-      rows.push({ k: 'id', g });
       let cur = [], wsum = 0, first = true;
-      g.cs.forEach(c => { const cw = c.pol === '3P+N' ? 4 : 2; if (wsum + cw > cap && cur.length) { rows.push({ k: 'pia', g, cs: cur, first }); first = false; cur = []; wsum = 0; } cur.push(c); wsum += cw; });
+      g.cs.forEach(c => { const cw = c.pol === '3P+N' ? 4 : 2; if (wsum + cw > cap && cur.length) { rows.push({ k: 'pia', g, cs: cur, first, last: false }); first = false; cur = []; wsum = 0; } cur.push(c); wsum += cw; });
       if (cur.length) rows.push({ k: 'pia', g, cs: cur, first });
     });
     let y = 44; const geo = [];
-    rows.forEach(r => { const h = r.k === 'ent' ? [34, 52] : r.k === 'id' ? [64, 14] : [tri ? 90 : 82, 104]; r.ry = y + h[0]; r.bot = r.ry + MH + h[1]; y = r.bot; geo.push(r); });
+    rows.forEach(r => { const h = r.k === 'ent' ? [34, 52] : [tri ? 84 : 70, 76]; r.ry = y + h[0]; r.bot = r.ry + MH + h[1]; y = r.bot; geo.push(r); });
     const by = y + 6, Ht = by + 44;
     let wires = '', devs = '', lab = '';
     const plate = (x, w, yy, a, b) => `<rect x="${x + 1}" y="${yy}" width="${w - 2}" height="22" rx="1.5" fill="#fff" stroke="#9aa3ad" stroke-width=".7"/><text x="${x + w / 2}" y="${yy + 10}" font-size="8.5" font-weight="700" text-anchor="middle" fill="#111">${esc(a)}</text>${b ? `<text x="${x + w / 2}" y="${yy + 19}" font-size="6.3" text-anchor="middle" fill="#444">${esc(b)}</text>` : ''}`;
@@ -86,29 +85,33 @@
       wires += wire([[sx0 + pol * MW - 6, ry0 + MH], [sx0 + pol * MW - 6, ry0 + MH + 34], [PL, ry0 + MH + 34]], 'PE', 2) + dot(PL, ry0 + MH + 34, 'PE');
       lab += `<text x="${sx0 + pol * MW + 6}" y="${ry0 + MH + 31}" font-size="6.5" fill="#333">PE del SPD</text>`;
     }
+    let prev = null;
     let feedMax = ry0 + MH + 8 + 6 * pol;
     /* ---- diferenciales y filas de PIA ---- */
     geo.forEach((r, gi) => {
-      if (r.k === 'id') {
-        const ry = r.ry; devs += modulo({ k: 'id', w: pol, l1: r.g.idIn + ' A', l2: '30 mA' }, X0, ry);
-        lab += plate(X0, pol * MW, ry - 36, r.g.id, r.g.cs.length > 1 ? r.g.cs[0].cod + '–' + r.g.cs[r.g.cs.length - 1].cod : r.g.cs[0].cod);
-        POL.forEach((pn, i) => { const fy = ry - 14 - (pol - 1 - i) * 5; wires += wire([[lane(i), fy], [px(i), fy], [px(i), ry + 7]], pn) + dot(lane(i), fy, pn); feedMax = Math.max(feedMax, fy); });
-      } else if (r.k === 'pia') {
-        const ry = r.ry, xs = X0 + pol * MW, idRow = r.first ? geo[gi - 1] : null;
+      if (r.k === 'pia') {
+        const ry = r.ry, xs = X0 + pol * MW;
         const pbY = ry + MH + 20, endY = ry + MH + 52;
+        if (r.first) {
+          devs += modulo({ k: 'id', w: pol, l1: r.g.idIn + ' A', l2: '30 mA' }, X0, ry);
+          lab += plate(X0, pol * MW, ry - (tri ? 70 : 58), r.g.id, r.g.cs.length > 1 ? r.g.cs[0].cod + '–' + r.g.cs[r.g.cs.length - 1].cod : r.g.cs[0].cod);
+          POL.forEach((pn, i) => { const fy = ry - 26 - (pol - 1 - i) * 5; wires += wire([[lane(i), fy], [px(i), fy], [px(i), ry + 7]], pn) + dot(lane(i), fy, pn); feedMax = Math.max(feedMax, fy); });
+        }
         const nY = ry - 8, fY = ph => ry - 8 - (tri ? ph * 5 : 6);   /* neutro en el peine más cercano; fases por encima */
         let xe = xs; r.cs.forEach(c => { xe += (c.pol === '3P+N' ? 4 : 2) * MW; });
         const comb = (xl, yy, col) => `<rect x="${xl}" y="${yy - 2}" width="${xe - xl}" height="4" rx="1" fill="${col}" stroke="rgba(0,0,0,.35)" stroke-width=".5"/>`;
-        wires += comb(idRow ? px(0) : xs, nY, '#4a90c8');
-        (tri ? [1, 2, 3] : [1]).forEach(ph => { wires += comb(idRow ? px(tri ? ph : 1) : xs, fY(ph), tri ? (ph === 1 ? '#a8652b' : ph === 2 ? '#2a2a2a' : '#9aa0a8') : '#c8843a'); });
-        if (idRow) POL.forEach((pn, i) => { const yy = pn === 'N' ? nY : fY(tri ? i : 1); wires += wire([[px(i), idRow.ry + MH - 8], [px(i), yy]], pn) + dot(px(i), idRow.ry + MH - 8, pn) + dot(px(i), yy, pn); });
-        else lab += `<text x="${X0 + 4}" y="${ry - 26}" font-size="7" fill="#555">continúa el peine de la fila anterior</text>`;
+        wires += comb(xs, nY, '#4a90c8');
+        (tri ? [1, 2, 3] : [1]).forEach(ph => { wires += comb(xs, fY(ph), tri ? (ph === 1 ? '#a8652b' : ph === 2 ? '#2a2a2a' : '#9aa0a8') : '#c8843a'); });
+        const yy = (pn, i) => (pn === 'N' ? nY : fY(tri ? i : 1));
+        if (r.first) POL.forEach((pn, i) => { const y2 = ry + MH + 8 + i * 5, y1 = yy(pn, i); wires += wire([[px(i), ry + MH - 8], [px(i), y2], [llane(i), y2], [llane(i), y1], [xs + 4, y1]], pn) + dot(px(i), ry + MH - 8, pn) + dot(xs + 4, y1, pn); });
+        else POL.forEach((pn, i) => { const y1 = yy(pn, i), p0 = prev.y[i]; wires += wire([[prev.xe, p0], [rlane(i), p0], [rlane(i), y1], [xe - 4, y1]], pn) + dot(xe - 4, y1, pn); });
+        prev = { xe, y: POL.map((pn, i) => yy(pn, i)) };
         wires += wire([[X0 + 4, pbY], [PL, pbY]], 'PE', 2) + dot(PL, pbY, 'PE') + `<text x="${X0 + 3}" y="${pbY + 8}" font-size="6.5" fill="#3a7d2e">PE</text>`;
         let x = xs;
         r.cs.forEach(c => {
           const w3 = c.pol === '3P+N', ww = w3 ? 4 : 2, wpx = ww * MW, cx = x + wpx / 2;
           devs += modulo({ k: 'pia', w: ww, l1: c.In + '' }, x, ry);
-          lab += plate(x, wpx, ry - (tri ? 62 : 44), c.cod, corto(c.cod));
+          lab += plate(x, wpx, ry - (tri ? 70 : 58), c.cod, corto(c.cod));
           const ph = tri ? Math.max(1, +String(c.fase || 'L1').slice(1)) : 1, pc = tri ? POL[ph] : 'L';
           if (w3) {
             for (let k = 0; k < 4; k++) {
