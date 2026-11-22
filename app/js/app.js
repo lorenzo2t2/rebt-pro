@@ -46,21 +46,35 @@
     house: '<path d="M4 21V9l8-6 8 6v12z"/><path d="M10 21v-6h4v6"/>',
   };
   const ic = n => '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">' + (P[n] || '') + '</svg>';
-  const NAV = [
-    ['#/', 'Inicio', 'home', ''],
-    ['#/guia', 'Guía REBT', 'search', 'Consultar'], ['#/temario', 'Temario', 'book', 'Consultar'], ['#/ref', 'Tablas', 'table', 'Consultar'], ['#/andalucia', 'Docs Andalucía', 'file', 'Consultar'], ['#/docs', 'Documentación', 'file', 'Consultar'],
-    ['#/calc', 'Cálculos', 'calc', 'Herramientas'], ['#/esquemas', 'Esquemas', 'schema', 'Herramientas'], ['#/motores', 'Motores', 'cog', 'Herramientas'], ['#/tipicos', 'Esquemas típicos', 'schema', 'Herramientas'], ['#/protecciones', 'Protecciones', 'bolt', 'Herramientas'], ['#/presupuesto', 'Presupuestos', 'calc', 'Herramientas'], ['#/fv', 'Autoconsumo FV', 'bolt', 'Herramientas'], ['#/obras', 'Obras y clientes', 'house', 'Herramientas'], ['#/simbolos', 'Simbología', 'schema', 'Consultar'], ['#/pruebas', 'Pruebas', 'flask', 'Herramientas'], ['#/crear', 'Crear documentos', 'doc', 'Herramientas'], ['#/utiles', 'Utilidades', 'tools', 'Herramientas'],
-    ['#/test', 'Examen', 'check', 'Formación'], ['#/acceso', 'Acceso y examen', 'cap', 'Formación'],
-    ['#/temas', 'Temas', 'palette', 'Aplicación'], ['#/actualizar', 'Actualizar', 'down', 'Aplicación'], ['#/fuentes', 'Fuentes', 'info', 'Aplicación'],
-  ];
-  const TAB = ['Inicio', 'Guía REBT', 'Cálculos', 'Esquemas', 'Examen'];
+  /* Estructura: 5 bloques. Cada bloque tiene su página de entrada (#/consultar, #/calcular, #/documentar, #/aprender). */
+  const HUBS = {
+    consultar: { t: 'Consultar', i: 'book', d: 'El reglamento y las referencias, siempre a mano.', items: [
+      ['#/guia', 'search', 'Guía REBT', 'Alturas, distancias y ubicación por elemento.'], ['#/temario', 'book', 'Temario', '7 unidades y todas las ITC-BT con datos clave.'], ['#/ref', 'table', 'Tablas', 'Intensidades, tubos y valores de referencia.'],
+      ['#/simbolos', 'schema', 'Simbología', 'Todos los símbolos eléctricos y su designación.'], ['#/pruebas', 'flask', 'Pruebas y mediciones', 'Cómo se hace cada ensayo y qué se anota.'], ['#/utiles', 'tools', 'Utilidades', 'Código IP/IK, conversores y tablas rápidas.'], ['#/andalucia', 'file', 'Normativa en Andalucía', 'TECI, PUES, CIE, MTD y trámites de la Junta.']] },
+    calcular: { t: 'Calcular', i: 'calc', d: 'Secciones, protecciones, motores y fotovoltaica.', items: [
+      ['#/calc', 'calc', 'Cálculos', 'Sección, caída de tensión, vivienda, tierra y más.'], ['#/protecciones', 'bolt', 'Protecciones', 'Calibre, curva, poder de corte y selectividad.'], ['#/motores', 'cog', 'Motores', 'Cálculo, arranques con esquema, bornas y averías.'], ['#/fv', 'bolt', 'Autoconsumo FV', 'Potencia, módulos, ahorro y cable.']] },
+    documentar: { t: 'Documentar', i: 'doc', d: 'Obras, presupuestos y documentos para entregar.', items: [
+      ['#/obras', 'house', 'Obras y clientes', 'Esquemas, documentos, fotos y firma por obra.'], ['#/presupuesto', 'calc', 'Presupuestos', 'Cubicación por estancias o desde un esquema.'], ['#/crear', 'doc', 'Crear documentos', 'Memoria, CIE, verificación y más.'], ['#/docs', 'file', 'Flujo de trabajo', 'Listas de comprobación de una instalación.'], ['#/andalucia', 'file', 'Documentación en Andalucía', 'Qué documento corresponde y cómo se tramita.']] },
+    aprender: { t: 'Aprender', i: 'cap', d: 'Práctica de examen y acceso a la habilitación.', items: [
+      ['#/test/diario', 'check', 'Repaso diario', '5 preguntas al día con racha.'], ['#/test', 'check', 'Examen', 'Test por unidad, simulacros y repaso de fallos.'], ['#/acceso', 'cap', 'Acceso y examen', 'Vías para obtener la habilitación.']] },
+  };
+  const AJUSTES = [['#/temas', 'palette', 'Temas', 'Estilo, modo oscuro o claro y alto contraste.'], ['#/actualizar', 'down', 'Actualizar', 'Busca versiones nuevas de la app.'], ['#/fuentes', 'info', 'Fuentes', 'De dónde salen los datos.']];
+  const DIBUJAR = [['#/esquemas', 'schema', 'Esquemas', 'Editor con más de 120 símbolos.'], ['#/tipicos', 'schema', 'Esquemas típicos', 'Conmutada, cruzamiento, telerruptor y más.']];
+  const NAV = [['#/', 'Inicio', 'home', '']]
+    .concat(Object.values(HUBS).filter(h => h.t !== 'Aprender').flatMap(h => h.items.filter(x => !(h.t === 'Documentar' && x[0] === '#/andalucia')).map(x => [x[0], x[2], x[1], h.t])))
+    .concat(DIBUJAR.map(x => [x[0], x[2], x[1], 'Dibujar']))
+    .concat(HUBS.aprender.items.map(x => [x[0], x[2], x[1], 'Aprender']))
+    .concat(AJUSTES.map(x => [x[0], x[2], x[1], 'Aplicación']));
+  /* Pestañas inferiores del móvil: cada una agrupa las rutas de su bloque */
+  const TABS = [['#/', 'Inicio', 'home', ['#/']], ['#/consultar', 'Consultar', 'book', ['#/consultar', '#/guia', '#/temario', '#/ref', '#/simbolos', '#/pruebas', '#/utiles', '#/andalucia']], ['#/calcular', 'Calcular', 'calc', ['#/calcular', '#/calc', '#/protecciones', '#/motores', '#/fv']], ['#/esquemas', 'Esquemas', 'schema', ['#/esquemas', '#/tipicos']], ['#/documentar', 'Documentar', 'doc', ['#/documentar', '#/obras', '#/presupuesto', '#/crear', '#/docs']]];
   function renderNav(cur) {
     const on = h => (h === '#/' ? cur === '#/' || cur === '' : cur.startsWith(h)) ? 'on' : '';
     let g = '';
     $('#nav').innerHTML = '<div class="logo"><i>' + ic('bolt') + '</i><div>Elec-LoM<small>Herramienta para instaladores BT</small></div></div>' +
       NAV.map(([h, t, i, grp]) => { let x = ''; if (grp !== g) { g = grp; if (grp) x = '<div class="ng">' + grp + '</div>'; } return x + '<a href="' + h + '" class="' + on(h) + '">' + ic(i) + t + '</a>'; }).join('') +
       '<div class="sp"></div><button class="btn sm" id="theme">Cambiar tema</button><div class="mini">Basado en el RD 842/2002 consolidado (BOE). Los datos orientativos no sustituyen al texto oficial.</div>';
-    $('#tabbar').innerHTML = NAV.filter(n => TAB.includes(n[1])).map(([h, t, i]) => '<a href="' + h + '" class="' + on(h) + '">' + ic(i) + t.replace('Guía REBT', 'Guía') + '</a>').join('') + '<a href="#/mas" class="' + on('#/mas') + '">' + ic('menu') + 'Más</a>';
+    const hon = pre => pre.some(x => x === '#/' ? (cur === '#/' || cur === '') : cur === x || cur.startsWith(x + '/')) ? 'on' : '';
+    $('#tabbar').innerHTML = TABS.map(([h, t, i, pre]) => '<a href="' + h + '" class="' + hon(pre) + '">' + ic(i) + t + '</a>').join('') + '<a href="#/mas" class="' + (cur === '#/mas' || /^#\/(test|acceso|temas|actualizar|fuentes)/.test(cur) ? 'on' : '') + '">' + ic('menu') + 'Más</a>';
     const tb = $('#theme');
     if (tb) tb.onclick = () => {
       const r = document.documentElement; const cur = r.dataset.theme;
@@ -148,33 +162,17 @@
       <form class="sbox" id="hs" role="search">${ic('search')}<input id="hq" type="search" placeholder="¿Qué dice el REBT de…?" autocomplete="off" aria-label="Buscar en el REBT"></form></div>
       <canvas id="fx3d" aria-hidden="true"></canvas>
     </div>
-    <h2>Herramientas</h2>
+    <h2>Acceso rápido</h2>
     <div class="tiles">
       ${tile('#/calc/seccion', 'cable', 'Sección de cables', 'Intensidad, caída de tensión y protección.')}
-      ${tile('#/calc/caida', 'pulse', 'Caída de tensión', 'Comprobación por circuito y tramo.')}
-      ${tile('#/calc/vivienda', 'house', 'Circuitos de vivienda', 'Electrificación, C1–C13, IGM y diferenciales.')}
-      ${tile('#/calc/tierra', 'earth', 'Puesta a tierra', 'Resistencia, electrodos y protección.')}
-      ${tile('#/esquemas', 'schema', 'Esquemas', 'Unifilar, multifilar, mando, viviendas y más: ' + Object.keys(window.REBTSym || {}).length + ' símbolos.')}
-      ${tile('#/motores', 'cog', 'Motores', 'Cálculo, arranques con esquema, bornas y averías.')}
-      ${tile('#/protecciones', 'bolt', 'Protecciones', 'Calibre, curva, poder de corte y selectividad.')}
-      ${tile('#/presupuesto', 'calc', 'Presupuestos', 'Cubicación por estancias o desde un esquema.')}
-      ${tile('#/obras', 'house', 'Obras y clientes', 'Esquemas, documentos, fotos y firma por obra.')}
-      ${tile('#/fv', 'bolt', 'Autoconsumo FV', 'Potencia, módulos, ahorro y cable.')}
-      ${tile('#/pruebas', 'flask', 'Pruebas y mediciones', 'Cómo se hace cada ensayo y qué se anota.')}
-      ${tile('#/crear', 'doc', 'Crear documentos', 'Memoria, CIE, verificación, presupuesto.')}
-      ${tile('#/utiles', 'tools', 'Utilidades', 'Código IP/IK, conversores, tablas rápidas.')}
+      ${tile('#/guia', 'search', 'Guía REBT', 'Alturas, distancias y ubicación.')}
+      ${tile('#/esquemas', 'schema', 'Esquemas', 'Dibuja y exporta esquemas.')}
+      ${tile('#/presupuesto', 'calc', 'Presupuestos', 'Cubicación y presupuesto.')}
+      ${tile('#/obras', 'house', 'Obras y clientes', 'Documentos, fotos y firma.')}
+      ${tile('#/test/diario', 'check', 'Repaso diario', (diarioHecho() ? 'Hecho hoy. Racha: ' : '5 preguntas. Racha: ') + rachaDiaria() + ' días.')}
     </div>
-    <h2>Consultar y aprender</h2>
-    <div class="tiles">
-      ${tile('#/guia', 'search', 'Guía REBT', 'Alturas, distancias y ubicación por elemento.')}
-      ${tile('#/temario', 'book', 'Temario', '7 unidades y todas las ITC-BT con datos clave.')}
-      ${tile('#/test/diario', 'check', 'Repaso diario', (diarioHecho() ? 'Hoy ya lo has hecho. Racha: ' : '5 preguntas al día. Racha: ') + rachaDiaria() + ' días.')}
-      ${tile('#/test', 'check', 'Preparar el examen', 'Test por unidad, simulacros y repaso de fallos.')}
-      ${tile('#/acceso', 'cap', 'Acceso y examen', 'Vías para obtener la habilitación.')}
-      ${tile('#/ref', 'table', 'Tablas', 'Intensidades, tubos y valores de referencia.')}
-      ${tile('#/andalucia', 'file', 'Documentación Andalucía', 'CIE, MTD, TECI/PUES y trámites de la Junta.')}
-      ${tile('#/docs', 'file', 'Documentación', 'Flujo de trabajo y listas de comprobación.')}
-    </div>
+    <h2>Todo, por bloques</h2>
+    <div class="tiles">${Object.entries(HUBS).map(([k, hb]) => tile('#/' + k, hb.i, hb.t, hb.d)).join('')}</div>
     ${(() => { const fv = store.get('favoritos', []), rc = store.get('recientes', []).filter(x => !fv.some(f => f[0] === x[0])).slice(0, 5); const ch = (a, ico) => a.map(x => `<a class="chip" href="${x[0]}">${ico} ${esc(x[1])}</a>`).join(''); return fv.length || rc.length ? `<h2>Favoritos y recientes</h2><div class="chips">${ch(fv, '★')}${ch(rc, '↺')}</div>` : ''; })()}
     <h2>Tu actividad</h2>
     <div class="kpis">
@@ -753,8 +751,12 @@
     <div class="note">Tus datos (progreso, notas, borradores) se guardan solo en este navegador y no se envían a ningún servidor.</div>`;
   });
 
+  Object.entries(HUBS).forEach(([k, hb]) => route(new RegExp('^#/' + k + '$'), () => {
+    view.innerHTML = `<h1>${hb.t}</h1><p class="lead">${hb.d}</p><div class="tiles">${hb.items.map(([h, i, t, d]) => `<a class="tile" href="${h}"><div class="ti">${ic(i)}</div><div><b>${t}</b><span>${d}</span></div></a>`).join('')}</div>`;
+  }));
   route(/^#\/mas$/, () => {
-    view.innerHTML = `<h1>Más secciones</h1><div class="tiles">${NAV.filter(n => n[1] !== "Inicio" && !TAB.includes(n[1])).map(([h, t, i]) => `<a class="tile" href="${h}"><div class="ti">${ic(i)}</div><div><b>${t}</b></div></a>`).join('')}</div>`;
+    const tl = (h, i, t, d) => `<a class="tile" href="${h}"><div class="ti">${ic(i)}</div><div><b>${t}</b><span>${d}</span></div></a>`;
+    view.innerHTML = `<h1>Más</h1><h2>Aprender</h2><div class="tiles">${HUBS.aprender.items.map(x => tl(...x)).join('')}</div><h2>Aplicación</h2><div class="tiles">${AJUSTES.map(x => tl(...x)).join('')}</div>`;
   });
   const API = { route, store, esc, fmt, num, view, go, $, $$, C };
   (window.REBTExt || []).forEach(fn => { try { fn(API); } catch (e) { console.error(e); } });

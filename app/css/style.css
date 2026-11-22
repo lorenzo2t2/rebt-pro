@@ -19,7 +19,7 @@
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-#app{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
+#app{display:grid;grid-template-columns:260px minmax(0,1fr);min-height:100vh}
 #nav{position:sticky;top:0;height:100vh;overflow:auto;background:var(--panel);border-right:1px solid var(--line);padding:18px 12px;display:flex;flex-direction:column;gap:4px}
 .logo{display:flex;gap:10px;align-items:center;padding:4px 8px 14px;font-weight:800;font-size:18px;letter-spacing:-.01em}
 .logo i{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:grid;place-items:center;color:#fff;font-style:normal}
@@ -108,7 +108,7 @@ details>div{padding:0 0 14px}
 .check input{width:22px;height:22px;min-height:0;margin-top:2px;flex:none}
 .print-only{display:none}
 @media (max-width:860px){
-  #app{grid-template-columns:1fr}
+  #app{grid-template-columns:minmax(0,1fr)}
   #nav{display:none}
   #tabbar{display:flex;position:fixed;bottom:0;left:0;right:0;background:var(--panel);border-top:1px solid var(--line);z-index:10;padding:6px 6px calc(6px + env(safe-area-inset-bottom));justify-content:space-around}
   #tabbar a{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px;color:var(--muted);text-decoration:none;font-size:11px;font-weight:700;border-radius:10px}
@@ -126,7 +126,7 @@ details>div{padding:0 0 14px}
 
 /* ---------- Adaptación a tablet y móvil ---------- */
 @media (min-width:861px) and (max-width:1180px){
-  #app{grid-template-columns:200px 1fr}
+  #app{grid-template-columns:200px minmax(0,1fr)}
   #nav{padding:14px 8px}#nav a{padding:9px 10px;font-size:14px}
   #view{padding:22px clamp(14px,3vw,28px) 70px}
   .mini{display:none}
@@ -331,3 +331,9 @@ th{background:var(--panel2)}
   .onehand .pad .u{grid-column:2}
   .esq{padding-bottom:70px}
 }
+
+#view{min-width:0}
+#view img,#view svg,#view canvas,#view table{max-width:100%}
+#view h1,#view h2,#view p,#view li{overflow-wrap:anywhere}
+@media (max-width:860px){#fx3d{height:90px}.top{padding:14px 16px}.top .kick{margin-bottom:4px}}
+@media (max-width:520px){.top p{display:none}.top .sbox{margin-top:10px}}

@@ -1,9 +1,9 @@
 {
- "version": "1.8.0",
+ "version": "1.9.0",
  "minApk": 4,
  "files": {
   "apple-touch-icon.png": "aa69b88802e7",
-  "css/style.css": "2091e2629586",
+  "css/style.css": "5227ceba425f",
   "data/rebt.txt": "d1ef5d28541f",
   "icon-192.png": "00ec0fe72877",
   "icon-512.png": "0e3a1c0757a7",
@@ -11,7 +11,7 @@
   "index.html": "7702597be74c",
   "js/acceso.js": "71931362913e",
   "js/andalucia.js": "ae5e8c3daac9",
-  "js/app.js": "6d4edda7116b",
+  "js/app.js": "c0602fbe37c1",
   "js/calc.js": "2cc9630a99b3",
   "js/docgen.js": "7f7457a7302a",
   "js/docs.js": "2f233c137d17",
