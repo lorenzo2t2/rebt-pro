@@ -154,7 +154,7 @@ window.GUIA = [
       { tipo: 'rebt', t: 'Volumen 1: hasta <b>2 m</b> del borde del recipiente y <b>2,5 m</b> de altura (y 1,5 m alrededor de trampolines/plataformas). Volumen 2: <b>1,5 m</b> más allá del volumen 1.', s: 'ITC-BT-31' },
       { tipo: 'rebt', t: 'IP en <b>fuentes</b> (ITC-BT-31, 3.3): volumen 0 <b>IPX8</b> · volumen 1 <b>IPX5</b>. En piscinas el REBT no da cifra de IP en el texto. Alumbrado subacuático solo MBTS ≤ 12 V CA / 30 V CC con transformador fuera de los volúmenes.', s: 'ITC-BT-31' },
       { tipo: 'rebt', t: 'En volúmenes 0 y 1 no se admiten cajas de conexión (salvo condiciones). Bases en piscinas pequeñas: ≥ 1,25 m del volumen 0 y ≥ 0,3 m del suelo.', s: 'ITC-BT-31' },
-      { tipo: 'rebt', t: 'Siempre proyecto; inspección inicial si P &gt; 10 kW y cada 5 años.', s: 'ITC-BT-04 / ITC-BT-05' },
+      { tipo: 'rebt', t: 'Proyecto si P &gt; 5 kW; inspección inicial si P &gt; 10 kW y después cada 5 años.', s: 'ITC-BT-04 / ITC-BT-05' },
     ] },
   { id: 'garaje', n: 'Garajes y aparcamientos', cat: 'Locales especiales', ic: '🚗', k: 'garaje aparcamiento ventilación plazas proyecto recarga vehículo eléctrico',
     r: [
@@ -171,9 +171,9 @@ window.GUIA = [
     ] },
   { id: 'proyecto', n: '¿Proyecto o memoria técnica de diseño? (por potencia)', cat: 'Documentación', ic: '📐', k: 'proyecto memoria técnica diseño MTD potencia kW límite',
     r: [
-      { tipo: 'rebt', t: 'Industrias: P &gt; <b>20 kW</b> · locales húmedos, polvorientos o con riesgo de corrosión: P &gt; <b>10 kW</b> · bombas de agua: &gt; 10 kW · locales mojados: &gt; 10 kW · generadores y convertidores: &gt; 10 kW.', s: 'ITC-BT-04 §3.1' },
-      { tipo: 'rebt', t: 'Temporal de obras y emplazamientos abiertos: &gt; 50 kW · conductores de caldeo (excepto viviendas): &gt; 50 kW.', s: 'ITC-BT-04 §3.1' },
-      { tipo: 'rebt', t: 'Sin límite: locales de pública concurrencia, riesgo de incendio o explosión (salvo aparcamientos), quirófanos, piscinas y fuentes, tensiones especiales, rótulos luminosos (salvo ITC-BT-44), líneas con apoyos comunes con AT, cercas eléctricas.', s: 'ITC-BT-04 §3.1' },
+      { tipo: 'rebt', t: 'Industrias: P &gt; <b>20 kW</b> · locales húmedos, polvorientos o con riesgo de corrosión y bombas de agua: P &gt; <b>10 kW</b> · locales mojados, generadores y convertidores y conductores de caldeo (no viviendas): &gt; 10 kW.', s: 'ITC-BT-04 §3.1' },
+      { tipo: 'rebt', t: 'Temporal de obras y emplazamientos abiertos: &gt; 50 kW · edificios de viviendas, comercios y oficinas: &gt; 100 kW por CGP · viviendas unifamiliares: &gt; 50 kW · alumbrado exterior y piscinas/fuentes: &gt; 5 kW · recarga VE: &gt; 50 kW (exterior &gt; 10 kW; modo 4 sin límite).', s: 'ITC-BT-04 §3.1' },
+      { tipo: 'rebt', t: 'Sin límite: locales de pública concurrencia, riesgo de incendio o explosión (salvo aparcamientos), quirófanos, tensiones especiales, rótulos luminosos (salvo ITC-BT-44), líneas con apoyos comunes con AT, máquinas de elevación y transporte, cercas eléctricas y redes de distribución.', s: 'ITC-BT-04 §3.1' },
       { tipo: 'rebt', t: 'Ampliaciones: proyecto si superan los límites o si en una o varias se supera el <b>50 %</b> de la potencia del proyecto anterior. El resto: Memoria Técnica de Diseño.', s: 'ITC-BT-04 §3.2, §4' },
     ] },
   { id: 'inspeccion', n: 'Inspecciones y plazos', cat: 'Documentación', ic: '🗓️', k: 'inspección OCA periódica plazos años organismo de control',
