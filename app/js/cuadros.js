@@ -196,6 +196,84 @@
     if (v.ve) add('C13', 'Recarga de vehículo eléctrico', v.veIn, v.veIn === 16 ? 2.5 : 6, v.veIn === 16 ? 20 : 25, { ve: 1, excl: true });
     return { elev, cs };
   }
+  /* ---------- esquemas editables a partir del cálculo ---------- */
+  let ULT = null;
+  const uid = () => 'x' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5);
+  function bld() {
+    const m = { els: [], wires: [] }; let n = 0; const SYM = window.REBTSym || {};
+    const add = (t, x, y, label, sub, o) => { const e = Object.assign({ id: 'e' + (++n), t, x, y, rot: 0, label: label == null ? (SYM[t] || {}).l : label, sub: sub || '' }, o || {}); m.els.push(e); return e; };
+    const w = (a, b, l) => m.wires.push({ id: 'w' + (++n), a: a.id, b: b.id, label: l || '' });
+    return { m, add, w };
+  }
+  const cajetin = t => ({ titulo: t, titular: '', instalador: (store.get('perfil', {}) || {}).instalador || '', fecha: new Date().toLocaleDateString('es-ES'), plano: '1', escala: 'S/E', hoja: 'A4' });
+  const sim = c => (c.luz ? 'lamp' : (c.tg || c.tb || c.b16 || c.b16c) ? 'toma' : 'carga');
+  const cab = (D, c) => c.cod + ' · ' + c.In + ' A';
+  const secc = c => (c.pol === '3P+N' ? '5×' : '3×') + String(c.S).replace('.', ',') + ' mm²';
+  const KIND = {
+    uni(D) {
+      const { m, add, w } = bld(), tri = D.sis === 'tri', N = D.cs.length, SP = Math.max(70, Math.min(100, Math.floor(1200 / N))), X0 = 90;
+      const red = add('red', X0, 50, 'Red', tri ? '3F+N 400 V' : '230 V monofásica'), cgp = add('cgp', X0, 130, 'CGP', 'fusibles'), ct = add('cont', X0, 210, 'Contador'), icp = add('icp', X0, 290, 'ICP', 'según potencia contratada'), igm = add('igm', X0, 370, 'IGA ' + D.iga + ' A', (tri ? '4P' : '2P') + ' · omnipolar');
+      const busW = Math.max(200, N * SP + 40), bus = add('bus', X0 - 30 + busW / 2, 440, 'Cuadro general', '', { w: busW });
+      w(red, cgp, 'Acometida'); w(cgp, ct, 'LGA'); w(ct, icp, 'DI mín. 6 mm²'); w(icp, igm); w(igm, bus);
+      if (D.spd) { const sp = add('spd', X0 + busW + 20, 500, 'SPD', D.spd + ' · ITC-BT-23'), te = add('tierra', X0 + busW + 20, 590, 'PE', ''); w(bus, sp); w(sp, te); }
+      let col = 0;
+      D.grupos.forEach(g => {
+        const xs = g.cs.map((_, k) => X0 + (col + k) * SP + 20); col += g.cs.length;
+        const cx = snap((xs[0] + xs[xs.length - 1]) / 2), sw = Math.max(80, g.cs.length * SP - 20);
+        const dif = add('dif', cx, 510, g.id + ' · ' + g.idIn + ' A', '30 mA tipo A'), sub = add('bus', cx, 580, '', '', { w: sw });
+        w(bus, dif); w(dif, sub);
+        g.cs.forEach((c, k) => { const pia = add('pia', xs[k], 640, cab(D, c), c.pol === '3P+N' ? '4P' : (c.fase || '')), ld = add(sim(c), xs[k], 740, c.n, '', { pos: 'b' }); w(sub, pia); w(pia, ld, secc(c)); });
+      });
+      m.cajetin = cajetin('Esquema unifilar · ' + D.nombre); return m;
+    },
+    multi(D) {
+      const { m, add, w } = bld(), N = D.cs.length, SP = Math.max(80, Math.min(110, Math.floor(1200 / N))), X0 = 120;
+      const busW = Math.max(240, N * SP + 40), top = add('bus', X0 - 30 + busW / 2, 60, 'L1 L2 L3 N', '', { w: busW }), ig = add('pia3', X0, 140, 'IGA ' + D.iga + ' A', '4P · omnipolar');
+      const bus = add('bus', X0 - 30 + busW / 2, 240, 'Cuadro general', '', { w: busW }); w(top, ig); w(ig, bus);
+      if (D.spd) { const sp = add('spd', X0 + busW + 20, 300, 'SPD', D.spd), te = add('tierra', X0 + busW + 20, 390, 'PE', ''); w(bus, sp); w(sp, te); }
+      let col = 0;
+      D.grupos.forEach(g => {
+        const xs = g.cs.map((_, k) => X0 + (col + k) * SP + 20); col += g.cs.length;
+        const cx = snap((xs[0] + xs[xs.length - 1]) / 2), sw = Math.max(80, g.cs.length * SP - 20);
+        const dif = add('dif4', cx, 320, g.id + ' · ' + g.idIn + ' A', '4P 30 mA tipo A'), sub = add('bus', cx, 390, '', '', { w: sw });
+        w(bus, dif); w(dif, sub);
+        g.cs.forEach((c, k) => { const t3 = c.pol === '3P+N', pia = add(t3 ? 'pia3' : 'pia', xs[k], 460, cab(D, c), t3 ? '3P+N' : 'N + ' + (c.fase || 'L1')), ld = add(t3 ? 'mot3' : sim(c), xs[k], 560, c.n, '', { pos: 'b' }); w(sub, pia); w(pia, ld, secc(c)); });
+      });
+      m.cajetin = cajetin('Esquema multifilar · ' + D.nombre); return m;
+    },
+    inst(D) {
+      const { m, add, w } = bld(), N = D.cs.length, SP = Math.max(100, Math.min(130, Math.floor(1300 / N))), X0 = 90;
+      const cu = add('cuadro', X0 + Math.floor(N * SP / 2) - 40, 50, 'Cuadro de mando y protección', D.iga + ' A');
+      D.cs.forEach((c, k) => {
+        const x = X0 + k * SP, pia = add('pia', x, 150, cab(D, c)); w(cu, pia);
+        if (c.luz) { const sw = add('sw1', x, 260, 'Interruptores 10 A', '≥ ' + c.luz); const fo = add('foco', x, 360, c.luz + ' puntos de luz', '', { pos: 'b' }); w(pia, sw, secc(c)); w(sw, fo); }
+        else if (c.em) { const em = add('emer', x, 280, c.em + ' aparatos de emergencia', '', { pos: 'b' }); w(pia, em, secc(c)); }
+        else { const n = c.tg || c.tb || (c.b25 ? 1 : 0) || c.b16c || c.b16 || 1; const b = add(c.b25 || c.cl || c.oc || c.cal || c.aire || c.aut || c.ve ? 'carga' : 'tomap', x, 280, c.n, (c.b25 ? 'Base 25 A 2P+T' : (c.tg || c.tb || c.b16 || c.b16c) ? n + ' bases 16 A 2P+T' : ''), { pos: 'b' }); w(pia, b, secc(c)); }
+      });
+      m.cajetin = cajetin('Instalación interior · ' + D.nombre); return m;
+    },
+    tierra(D) {
+      const { m, add, w } = bld(), x = 300;
+      const pq = add('pqt', x, 70, 'Electrodo / pica', 'ITC-BT-18'), bep = add('bep', x, 190, 'Borne principal de tierra', 'seccionable'), cu = add('cuadro', x, 310, 'Cuadro general', 'barra PE'), eq = add('eqp', x + 200, 190, 'Equipotencial', 'baños y cocina · ITC-BT-27');
+      w(pq, bep, 'Conductor de tierra: 16 mm² Cu protegido / 25 mm² Cu sin protección mecánica'); w(bep, cu, 'Línea principal de tierra'); w(bep, eq, 'Conductor equipotencial');
+      add('txt', 90, 420, 'Conductores de protección: verde-amarillo, uno por circuito, hasta cada base y masa (ITC-BT-19 y 18). DI: ≥ 6 mm² Cu con conductor de protección (ITC-BT-15).', '', { fs: 12 });
+      m.cajetin = cajetin('Puesta a tierra · ' + D.nombre); return m;
+    },
+  };
+  const TIPOQ = { uni: ['cuadro', 'Unifilar'], multi: ['multi', 'Multifilar'], inst: ['viv', 'Instalación'], tierra: ['tierra', 'Puesta a tierra'] };
+  function publicar(D) {
+    ULT = D; const host = $('#co'); if (!host) return;
+    const tri = D.sis === 'tri';
+    host.insertAdjacentHTML('beforeend', `<h2>Esquemas editables</h2><p class="muted mini">Se crean con los valores de este cálculo y se abren en el editor de Esquemas para modificarlos e imprimirlos.</p>
+      <div class="rnav"><button class="btn pri sm" data-gen="uni">Unifilar del cuadro</button> <button class="btn sm" data-gen="multi" ${tri ? '' : 'disabled title="Solo trifásica"'}>Multifilar${tri ? '' : ' (solo trifásica)'}</button> <button class="btn sm" data-gen="inst">Instalación interior</button> <button class="btn sm" data-gen="tierra">Puesta a tierra</button></div>
+      <p class="muted mini">Mando, motores y fotovoltaica no salen de este cálculo: tienen su propia página (Motores, Generación).</p>`);
+    host.querySelectorAll('[data-gen]').forEach(b => b.onclick = () => {
+      const k = b.dataset.gen, m = KIND[k](ULT), q = TIPOQ[k];
+      m.id = uid(); m.tipo = q[0]; m.nombre = q[1] + ' · ' + ULT.nombre; m.mod = Date.now();
+      const l = store.get('esquemas', []); l.push(m); store.set('esquemas', l); location.hash = '#/esquemas/' + m.id;
+    });
+  }
+  const snap = v => Math.round(v / 10) * 10;
   const defL = sup => Math.round(Math.sqrt(sup) * 1.4 + 4);
 
   route(/^#\/cuadro\/vivienda$/, () => {
@@ -261,6 +339,7 @@
         <li><b>Sobretensiones:</b> ${spd ? 'línea aérea, protección necesaria en el origen (ITC-BT-23, 3.2).' : 'red subterránea: situación natural, no exigida; recomendable si hay equipos sensibles (ITC-BT-23, 3.1).'}</li>${ve.length ? '<li><b>C13:</b> en vivienda unifamiliar; se parte de 32 A como dato editable y la ITC-BT-52 fija la potencia y las bases según el modo de carga. En aparcamientos colectivos se sustituye por los esquemas de la ITC-BT-52.</li>' : ''}</ul>
       <h2>Materiales</h2>${tabla(['Material', 'Detalle', 'Cantidad'], mat)}${nota}
       <p class="muted mini">Sección mínima según tabla 1 de la ITC-BT-25 y caída de tensión ≤ 3 % calculada con la intensidad del PIA (cobre, PVC, tubo empotrado). El poder de corte y la curva dependen de la Icc del punto: confirma con la distribuidora.</p>`;
+      publicar({ kind: 'viv', sis: 'mono', iga: IGAn, grupos, spd, cs, elev, nombre: 'Vivienda ' + (elev ? 'elevada' : 'básica') });
     };
     $$('.form input,.form select').forEach(i => { if (!i.closest('#lg')) i.oninput = i.onchange = go; }); go();
   });
@@ -268,6 +347,7 @@
   /* =====================================================================
      LOCAL
      ===================================================================== */
+  const nom0 = { com: 'Local comercial', pub: 'Local de pública concurrencia', ind: 'Industria o taller' };
   const TIPOS = { com: ['Local comercial u oficina', 100, 3450], pub: ['Local de pública concurrencia', 100, 3450], ind: ['Industria o taller', 125, 10350] };
   route(/^#\/cuadro\/local$/, () => {
     const S = store.get('cuadro.loc', {}); const g = (k, d) => (S[k] !== undefined ? S[k] : d);
@@ -329,6 +409,7 @@
       <h2>Circuitos</h2>${tabla(['Circuito', 'Uso', 'PIA', 'Cable', 'Tubo', 'ΔU'], cs.map(c => [c.cod, esc(c.n) + (c.fase ? ' · ' + c.fase : ''), c.pol + ' ' + c.In + ' A', c.S + ' mm²', 'Ø ' + c.tubo, c.ok ? fmt(c.dUp, 2) + ' % (≤ ' + c.lim + ')' : '✖ no cumple']))}
       <h2>Qué lleva el cuadro</h2><ul>${notas}</ul>
       <h2>Materiales</h2>${tabla(['Material', 'Detalle', 'Cantidad'], mat)}${nota}`;
+      publicar({ kind: 'loc', sis, iga: IGA, grupos, spd, cs, nombre: nom0[v.tipo] });
     };
     $$('.form input,.form select,#o_desc').forEach(i => i.oninput = i.onchange = go); go();
   });
