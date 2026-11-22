@@ -1,9 +1,9 @@
 {
- "version": "1.9.0",
+ "version": "1.9.1",
  "minApk": 4,
  "files": {
   "apple-touch-icon.png": "aa69b88802e7",
-  "css/style.css": "5227ceba425f",
+  "css/style.css": "cfbc85c23a92",
   "data/rebt.txt": "d1ef5d28541f",
   "icon-192.png": "00ec0fe72877",
   "icon-512.png": "0e3a1c0757a7",
