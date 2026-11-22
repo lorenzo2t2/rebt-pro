@@ -14,6 +14,7 @@
 
   let cat = '', q = '';
   route(/^#\/guia$/, () => {
+    try { const s = sessionStorage.getItem('rebt.gq'); if (s !== null) { q = s; cat = ''; sessionStorage.removeItem('rebt.gq'); } } catch (x) { }
     view.innerHTML = `<h1>Guía: ¿qué dice el REBT de…?</h1><p class="lead">Escribe un elemento (interruptor, enchufe, cuadro, baño, tierra…) y mira qué exige el reglamento: alturas, distancias, ubicación, y la ITC de donde sale.</p>
     <input id="gq" type="search" placeholder="Ej.: interruptor, contador, cocina, piscina…" value="${esc(q)}" autocomplete="off" aria-label="Buscar elemento">
     <div class="chips" id="gc"><button class="chip ${cat ? '' : 'on'}" data-c="">Todo</button>${CATS.map(c => `<button class="chip ${cat === c ? 'on' : ''}" data-c="${esc(c)}">${esc(c)}</button>`).join('')}</div>

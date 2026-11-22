@@ -21,16 +21,44 @@
   const allFichas = () => T.flatMap(u => u.fichas.map(f => Object.assign({ unidad: u }, f)));
 
   /* ---------- navegación ---------- */
+  const P = {
+    home: '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/>',
+    book: '<path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2z"/><path d="M4 19V5M9 7h6"/>',
+    calc: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h1M12 12h1M16 12h0M8 16h1M12 16h1M16 16h0"/>',
+    check: '<path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2V7a2 2 0 012-2h9"/>',
+    search: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
+    flask: '<path d="M9 3h6M10 3v6l-5 9a2 2 0 002 3h10a2 2 0 002-3l-5-9V3"/>',
+    schema: '<circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="12" r="2"/><path d="M7 6h5v12H7M12 12h5"/>',
+    doc: '<path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/>',
+    tools: '<path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/>',
+    file: '<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/>',
+    table: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/>',
+    info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h0"/>',
+    cap: '<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>',
+    down: '<path d="M12 4v12M7 11l5 5 5-5M4 20h16"/>',
+    menu: '<path d="M4 7h16M4 12h16M4 17h16"/>',
+    bolt: '<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
+    pulse: '<path d="M3 12h4l2-6 4 12 2-6h6"/>',
+    cable: '<circle cx="12" cy="12" r="4"/><path d="M2 12h6M16 12h6"/>',
+    earth: '<path d="M12 3v10M6 13h12M8 17h8M10 21h4"/>',
+    house: '<path d="M4 21V9l8-6 8 6v12z"/><path d="M10 21v-6h4v6"/>',
+  };
+  const ic = n => '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">' + (P[n] || '') + '</svg>';
   const NAV = [
-    ['#/', 'Inicio', '🏠'], ['#/temario', 'Temario', '📘'], ['#/calc', 'Cálculos', '🧮'],
-    ['#/test', 'Examen', '✅'], ['#/guia', 'Guía REBT', '🔎'], ['#/pruebas', 'Pruebas', '🧪'], ['#/esquemas', 'Esquemas', '📐'], ['#/crear', 'Crear documentos', '🗂️'], ['#/utiles', 'Utilidades', '🧰'], ['#/docs', 'Documentación', '📄'], ['#/ref', 'Tablas', '📊'], ['#/acceso', 'Acceso y examen', '🎓'], ['#/actualizar', 'Actualizar', '⬇️'], ['#/fuentes', 'Fuentes', 'ℹ️'],
+    ['#/', 'Inicio', 'home', ''],
+    ['#/guia', 'Guía REBT', 'search', 'Consultar'], ['#/temario', 'Temario', 'book', 'Consultar'], ['#/ref', 'Tablas', 'table', 'Consultar'], ['#/docs', 'Documentación', 'file', 'Consultar'],
+    ['#/calc', 'Cálculos', 'calc', 'Herramientas'], ['#/esquemas', 'Esquemas', 'schema', 'Herramientas'], ['#/pruebas', 'Pruebas', 'flask', 'Herramientas'], ['#/crear', 'Crear documentos', 'doc', 'Herramientas'], ['#/utiles', 'Utilidades', 'tools', 'Herramientas'],
+    ['#/test', 'Examen', 'check', 'Formación'], ['#/acceso', 'Acceso y examen', 'cap', 'Formación'],
+    ['#/actualizar', 'Actualizar', 'down', 'Aplicación'], ['#/fuentes', 'Fuentes', 'info', 'Aplicación'],
   ];
+  const TAB = ['Inicio', 'Guía REBT', 'Cálculos', 'Esquemas', 'Examen'];
   function renderNav(cur) {
     const on = h => (h === '#/' ? cur === '#/' || cur === '' : cur.startsWith(h)) ? 'on' : '';
-    $('#nav').innerHTML = `<div class="logo"><i>⚡</i><div>REBT Pro<small>Instalador baja tensión</small></div></div>` +
-      NAV.map(([h, t, i]) => `<a href="${h}" class="${on(h)}"><span>${i}</span>${t}</a>`).join('') +
-      `<div class="sp"></div><button class="btn sm" id="theme">🌓 Tema</button><div class="mini">Basado en el RD 842/2002 consolidado (BOE). Los datos orientativos no sustituyen al texto oficial.</div>`;
-    $('#tabbar').innerHTML = NAV.filter(n => ['Inicio', 'Temario', 'Cálculos', 'Examen', 'Guía REBT'].includes(n[1])).map(([h, t, i]) => `<a href="${h}" class="${on(h)}"><span>${i}</span>${t.replace('Guía REBT', 'Guía')}</a>`).join('') + `<a href="#/mas" class="${on('#/mas')}"><span>☰</span>Más</a>`;
+    let g = '';
+    $('#nav').innerHTML = '<div class="logo"><i>' + ic('bolt') + '</i><div>REBT Pro<small>Herramienta para instaladores BT</small></div></div>' +
+      NAV.map(([h, t, i, grp]) => { let x = ''; if (grp !== g) { g = grp; if (grp) x = '<div class="ng">' + grp + '</div>'; } return x + '<a href="' + h + '" class="' + on(h) + '">' + ic(i) + t + '</a>'; }).join('') +
+      '<div class="sp"></div><button class="btn sm" id="theme">Tema claro / oscuro</button><div class="mini">Basado en el RD 842/2002 consolidado (BOE). Los datos orientativos no sustituyen al texto oficial.</div>';
+    $('#tabbar').innerHTML = NAV.filter(n => TAB.includes(n[1])).map(([h, t, i]) => '<a href="' + h + '" class="' + on(h) + '">' + ic(i) + t.replace('Guía REBT', 'Guía') + '</a>').join('') + '<a href="#/mas" class="' + on('#/mas') + '">' + ic('menu') + 'Más</a>';
     const tb = $('#theme');
     if (tb) tb.onclick = () => {
       const r = document.documentElement; const cur = r.dataset.theme;
@@ -39,6 +67,20 @@
     };
   }
   const th = store.get('theme', ''); if (th) document.documentElement.dataset.theme = th;
+
+
+  /* Quita emojis del contenido: la interfaz usa iconos de línea. */
+  const EMO = /[\u{1F000}-\u{1FAFF}\u{2600}-\u{2712}\u{2728}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}\u{200D}]\s?/gu;
+  let limpiando = false;
+  const limpiar = root => {
+    if (limpiando) return; limpiando = true;
+    const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    let n; const lista = [];
+    while ((n = w.nextNode())) { if (!n.parentElement || n.parentElement.closest('svg,script,style,textarea')) continue; EMO.lastIndex = 0; if (EMO.test(n.nodeValue)) lista.push(n); }
+    lista.forEach(t => { t.nodeValue = t.nodeValue.replace(EMO, ''); });
+    limpiando = false;
+  };
+  new MutationObserver(() => limpiar(view)).observe(view, { childList: true, subtree: true, characterData: true });
 
   const routes = [];
   const route = (re, fn) => routes.push([re, fn]);
@@ -69,27 +111,41 @@
     const p = progresoTemario(), s = statsPreguntas();
     const hist = store.get('simulacros', []);
     const last = hist[hist.length - 1];
+    const tile = (h, i, t, d) => `<a class="tile" href="${h}"><div class="ti">${ic(i)}</div><div><b>${t}</b><span>${d}</span></div></a>`;
     view.innerHTML = `
-    <div class="hero">
-      <h1>Prepara tu examen de instalador en baja tensión</h1>
-      <p>Temario completo del REBT organizado como el Apéndice II de la ITC-BT-03, calculadoras con verificación automática, banco de ${QS.length} preguntas con explicación y la documentación que necesita un instalador.</p>
-      <div class="row"><a class="btn pri" href="#/test">Empezar a practicar</a><a class="btn" href="#/calc/seccion" style="background:transparent;color:#fff;border-color:#64748b">Calcular una sección</a></div>
+    <div class="top">
+      <div><h1>REBT Pro</h1><p>Herramienta de aprendizaje y utilidades para el instalador en baja tensión: consulta del reglamento, cálculo, esquemas, documentación y práctica.</p></div>
+      <form class="sbox" id="hs" role="search">${ic('search')}<input id="hq" type="search" placeholder="¿Qué dice el REBT de…?" autocomplete="off" aria-label="Buscar en el REBT"></form>
     </div>
-    <h2>Tu progreso</h2>
-    <div class="grid g3">
-      <div class="card"><div class="muted">Temario estudiado</div><div class="stat">${p.done}/${p.total}</div><div class="bar"><i style="width:${p.total ? p.done / p.total * 100 : 0}%"></i></div></div>
-      <div class="card"><div class="muted">Preguntas vistas</div><div class="stat">${s.vistas}/${s.total}</div><div class="bar"><i style="width:${s.vistas / s.total * 100}%"></i></div></div>
-      <div class="card"><div class="muted">Porcentaje de aciertos</div><div class="stat">${s.ok + s.ko ? s.pct + ' %' : '—'}</div><div class="bar"><i style="width:${s.pct}%"></i></div></div>
-      <div class="card"><div class="muted">Último simulacro</div><div class="stat">${last ? fmt(last.nota, 1) + '/10' : '—'}</div><p>${last ? new Date(last.fecha).toLocaleDateString('es-ES') + ' · ' + last.n + ' preguntas' : 'Aún no has hecho ninguno'}</p></div>
+    <h2>Herramientas</h2>
+    <div class="tiles">
+      ${tile('#/calc/seccion', 'cable', 'Sección de cables', 'Intensidad, caída de tensión y protección.')}
+      ${tile('#/calc/caida', 'pulse', 'Caída de tensión', 'Comprobación por circuito y tramo.')}
+      ${tile('#/calc/vivienda', 'house', 'Circuitos de vivienda', 'Electrificación, C1–C13, IGM y diferenciales.')}
+      ${tile('#/calc/tierra', 'earth', 'Puesta a tierra', 'Resistencia, electrodos y protección.')}
+      ${tile('#/esquemas', 'schema', 'Esquemas unifilares', 'Editor con símbolos y plantillas.')}
+      ${tile('#/pruebas', 'flask', 'Pruebas y mediciones', 'Cómo se hace cada ensayo y qué se anota.')}
+      ${tile('#/crear', 'doc', 'Crear documentos', 'Memoria, CIE, verificación, presupuesto.')}
+      ${tile('#/utiles', 'tools', 'Utilidades', 'Código IP/IK, conversores, tablas rápidas.')}
     </div>
-    <h2>Ir a…</h2>
-    <div class="grid g2">
-      <a class="card" href="#/temario"><h3>📘 Temario REBT</h3><p>7 unidades · todas las ITC-BT con datos clave, tablas y trucos de memoria.</p></a>
-      <a class="card" href="#/calc"><h3>🧮 Calculadoras</h3><p>Sección de cables, caída de tensión, previsión de cargas, tierras, cortocircuito, motores, iluminación…</p></a>
-      <a class="card" href="#/test"><h3>✅ Preparar el examen</h3><p>Test por unidad, simulacros cronometrados, repaso de fallos y problemas prácticos.</p></a>
-      <a class="card" href="#/docs"><h3>📄 Documentación</h3><p>Flujo de trabajo, check-list de verificación, mediciones, CIE y MTD imprimibles.</p></a>
+    <h2>Consultar y aprender</h2>
+    <div class="tiles">
+      ${tile('#/guia', 'search', 'Guía REBT', 'Alturas, distancias y ubicación por elemento.')}
+      ${tile('#/temario', 'book', 'Temario', '7 unidades y todas las ITC-BT con datos clave.')}
+      ${tile('#/test', 'check', 'Preparar el examen', 'Test por unidad, simulacros y repaso de fallos.')}
+      ${tile('#/acceso', 'cap', 'Acceso y examen', 'Vías para obtener la habilitación.')}
+      ${tile('#/ref', 'table', 'Tablas', 'Intensidades, tubos y valores de referencia.')}
+      ${tile('#/docs', 'file', 'Documentación', 'Flujo de trabajo y listas de comprobación.')}
     </div>
-    <div class="note" style="margin-top:22px"><b>Importante:</b> esta app es una herramienta de estudio y cálculo. El texto oficial del REBT (BOE) y la normativa de tu Comunidad Autónoma prevalecen siempre. El formato exacto del examen lo fija la entidad certificadora/centro examinador.</div>`;
+    <h2>Tu actividad</h2>
+    <div class="kpis">
+      <div><small>Temario revisado</small><strong>${p.done}/${p.total}</strong><div class="bar"><i style="width:${p.total ? p.done / p.total * 100 : 0}%"></i></div></div>
+      <div><small>Preguntas vistas</small><strong>${s.vistas}/${s.total}</strong><div class="bar"><i style="width:${s.vistas / s.total * 100}%"></i></div></div>
+      <div><small>Aciertos</small><strong>${s.ok + s.ko ? s.pct + ' %' : '—'}</strong><div class="bar"><i style="width:${s.pct}%"></i></div></div>
+      <div><small>Último simulacro</small><strong>${last ? fmt(last.nota, 1) + '/10' : '—'}</strong><div class="muted" style="font-size:12px">${last ? new Date(last.fecha).toLocaleDateString('es-ES') + ' · ' + last.n + ' preguntas' : 'Sin simulacros'}</div></div>
+    </div>
+    <p class="foot">Herramienta de apoyo. El texto oficial del REBT (BOE) y la normativa de tu comunidad autónoma prevalecen siempre. Verifica los resultados antes de ejecutar una instalación real.</p>`;
+    $('#hs').onsubmit = ev => { ev.preventDefault(); const v = $('#hq').value.trim(); try { sessionStorage.setItem('rebt.gq', v); } catch (x) { } location.hash = '#/guia'; };
   });
 
   /* =====================================================================
@@ -623,12 +679,12 @@
   route(/^#\/fuentes$/, () => {
     view.innerHTML = `<h1>Fuentes y avisos</h1><p class="lead">Documentos oficiales usados para elaborar el contenido.</p>
     ${window.FUENTES.map(f => `<div class="card" style="margin:10px 0"><h3><a href="${f.u}" target="_blank" rel="noopener">${esc(f.t)}</a></h3><p>${esc(f.n)}</p></div>`).join('')}
-    <h2>Avisos</h2><div class="note">Esta aplicación es una ayuda al estudio y al cálculo. No sustituye al texto oficial del REBT, a las normas UNE ni a las normas particulares de la empresa distribuidora de cada zona. Los valores de intensidades admisibles en aluminio son estimados. Verifica siempre antes de ejecutar una instalación real.</div>
+    <h2>Avisos</h2><div class="note">Esta aplicación es una herramienta de aprendizaje, consulta y cálculo. No sustituye al texto oficial del REBT, a las normas UNE ni a las normas particulares de la empresa distribuidora de cada zona. Los valores de intensidades admisibles en aluminio son estimados. Verifica siempre antes de ejecutar una instalación real.</div>
     <div class="note">Tus datos (progreso, notas, borradores) se guardan solo en este navegador y no se envían a ningún servidor.</div>`;
   });
 
   route(/^#\/mas$/, () => {
-    view.innerHTML = `<h1>Más secciones</h1><div class="grid g2">${NAV.slice(5).map(([h, t, i]) => `<a class="card" href="${h}"><h3>${i} ${t}</h3></a>`).join('')}</div>`;
+    view.innerHTML = `<h1>Más secciones</h1><div class="tiles">${NAV.filter(n => n[1] !== "Inicio" && !TAB.includes(n[1])).map(([h, t, i]) => `<a class="tile" href="${h}"><div class="ti">${ic(i)}</div><div><b>${t}</b></div></a>`).join('')}</div>`;
   });
   const API = { route, store, esc, fmt, num, view, go, $, $$, C };
   (window.REBTExt || []).forEach(fn => { try { fn(API); } catch (e) { console.error(e); } });
