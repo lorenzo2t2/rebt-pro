@@ -1,5 +1,5 @@
 {
- "version": "1.10.0",
+ "version": "1.11.0",
  "minApk": 4,
  "files": {
   "apple-touch-icon.png": "aa69b88802e7",
@@ -8,11 +8,12 @@
   "icon-192.png": "00ec0fe72877",
   "icon-512.png": "0e3a1c0757a7",
   "icon.svg": "bcf7b2336856",
-  "index.html": "42e3a7e19697",
+  "index.html": "93da92cd6c22",
   "js/acceso.js": "71931362913e",
   "js/andalucia.js": "ae5e8c3daac9",
-  "js/app.js": "4e9f16e2979a",
+  "js/app.js": "b5dc81cfa8f8",
   "js/calc.js": "2cc9630a99b3",
+  "js/cuadros.js": "5cdc149f753e",
   "js/docgen.js": "7f7457a7302a",
   "js/docs.js": "2f233c137d17",
   "js/esquemas.js": "a481283a3f79",
