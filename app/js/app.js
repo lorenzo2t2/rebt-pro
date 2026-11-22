@@ -156,7 +156,12 @@
     const hist = store.get('simulacros', []);
     const last = hist[hist.length - 1];
     const tile = (h, i, t, d) => `<a class="tile" href="${h}"><div class="ti">${ic(i)}</div><div><b>${t}</b><span>${d}</span></div></a>`;
-    view.innerHTML = `
+    const estP = store.get('estilo', 'futurista');
+    const alt = window.PORTADA && window.PORTADA[estP];
+    if (alt) {
+      view.innerHTML = alt({ p, s, last, ic, fmt, store, HUBS, rachaDiaria, diarioHecho });
+      $$('.pc-chip').forEach(b => b.onclick = () => { try { sessionStorage.setItem('rebt.gq', b.dataset.q); } catch (x) { } location.hash = '#/guia'; });
+    } else view.innerHTML = `
     <div class="top">
       <div><div class="kick">Baja tensión · REBT</div><h1>Elec-LoM</h1><p>Herramienta de aprendizaje y utilidades para el instalador: consulta del reglamento, cálculo, esquemas, documentación y práctica.</p>
       <form class="sbox" id="hs" role="search">${ic('search')}<input id="hq" type="search" placeholder="¿Qué dice el REBT de…?" autocomplete="off" aria-label="Buscar en el REBT"></form></div>
@@ -183,7 +188,7 @@
     <div class="tiles">${Object.entries(HUBS).map(([k, hb]) => tile('#/' + k, hb.i, hb.t, hb.d)).join('')}</div>
     ${(() => { const fv = store.get('favoritos', []), rc = store.get('recientes', []).filter(x => !fv.some(f => f[0] === x[0])).slice(0, 5); const ch = (a, ico) => a.map(x => `<a class="chip" href="${x[0]}">${ico} ${esc(x[1])}</a>`).join(''); return fv.length || rc.length ? `<h2>Favoritos y recientes</h2><div class="chips">${ch(fv, '★')}${ch(rc, '↺')}</div>` : ''; })()}
     <p class="foot">Herramienta de apoyo. El texto oficial del REBT (BOE) y la normativa de tu comunidad autónoma prevalecen siempre. Verifica los resultados antes de ejecutar una instalación real.</p>`;
-    if (window.REBTFx) REBTFx.mount($('#fx3d'));
+    if (window.REBTFx && $('#fx3d')) REBTFx.mount($('#fx3d'));
     $('#hs').onsubmit = ev => { ev.preventDefault(); const v = $('#hq').value.trim(); try { sessionStorage.setItem('rebt.gq', v); } catch (x) { } location.hash = '#/guia'; };
   });
 
