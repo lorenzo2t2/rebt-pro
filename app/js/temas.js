@@ -20,7 +20,7 @@
     return `<div style="background:${bg};border-radius:10px;padding:12px;height:124px;display:grid;gap:8px;grid-template-columns:44px 1fr;border:1px solid ${bd}">
       <div style="${blk}display:grid;gap:6px;padding:6px;align-content:start"><i style="height:6px;border-radius:3px;background:${ac};${glow}display:block"></i><i style="height:4px;border-radius:2px;background:${bd};display:block"></i><i style="height:4px;border-radius:2px;background:${bd};display:block"></i><i style="height:4px;border-radius:2px;background:${bd};display:block"></i></div>
       <div style="display:grid;gap:8px;grid-template-rows:34px 1fr">
-        <div style="${blk}padding:6px 8px;color:${tx};font:700 11px system-ui">REBT Pro<i style="float:right;width:34px;height:8px;border-radius:4px;background:${ac};${glow}margin-top:2px"></i></div>
+        <div style="${blk}padding:6px 8px;color:${tx};font:700 11px system-ui">Elec-LoM<i style="float:right;width:34px;height:8px;border-radius:4px;background:${ac};${glow}margin-top:2px"></i></div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><div style="${blk}"></div><div style="${blk}${id === 'futurista' ? 'box-shadow:0 0 16px -2px rgba(56,214,255,.4);border-color:#38d6ff;' : ''}"></div></div>
       </div></div>`;
   };

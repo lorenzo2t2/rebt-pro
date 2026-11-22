@@ -1,4 +1,4 @@
-REBT Pro en el móvil
+Elec-LoM en el móvil
 
 APK (Android) - igual que la Agenda familiar y MedLoM
   REBT-Pro.apk (≈0,4 MB). Pásala al móvil e instálala (permite "orígenes desconocidos").

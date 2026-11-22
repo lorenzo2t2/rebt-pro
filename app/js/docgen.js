@@ -242,7 +242,7 @@
       return `<section><h2>${n}. ${esc(s.t)}</h2>${dl}${rest}${tpl.extras && tpl.extras[s.id] ? tpl.extras[s.id](d) : ''}</section>`;
     }).join('');
     const emp = d.empresa || perfil().empresa;
-    return `<div class="paper"><h1>${esc(tpl.titulo)}</h1><div class="sub">${esc(doc.nombre)}${d.fecha ? ' · ' + new Date(d.fecha).toLocaleDateString('es-ES') : ''}</div>${secs}${tpl.texto ? `<h2>Declaración</h2><p>${esc(tpl.texto)}</p>` : ''}<div class="firmas">${tpl.firmas.map(x => `<div>${esc(x)}</div>`).join('')}</div><div class="pie">Documento generado con REBT Pro${emp ? ' · ' + esc(emp) : ''}. Borrador de trabajo: el contenido debe revisarse y adaptarse al modelo oficial y a la normativa autonómica aplicable.</div></div>`;
+    return `<div class="paper"><h1>${esc(tpl.titulo)}</h1><div class="sub">${esc(doc.nombre)}${d.fecha ? ' · ' + new Date(d.fecha).toLocaleDateString('es-ES') : ''}</div>${secs}${tpl.texto ? `<h2>Declaración</h2><p>${esc(tpl.texto)}</p>` : ''}<div class="firmas">${tpl.firmas.map(x => `<div>${esc(x)}</div>`).join('')}</div><div class="pie">Documento generado con Elec-LoM${emp ? ' · ' + esc(emp) : ''}. Borrador de trabajo: el contenido debe revisarse y adaptarse al modelo oficial y a la normativa autonómica aplicable.</div></div>`;
   }
 
   /* ------------------------------------------------------------------ vistas */

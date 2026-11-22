@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Compila la APK de REBT Pro (WebView con la app dentro, sin internet).
+# Compila la APK de Elec-LoM (WebView con la app dentro, sin internet).
 # Uso:  ./compilar-apk.sh          -> deja movil/REBT-Pro.apk
 # Cada ejecución sube el número de versión.
 set -e

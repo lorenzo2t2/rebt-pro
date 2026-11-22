@@ -1,4 +1,4 @@
-/* REBT Pro - interfaz. Vanilla JS, sin dependencias. Datos en localStorage (nunca sale del dispositivo). */
+/* Elec-LoM - interfaz. Vanilla JS, sin dependencias. Datos en localStorage (nunca sale del dispositivo). */
 (function () {
   'use strict';
   const $ = (s, r = document) => r.querySelector(s);
@@ -56,7 +56,7 @@
   function renderNav(cur) {
     const on = h => (h === '#/' ? cur === '#/' || cur === '' : cur.startsWith(h)) ? 'on' : '';
     let g = '';
-    $('#nav').innerHTML = '<div class="logo"><i>' + ic('bolt') + '</i><div>REBT Pro<small>Herramienta para instaladores BT</small></div></div>' +
+    $('#nav').innerHTML = '<div class="logo"><i>' + ic('bolt') + '</i><div>Elec-LoM<small>Herramienta para instaladores BT</small></div></div>' +
       NAV.map(([h, t, i, grp]) => { let x = ''; if (grp !== g) { g = grp; if (grp) x = '<div class="ng">' + grp + '</div>'; } return x + '<a href="' + h + '" class="' + on(h) + '">' + ic(i) + t + '</a>'; }).join('') +
       '<div class="sp"></div><button class="btn sm" id="theme">Cambiar tema</button><div class="mini">Basado en el RD 842/2002 consolidado (BOE). Los datos orientativos no sustituyen al texto oficial.</div>';
     $('#tabbar').innerHTML = NAV.filter(n => TAB.includes(n[1])).map(([h, t, i]) => '<a href="' + h + '" class="' + on(h) + '">' + ic(i) + t.replace('Guía REBT', 'Guía') + '</a>').join('') + '<a href="#/mas" class="' + on('#/mas') + '">' + ic('menu') + 'Más</a>';
@@ -115,7 +115,7 @@
     const tile = (h, i, t, d) => `<a class="tile" href="${h}"><div class="ti">${ic(i)}</div><div><b>${t}</b><span>${d}</span></div></a>`;
     view.innerHTML = `
     <div class="top">
-      <div><div class="kick">Baja tensión · REBT</div><h1>REBT Pro</h1><p>Herramienta de aprendizaje y utilidades para el instalador: consulta del reglamento, cálculo, esquemas, documentación y práctica.</p>
+      <div><div class="kick">Baja tensión · REBT</div><h1>Elec-LoM</h1><p>Herramienta de aprendizaje y utilidades para el instalador: consulta del reglamento, cálculo, esquemas, documentación y práctica.</p>
       <form class="sbox" id="hs" role="search">${ic('search')}<input id="hq" type="search" placeholder="¿Qué dice el REBT de…?" autocomplete="off" aria-label="Buscar en el REBT"></form></div>
       <canvas id="fx3d" aria-hidden="true"></canvas>
     </div>

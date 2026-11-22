@@ -1,5 +1,5 @@
 {
- "version": "1.6.0",
+ "version": "1.6.1",
  "minApk": 4,
  "files": {
   "apple-touch-icon.png": "aa69b88802e7",
@@ -8,12 +8,12 @@
   "icon-192.png": "00ec0fe72877",
   "icon-512.png": "0e3a1c0757a7",
   "icon.svg": "bcf7b2336856",
-  "index.html": "6f49da2104f2",
+  "index.html": "009524120b7d",
   "js/acceso.js": "71931362913e",
   "js/andalucia.js": "ae5e8c3daac9",
-  "js/app.js": "b7db714f41c0",
-  "js/calc.js": "9e154e9b32f7",
-  "js/docgen.js": "1d65dc5c96b8",
+  "js/app.js": "2632b77efbc4",
+  "js/calc.js": "2cc9630a99b3",
+  "js/docgen.js": "7f7457a7302a",
   "js/docs.js": "2f233c137d17",
   "js/esquemas.js": "7dbe37ec1919",
   "js/fx.js": "8b9187a21115",
@@ -24,9 +24,9 @@
   "js/preguntas2.js": "75153f885476",
   "js/pruebas.js": "14bf1ba1cd8d",
   "js/temario.js": "e51a902822a4",
-  "js/temas.js": "73a4104c8c9e",
+  "js/temas.js": "756ad07e4a2f",
   "js/update.js": "7baf10c133e1",
   "js/utiles.js": "c047f7c56c75",
-  "manifest.webmanifest": "2be337ecf93e"
+  "manifest.webmanifest": "fa7797af9f07"
  }
 }

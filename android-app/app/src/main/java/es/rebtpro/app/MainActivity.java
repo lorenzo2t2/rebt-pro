@@ -113,7 +113,7 @@ public class MainActivity extends Activity {
     private void instalarApk(String url) {
         if (url == null || !url.startsWith("https://github.com/")) return;
         if (Build.VERSION.SDK_INT >= 26 && !getPackageManager().canRequestPackageInstalls()) {
-            Toast.makeText(this, "Permite instalar apps desde REBT Pro y vuelve a pulsar Instalar", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Permite instalar apps desde Elec-LoM y vuelve a pulsar Instalar", Toast.LENGTH_LONG).show();
             startActivity(new Intent(android.provider.Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, Uri.parse("package:" + getPackageName())));
             return;
         }
@@ -196,7 +196,7 @@ public class MainActivity extends Activity {
         public void print(String title) {
             runOnUiThread(() -> {
                 PrintManager pm = (PrintManager) getSystemService(PRINT_SERVICE);
-                String t = (title == null || title.isEmpty()) ? "REBT Pro" : title;
+                String t = (title == null || title.isEmpty()) ? "Elec-LoM" : title;
                 pm.print(t, web.createPrintDocumentAdapter(t), new PrintAttributes.Builder().build());
             });
         }

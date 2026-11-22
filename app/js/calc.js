@@ -1,4 +1,4 @@
-/* REBT Pro - motor de cálculo. Funciones puras, sin DOM. (UMD: navegador -> window.Calc, node -> module.exports) */
+/* Elec-LoM - motor de cálculo. Funciones puras, sin DOM. (UMD: navegador -> window.Calc, node -> module.exports) */
 (function (root, factory) {
   if (typeof module === 'object' && module.exports) module.exports = factory();
   else root.Calc = factory();

@@ -1,4 +1,4 @@
-# REBT Pro · herramienta de aprendizaje y utilidades para instaladores en baja tensión
+# Elec-LoM · herramienta de aprendizaje y utilidades para instaladores en baja tensión
 
 Abrir: doble clic en `abrir-app.bat` (servidor local en http://localhost:5188).
 Sin dependencias ni internet; funciona como PWA. El progreso se guarda en el navegador.
