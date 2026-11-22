@@ -47,7 +47,7 @@
   const ic = n => '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">' + (P[n] || '') + '</svg>';
   const NAV = [
     ['#/', 'Inicio', 'home', ''],
-    ['#/guia', 'Guía REBT', 'search', 'Consultar'], ['#/temario', 'Temario', 'book', 'Consultar'], ['#/ref', 'Tablas', 'table', 'Consultar'], ['#/docs', 'Documentación', 'file', 'Consultar'],
+    ['#/guia', 'Guía REBT', 'search', 'Consultar'], ['#/temario', 'Temario', 'book', 'Consultar'], ['#/ref', 'Tablas', 'table', 'Consultar'], ['#/andalucia', 'Docs Andalucía', 'file', 'Consultar'], ['#/docs', 'Documentación', 'file', 'Consultar'],
     ['#/calc', 'Cálculos', 'calc', 'Herramientas'], ['#/esquemas', 'Esquemas', 'schema', 'Herramientas'], ['#/pruebas', 'Pruebas', 'flask', 'Herramientas'], ['#/crear', 'Crear documentos', 'doc', 'Herramientas'], ['#/utiles', 'Utilidades', 'tools', 'Herramientas'],
     ['#/test', 'Examen', 'check', 'Formación'], ['#/acceso', 'Acceso y examen', 'cap', 'Formación'],
     ['#/temas', 'Temas', 'palette', 'Aplicación'], ['#/actualizar', 'Actualizar', 'down', 'Aplicación'], ['#/fuentes', 'Fuentes', 'info', 'Aplicación'],
@@ -137,6 +137,7 @@
       ${tile('#/test', 'check', 'Preparar el examen', 'Test por unidad, simulacros y repaso de fallos.')}
       ${tile('#/acceso', 'cap', 'Acceso y examen', 'Vías para obtener la habilitación.')}
       ${tile('#/ref', 'table', 'Tablas', 'Intensidades, tubos y valores de referencia.')}
+      ${tile('#/andalucia', 'file', 'Documentación Andalucía', 'CIE, MTD, TECI/PUES y trámites de la Junta.')}
       ${tile('#/docs', 'file', 'Documentación', 'Flujo de trabajo y listas de comprobación.')}
     </div>
     <h2>Tu actividad</h2>

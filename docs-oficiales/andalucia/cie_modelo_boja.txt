@@ -1,0 +1,265 @@
+24 de junio 2015  Boletín Oficial de la Junta de Andalucía  Núm. 121 página 83
+
+                                   3. Otras disposiciones                                                             00072174
+
+Consejería de Economía, Innovación, Ciencia y Empleo
+
+               Resolución de 17 de junio de 2015, de la Dirección General de Industria, Energía y Minas, por
+        la que se aprueba el modelo del certificado de instalación eléctrica de baja tensión.
+
+                                             ANTECEDENTES DE HECHO
+
+        Primero. El Real Decreto 842/2002, de 2 de agosto, por el que se aprueba el Reglamento Electrotécnico
+para Baja Tensión (en adelante, REBT), establece en su artículo 18 que a la terminación de una instalación
+eléctrica de baja tensión la empresa instaladora ejecutora de la instalación emitirá un certificado de instalación
+(en adelante CIE), que estará suscrito por un instalador perteneciente a dicha empresa. En el CIE se hará constar
+que la instalación se ha realizado de conformidad con lo establecido en el Reglamento y sus Instrucciones
+Técnicas Complementarias (en adelante ITC).
+
+        Segundo. El citado artículo 18 determina que el certificado, junto con la documentación técnica y, en su
+caso, el certificado de dirección de obra y el de inspección inicial, deberá presentarse ante el órgano competente
+de la Comunidad Autónoma, con objeto de registrar la referida instalación, recibiendo las copias diligenciadas
+necesarias para la constancia de cada interesado y solicitud de suministro de energía. Las Administraciones
+competentes deberán facilitar que estos documentos puedan ser presentados y registrados por procedimientos
+informáticos o telemáticos, habiendo aprobado con este objetivo la entonces Consejería de Innovación, Ciencia
+y Empresa la Orden de 24 de octubre de 2005, por la que se regula el procedimiento electrónico para la puesta
+en servicio de determinadas instalaciones de Baja Tensión.
+
+        Tercero. La ITC-BT-04, que desarrolla el artículo 18 del REBT, determina la documentación técnica
+que deben tener las instalaciones para ser legalmente puestas en servicio, así como algunos aspectos de su
+tramitación ante el órgano competente de la Administración.
+
+        Concretamente, en el apartado 5.4 de la citada ITC-BT-04 se establece que una vez finalizadas las
+obras, la empresa instaladora deberá emitir un CIE, suscrito por un instalador en baja tensión que pertenezca a
+la empresa, según modelo establecido por la Administración, que deberá comprender, al menos, lo siguiente:
+
+        a) Los datos referentes a las principales características de la instalación.
+        b) La potencia prevista de la instalación.
+        c) En su caso, la referencia del certificado del organismo de control que hubiera realizado con calificación
+de resultado favorable, la inspección inicial.
+        d) Identificación de la empresa instaladora responsable de la instalación y del instalador en baja tensión
+que suscribe el certificado de instalación.
+        e) Declaración expresa de que la instalación ha sido ejecutada de acuerdo con las prescripciones
+del,REBT, y, en su caso, con las especificaciones particulares aprobadas a la compañía eléctrica, así como,
+según corresponda, con el Proyecto o la Memoria Técnica de Diseño.
+
+        Cuarto. Mediante Resolución de 11 de noviembre de 2003, esta Dirección General de Industria, Energía
+y Minas aprobó, de acuerdo con la habilitación incluida en el apartado 5.4. de la ITC citada, el modelo de CIE
+para instalaciones de baja tensión.
+
+        Quinto. La entrada en vigor del Real Decreto 560/2010, de 7 de mayo, por el que se modifican
+diversas normas reglamentarias en materia de seguridad industrial para adecuarlas a la Ley 17/2009, de 23
+de noviembre, sobre el libre acceso a las actividades de servicios y su ejercicio, y a la Ley 25/2009, de 22 de
+diciembre, de modificación de diversas leyes para su adaptación a la Ley sobre el libre acceso a las actividades
+de servicios y su ejercicio, ha supuesto un cambio en la nomenclatura empleada en el REBT para referirse a los
+agentes intervinientes a la hora de ejecutar una instalación, pasando a denominarse «empresa instaladora» e
+«instalador» a lo que antes se denominaba «instalador autorizado» y «titular del CCI», respectivamente.
+
+        Sexto. Asimismo con la entrada en vigor del Real Decreto 1053/2014, de 12 de diciembre, por el que
+se aprueba una nueva Instrucción Técnica Complementaria (ITC) BT 52 «Instalaciones con fines especiales.
+Infraestructura para la recarga de vehículos eléctricos», del Reglamento electrotécnico para baja tensión, aprobado
+          Núm. 121 página 84  Boletín Oficial de la Junta de Andalucía  24 de junio 2015
+
+          por Real Decreto 842/2002, de 2 de agosto, y se modifican otras instrucciones técnicas complementarias
+          del mismo, se establece un nuevo tipo de instalaciones, denominadas instalaciones de recarga de vehículos
+          eléctricos, que han sido asimismo incluidas en el nuevo modelo de CIE.
+
+                  Séptimo. Por último, la experiencia acumulada en el uso del modelo del certificado de instalación en
+          baja tensión, ha hecho aconsejable la mejora del mismo mediante, entre otros aspectos, la inclusión del código
+          universal de punto de suministro (CUPS), permitiendo así una mayor trazabilidad del suministro.
+
+                                                      FUNDAMENTOS DE DERECHO
+
+                  Primero. Las competencias autonómicas en materia de energía se encuentran establecidas en el Título
+          II, Capítulo II, artículo 49, del Estatuto de Autonomía para Andalucía. Esta Dirección General de Industria, Energía
+          y Minas es, dentro de la Junta de Andalucía y de acuerdo con el Decreto de la Presidenta 4/2013, de 9 de
+          septiembre, de la Presidencia y sobre reestructuración de Consejerías, y el Decreto 149/2012, de 5 de junio, por
+          el que se regula la estructura orgánica de la Consejería de Economía, Innovación, Ciencia y Empleo, el órgano
+          al que se atribuyen las competencias en materia de régimen energético eléctrico y autorización de instalaciones
+          energéticas, de conformidad con lo establecido en el artículo 14.2.h) e i) del citado Decreto 149/2012, de 5 de
+          junio.
+
+                  Segundo. Según establece el apartado 5.4 de la ITC-BT-04 del REBT, el CIE se redactará sobre impresos,
+          según modelo determinado por el órgano competente de la Comunidad Autónoma.
+
+                  Habida cuenta de la necesidad de modificar el modelo aprobado mediante Resolución de 11 de
+          noviembre de 2003, en virtud de los antecedentes expuestos, y en uso de la habilitación prevista en el apartado
+          5.4 de la ITC-BT-04, esta Dirección General de Industria, Energía y Minas
+
+                                                             R ESUEL V E
+
+                  Primero. Aprobar el nuevo modelo de certificado de instalación eléctrica de baja tensión que se adjunta
+          como el Anexo I de esta Resolución y sus correspondientes instrucciones de cumplimentación, que se incluyen
+          como Anexo II. El modelo de certificado de instalación eléctrica será de utilización para las instalaciones que
+          se ejecuten al amparo del Real Decreto 842/2002, de 2 de agosto, por el que se aprueba el Reglamento
+          Electrotécnico de Baja Tensión.
+
+                  Segundo. Dejar sin efecto la Resolución de 11 de noviembre de 2003, de la Dirección General de
+          Industria, Energía y Minas, por la que se aprueba el modelo de certificado de instalación eléctrica de baja
+          tensión.
+
+                  Tercero. Publicar la presente Resolución y sus Anexos en el Boletín Oficial de la Junta de Andalucía. La
+          presente Resolución producirá efectos el día siguiente al de su publicación.
+
+                  Contra la presente Resolución, que no pone fin a la vía administrativa, se podrá interponer recurso
+          de alzada, ante el Excmo. Sr. Consejero de Economía, Innovación, Ciencia y Empleo, en el plazo de un (1)
+          mes contado a partir del día siguiente al de su publicación, de conformidad con lo establecido en los artículos
+          114 y 115 de la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y
+          del Procedimiento Administrativo Común, y con el artículo 115.1 de la Ley 9/2007, de 22 de octubre, de la
+          Administración de la Junta de Andalucía.
+
+                  Sevilla, 17 de junio de 2015.- La Directora General, María José Asensio Coto.
+
+00072174
+24 de junio 2015               Boletín Oficial de la Junta de Andalucía                  Núm. 121 página 85
+
+                                                             /IJ2*
+
+                  ) *K*)/2*IF /0/)*LI0N) *)//G/ IF*LI
+
+ 1  (!)   1                           IO>*F 20/*IF /0/)*LI"&#                                   F(
+              *  +                                                                                    
+
+                                                                                ' G /$
+
+                                      IOJ;*I /G/ IF*LI"#
+
+ * E0/0/*IF /0/)*LI                   ; 17       )  !7           I*KI*2 7
+                                                                 )!; 7
+I -!F7
+7                                                                                    (7
+
+07                                                       I6 7 7          ; 7   7 ;7            ; 7
+                                                                              )!; 7            F ("#7
+/ 2F0/*IF /0/)*LI                              ; 17
+                                               E 7
+- 7
+
+07
+  !"=#7
+
+* !7   I1                       /!     <(!       )E;F7
+
+)//) PF *)/F>I/0F0/*IF /0/)*LI
+
+)> ;  !                        0$> / !7                  )  $  !7
+* I"/#7                                                      I1 7
+                                          F I                <   7
+* !4;  1 "QR#7                                               <    7
+                                                             F!(   !"#7 
+
+ 1!14;  1 "QR#7                                          )   1!17
+                                                             I1 7
+ 7                <    ('       ('    ! "S#" #7              <   7
+                                                             <    7
+                                                             F!(   !"#7
+
+   7                           F"/#7  ;     7             K   !
+;  ( * 7
+* "/#7                                 *  , '   !                 .   
+
+    "#7                                           .   
+
+                                                    !"Q#7
+
+S*K*)/)*LI*IF;))*LI0/*IF /0/)*LI                  !7             )2(7                          IO)7
+
+   2 7
+
+2 ) /  -+ -*!*7                                IO,I (!7  ( .(+*!*K1  -7
+
+ *  H                                                           IO 7
+
+*   !                                          I*KI* 7          '         
+2 17                                                                       <          " 3 # 7
+                                                         )  $7
+
+*   !   *    ) *K*)/+  .1 ( ! 1 
+      !*        $ 
+     (  . !  !,
+
+                 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+                                             "K *   !. *  + #                                                                                                                                                 00072174
+
+;2 ))*LI/ 2F
+  0.2 '&3&AAA&= ;  ! ) '  ; ) $$*1!)
+.(      !   (  .' 1   
+    (+   -,/(  .   +  (    $ 
+(  $   +  !.  (  1!.   / !,
+
+  1  0.2 '    +  (!!.!     !> 
+*  $.<,) $$1!).,)G+T U&(T  &A*) F1,
+          Núm. 121 página 86  Boletín Oficial de la Junta de Andalucía  24 de junio 2015
+
+00072174                                                         anexo ii
+
+                 INSTRUCCIONES PARA LA CUMPLIMENTACIÓN DEL CERTIFICADO DE INSTALACIÓN ELÉCTRICA
+                                                            DE BAJA TENSIÓN
+
+                  Núm. de registro de la instalación (1).
+                  En el primer espacio se indicará mediante la letra «A» si la instalación corresponde a locales o
+          establecimientos de las características que se relacionan.
+                  - Las correspondientes a industrias en general siempre que no se requiera proyecto por no existir locales
+          especiales y potencia prevista menor o igual a 20 kW.
+                  - Los correspondientes a locales húmedos polvorientos o con riesgo de corrosión bombas de extracción
+          o elevación de agua, siendo industriales o no, con potencia prevista menor igual a 10 kW.
+                  - Las correspondientes a locales, mojados, generadores y convertidores y conductores aislados para
+          caldeo, excluyendo las de vivienda con potencia prevista igual o menor a 10 kW.
+                  - Las de carácter temporal para alimentación de maquinaria de obras en construcción de potencia
+          prevista menor o igual a 50 kW.
+                  - Edificios destinados principalmente a viviendas, con previsión de cargas inferior o igual a 100 kW,
+          calculada de acuerdo con lo establecido en las Instrucciones Técnicas del vigente Reglamento Electrotécnico
+          para Baja Tensión.
+                  - Viviendas consideradas de forma individual con previsión de cargas igual o inferior a 50 kW.
+                  - Piscinas y fuentes con potencia instalada menor o igual a 5 kW.
+                  - Instalaciones de alumbrado exterior con potencia instalada menor o igual a 5 kW.
+                  - Garajes que no requieran ventilación forzada de hasta 5 plazas de estacionamiento.
+                  - Establecimientos comerciales y oficinas con presencia de público que no tengan la consideración de
+          locales de pública concurrencia (ocupación inferior a 50 personas y no clasificadas en condiciones BD2, BD3
+          y BD4, según la norma UNE 20.460-3 que clasifica los locales según las condiciones de evacuación en una
+          emergencia) y potencia prevista o instalada por caja general de protección inferior o igual a 100 kW.
+                  - Locales de reunión, trabajo y usos sanitarios (bibliotecas, centros de enseñanza, consultorios médicos,
+          residencias de estudiantes, gimnasios, salas de exposiciones, centros culturales, clubes sociales y deportivos,
+          con ocupación inferior a 50 personas, y no clasificadas en condiciones BD2, BD3 y BD4, según la norma UNE
+          20.460-3 que clasifica los locales según las condiciones de evacuación en una emergencia) y potencia prevista
+          o instalada por caja general de protección inferior o igual a 100 kW.
+                  - Instalaciones eléctricas de uso temporal, de ferias y manifestaciones análogas con potencia prevista o
+          instalada inferior o igual a 10 kW, y en caso de casetas de feria o stands con una superficie útil igual o menor
+          de 100 m2. Se exceptúan circos y teatros ambulantes que se consideran como locales de pública concurrencia
+          (según Instrucción de 31 de marzo de 2004).
+                  - Instalaciones de recarga de vehículo eléctrico que no sean de modo de carga 4, estén situadas en el
+          exterior y su potencia sea menor o igual a 10Kw.
+                  - Instalaciones de recarga de vehículo eléctrico que no sean de modo de carga 4, no estén situadas en el
+          exterior y su potencia sea menor o igual a 50Kw.
+                  Si la instalación no está incluida en la relación anterior se identificará con la letra «B».
+                  En el segundo espacio se indicará mediante un número secuencial de 6 dígitos el núm. total de
+          instalaciones realizadas por la empresa instaladora, que continuarán la serie ya iniciada si ésta existe.
+                  En el tercer espacio se indicará mediante 2 dígitos el año en que se ha realizado la instalación.
+
+                  Núm. expediente baja tensión (2). El número de expediente de baja tensión será asignado por la
+          Administración.
+
+                  Tipo de instalación (3). Según la clasificación de la tabla del epígrafe 3.1 de la I.T.C. BT 04.
+
+                  Tensión suministro (V) (4). Para suministros monofásicos se indicará la tensión simple (ej. 230V), para
+          suministros trifásicos a cuatro hilos se indicará la tensión compuesta y simple (ej. 400/230 V) y para suministros
+          trifásicos a tres hilos se indicará la tensión compuesta por el número de fases (ej. 3x230 V).
+
+                  Modalidad (5). Se indicará la modalidad con el siguiente código:
+                  M1Sistemas de automatización, gestión técnica de la energía y seguridad para viviendas y
+
+                            edificios.
+                  M2Sistemas de control distribuido.
+                  M3 Sistemas de supervisión, control y adquisición de datos.
+24 de junio 2015  Boletín Oficial de la Junta de Andalucía               Núm. 121 página 87
+
+M4 Control de procesos.
+M5 Líneas aéreas o subterráneas para distribución de energía.
+M6 Locales con riesgo de incendio o explosión.
+M7 Quirófanos y salas de intervención.
+M8 Lámparas de descarga en alta tensión, rótulos luminosos y similares.
+M9 Instalaciones generadoras de baja tensión.
+
+                                                                                             00072174
+

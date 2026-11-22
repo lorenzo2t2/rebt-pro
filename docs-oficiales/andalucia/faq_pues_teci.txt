@@ -1,0 +1,697 @@
+MANUAL DE LA SECRETARÍA GENERAL DE INDUSTRIA, ENERGÍA Y MINAS PARA LA
+TRAMITACIÓN ADMINISTRATIVA DE LAS INSTALACIONES DE GENERACIÓN DE ENERGÍA
+ELÉCTRICA EN RÉGIMEN DE AUTOCONSUMO EN LA COMUNIDAD AUTÓNOMA DE ANDALUCÍA
+
+Actualización: Julio 2019.
+
+ 1.- OBJETO DEL MANUAL Y NORMATIVA DE APLICACIÓN .......................................................................... 2
+ 2.- DEFINICIONES ................................................................................................................................... 3
+ 3.- TIPOLOGÍA DE INSTALACIONES........................................................................................................... 4
+ 4.- Novedades Real Decreto-Ley 15/2018 y Real Decreto 244/2019. ........................................................... 6
+ 4.1 Resumen de novedades no relativas a la tramitación ............................................................................ 6
+ 4.2 Esquema de tramitación .................................................................................................................... 7
+ 5.- TRAMITACIÓN DE INSTALACIONES. ..................................................................................................... 8
+
+    5.1.- TRAMITACIÓN ADMINISTRATIVA INSTALACIONES SIN EXCEDENTES O CON EXCEDENTES DE
+    POTENCIA MENOR O IGUAL A 15kW EN SUELO URBANIZADO. .............................................................. 9
+
+       5.1.1.- Depósito de garantía .............................................................................................................. 9
+       5.1.2.- Solicitud del punto de acceso y conexión................................................................................. 9
+       5.1.3.- Legalización ante el órgano autonómico competente en industria y energía. ............................... 9
+       5.1.4.- Contrato técnico de acceso..................................................................................................... 9
+       5.1.5.- Suscripción o adaptación del contrato de acceso de suministro................................................. 9
+       5.1.6.-Registro administrativo de instalaciones de producción de energía eléctrica (PRETOR). ................ 9
+       5.1.7.- Registro administrativo de autoconsumo de energía eléctrica. ................................................. 10
+       5.1.8.- Mecanismo de compensación simplificada. ........................................................................... 10
+       5.1.9.- Inspección inicial por OCA.................................................................................................... 10
+    5.2.- TRAMITACIÓN ADMINISTRATIVA INSTALACIONES CON EXCEDENTES, EXCEPTO LAS DE MENOS DE
+    15 KW EN SUELO URBANIZADO......................................................................................................... 11
+       5.2.1.- Depósito de garantía............................................................................................................ 12
+       5.2.2.- Solicitud del punto de acceso y conexión .............................................................................. 12
+       5.2.3.- Solicitud autorización administrativa de la instalación o legalización ante industria. .................. 13
+       5.2.4.- Solicitud formalización del contrato técnico de acceso, conexión y primera verificación ............. 14
+       5.2.5.- Suscripción o adaptación del contrato de acceso de suministro .............................................. 16
+       5.2.6.- Inscripción Registro administrativo de instalaciones de producción eléctrica ............................ 16
+       5.2.7.- Inscripción Registro administrativo de autoconsumo de energía eléctrica ................................. 17
+       5.2.8.- Mecanismo de compensación simplificada ........................................................................... 17
+       5.2.9.- Venta de los excedentes ...................................................................................................... 18
+    5.3.- TRAMITACIÓN ADMINISTRATIVA INSTALACIONES GENERADORAS AISLADAS................................. 19
+       5.3.1.- Depósito de garantía............................................................................................................ 19
+       5.3.2.- Solicitud del punto de acceso y conexión .............................................................................. 19
+       5.3.3.- Legalización ante el órgano autonómico competente en industria y energía. ............................ 19
+       5.3.4.- Inspección inicial por OCA. .................................................................................................. 19
+       5.3.5.- Contrato técnico de acceso .................................................................................................. 19
+       5.3.6.- Suscripción o adaptación del contrato de acceso de suministro .............................................. 19
+       5.3.7.-Registro administrativo de instalaciones de producción de energía eléctrica (PRETOR). .............. 19
+       5.3.8.- Registro administrativo de autoconsumo de energía eléctrica.................................................. 19
+       Exentas ........................................................................................................................................ 19
+ 6.- INSTALACIONES EXISTENTES ANTERIORES AL R.D. 244/2019, DE 5 DE ABRIL. .................................. 20
+
+                                                                                                                   1
+ 1.- OBJETO DEL MANUAL Y NORMATIVA DE APLICACIÓN
+ El presente manual pretende aclarar la tramitación de las instalaciones de generación de energía eléctrica en
+ régimen de autoconsumo en la Comunidad Autónoma de Andalucía. La normativa de aplicación es la siguiente:
+ Normativa estatal:
+ · Ley 24/2013, de 26 de diciembre, del Sector Eléctrico.
+ · Real Decreto 1955/2000, de 1 de diciembre, por el que se regulan las actividades de transporte, distribución,
+ comercialización, suministro y procedimientos de autorización de instalaciones de energía eléctrica.
+ · Real Decreto 1699/2011, de 18 de noviembre, por el que se regula la conexión a red de instalaciones de producción de
+ energía eléctrica de pequeña potencia.
+ · Real Decreto 413/2014, de 6 de junio, por el que se regula la actividad de producción de energía eléctrica a partir de
+ fuentes de energía renovables, cogeneración y residuos.
+ · Real Decreto 900/2015, de 9 de octubre, por el que se regulan las condiciones administrativas, técnicas y económicas
+ de las modalidades de suministro de energía eléctrica con autoconsumo y de producción con autoconsumo.
+ · Real Decreto 842/2002, de 2 de agosto, por el que se aprueba el Reglamento electrotécnico para baja tensión.
+ · Real Decreto 1110/2007, de 24 de agosto, por el que se aprueba el Reglamento unificado de puntos de medida del
+ sistema eléctrico.
+ · Real Decreto 1048/2013, de 27 de diciembre, por el que se establece la metodología para el cálculo de la retribución
+ de la actividad de distribución de energía eléctrica.
+ · Real Decreto Ley 15/2018, de 5 de octubre, de medidas urgentes para la transición energética y la protección de los
+ consumidores.
+ · Real Decreto 244/2019, de 5 de abril, por el que se regulan las condiciones administrativas, técnicas y económicas del
+ autoconsumo de energía eléctrica.
+ Normativa autonómica:
+ · Orden de 5 de marzo de 2013, por la que se dictan normas de desarrollo del Decreto 59/2005, de 1 de marzo, por el
+ que se regula el procedimiento para la instalación, ampliación, traslado y puesta en funcionamiento de los
+ establecimientos industriales, así como el control, responsabilidad y régimen sancionador de los mismos (PUES)1
+ · Orden de 24 de octubre de 2005, por la que se regula el procedimiento electrónico para la puesta en servicio de
+ determinadas instalaciones de Baja Tensión (TECI)
+ · Decreto-ley 2/2018, de 26 de junio, de simplificación de normas en materia de energía y fomento de las energías
+ renovables en Andalucía.
+
+        1
+
+     Actualmente se están tramitando a través del aplicativo TECI (Tramitador Electrónico de Certificados de Instalación) las instalaciones de Generación aisladas de
+potencia no superior a 10kW.
+
+                                                                                                                     2
+2.- DEFINICIONES
+
+· Potencia contratada:
+
+La potencia contratada es la potencia "para cada uno de los períodos tarifarios, de acuerdo con la tarifa de acceso que le
+
+corresponda", según las condiciones generales establecidas para la tarifa de acceso de la instalación, tal como se
+
+dispone en el artículo 6.6 del Real Decreto 1164/2001, de 26 de octubre, por el que se establecen tarifas de acceso a las
+
+redes de transporte y distribución de la energía eléctrica. No obstante, en el caso de disponer de varias potencias de
+
+acceso contratadas para los diferentes periodos, será la mayor de las potencias contratadas y se medirá en kW.
+
+· Potencia instalada:
+
+Según el artículo 3 del Real Decreto 413/2014, de 6 de junio, la potencia instalada se corresponderá con la potencia
+
+activa máxima que puede alcanzar una unidad de producción y vendrá determinada por la potencia menor de las
+
+especificadas en la placas de características de los grupos motor, turbina o alternador instalados en serie, o en su caso,
+
+cuando la instalación esté configurada por varios motores, turbinas o alternadores en paralelo será la menor de las sumas
+
+de las potencias de las placas de características de los motores, turbinas o alternadores que se encuentren en paralelo.
+
+Según el artículo 3.h del Real Decreto 244/2019, de 5 de abril, en el caso de instalaciones fotovoltaicas, la potencia
+
+instalada será la potencia máxima del inversor o, en su caso, la suma de las potencias máximas de los inversores.
+
+· Mecanismo antivertido:
+
+Según el artículo 3.k del Real Decreto 244/2019, de 5 de abril, dispositivo o conjunto de dispositivos que impide en todo
+
+momento el vertido de energía eléctrica a la red. Estos dispositivos deberán cumplir con la normativa de calidad y
+
+seguridad industrial que le sea de aplicación y, en particular, en el caso de la baja tensión con, lo previsto en la ITC-BT-40.
+
+· Línea directa:
+
+Según el artículo 3.f del Real Decreto 244/2019, de 5 de abril, línea que tenga por objeto el enlace directo de una
+
+instalación de generación con un consumidor y que cumpla los requisitos establecidos en la normativa en vigor.
+
+· Instalación de producción próxima a las de consumo y asociada a las mismas:
+
+Según el artículo 3.g del Real Decreto 244/2019, de 5 de abril, instalación de producción o generación destinada a
+
+generar energía eléctrica para suministrar a uno o más consumidores acogidos a cualquiera de las modalidades de
+
+autoconsumo en las que se cumpla alguna de las siguientes condiciones:
+
+ Instalaciones          Estén conectadas a la red interior de los consumidores asociados o estén unidas a éstos a
+próximas de red         través de líneas directas.
+
+     interior
+
+                        Estén conectadas a cualquiera de las redes de baja tensión derivada del mismo centro de
+
+                        transformación.
+
+                        Se encuentren conectados, tanto la generación como los consumos, en baja tensión y a una
+
+  Instalaciones         distancia entre ellos inferior a 500 metros. A tal efecto se tomará la distancia entre los
+próximas a través       equipos de medida en su proyección ortogonal en planta.
+                        Estén ubicados, tanto la generación como los consumos, en una misma referencia catastral
+     de la red          según sus primeros 14 dígitos o, en su caso, según lo dispuesto en la disposición adicional
+
+                        vigésima del Real Decreto 413/2014, de 6 de junio, por el que se regula la actividad de
+
+                        producción de energía eléctrica a partir de fuentes de energía renovables, cogeneración y
+
+                        residuos.
+
+                                                                                                                   3
+3.- TIPOLOGÍA DE INSTALACIONES
+En el artículo 3 del Real Decreto 244/2019, de 5 de abril, se definen las instalaciones de la siguiente manera:
+· Instalación aislada: Aquella en la que no existe en ningún momento capacidad física de conexión eléctrica con
+la red de transporte o distribución ni directa ni indirectamente a través de una instalación propia o ajena. Las
+instalaciones desconectadas de la red mediante dispositivos interruptores o equivalentes no se considerarán
+aisladas.
+· Instalación conectada a la red: Aquella instalación de generación conectada en el interior de una red de un
+consumidor, que comparte infraestructuras de conexión a la red con un consumidor o que esté unida a este a
+través de una línea directa y que tenga o pueda tener, en algún momento, conexión eléctrica con la red de
+transporte o distribución. También tendrá consideración de instalación de generación conectada a la red aquella
+que está conectada directamente a las redes de transporte o distribución.
+Las instalaciones desconectadas de la red mediante dispositivos interruptores o equivalentes se considerarán
+instalaciones conectadas a la red a los efectos de la aplicación de este real decreto.
+En el supuesto de instalaciones de generación conectadas a la red interior de un consumidor, se considerará
+que ambas instalaciones están conectadas a la red cuando o bien la instalación receptora o bien la instalación
+de generación esté conectada a la red.
+
+De acuerdo con lo previsto en el artículo 9.1 de la Ley 24/2013, de 26 de diciembre, se entenderá por
+autoconsumo, el consumo por parte de uno o varios consumidores de energía eléctrica proveniente de
+instalaciones de producción próximas a las de consumo y asociadas a los mismos.
+
+Se distinguen las siguientes modalidades de autoconsumo:
+
+1) Modalidades de suministro con autoconsumo sin excedentes. Corresponde a las modalidades definidas
+en el artículo 9.1.a) de la Ley 24/2013, de 26 de diciembre. En estas modalidades se deberá instalar un
+mecanismo antivertido que impida la inyección de energía excedentaria a la red de transporte o de distribución.
+En este caso existirá un único tipo de sujeto de los previstos en el artículo 6 de la Ley 24/2013, de 26 de
+diciembre, que será el sujeto consumidor.
+
+2) Modalidades de suministro con autoconsumo con excedentes. Corresponde a las modalidades definidas
+en el artículo 9.1.b) de la Ley 24/2013, de 26 de diciembre. En estas modalidades las instalaciones de
+producción próximas y asociadas a las de consumo podrán, además de suministrar energía para autoconsumo,
+inyectar energía excedentaria en las redes de transporte y distribución. En estos casos existirán dos tipos de
+sujetos de los previstos en el artículo 6 de la Ley 24/2013, de 26 de diciembre, que serán el sujeto
+consumidor y el productor.
+
+                                                                                                                   4
+La modalidad de suministro con autoconsumo con excedentes, se divide en:
+a) Modalidad con excedentes acogida a compensación: Pertenecerán a esta modalidad, aquellos casos
+de suministro con autoconsumo con excedentes en los que voluntariamente el consumidor y el productor opten
+por acogerse a un mecanismo de compensación de excedentes. Esta opción solo será posible en aquellos casos
+en los que se cumpla con todas las condiciones que seguidamente se recogen:
+
+           i. La fuente de energía primaria sea de origen renovable.
+           ii. La potencia total de las instalaciones de producción asociadas no sea superior a 100 kW.
+           iii. Si resultase necesario realizar un contrato de suministro para servicios auxiliares de producción, el
+           consumidor haya suscrito un único contrato de suministro para el consumo asociado y para los consumos
+           auxiliares de producción con una empresa comercializadora.
+           iv. El consumidor y productor asociado hayan suscrito un contrato de compensación de excedentes de
+           autoconsumo.
+           v. La instalación de producción no tenga otorgado un régimen retributivo adicional o específico.
+b) Modalidad con excedentes no acogida a compensación: Pertenecerán a esta modalidad, todos
+aquellos casos de autoconsumo con excedentes que no cumplan con alguno de los requisitos para pertenecer a
+la modalidad con excedentes acogida a compensación o que voluntariamente opten por no acogerse a dicha
+modalidad. Adicionalmente a las modalidades de autoconsumo señaladas, el autoconsumo podrá clasificarse
+en individual o colectivo en función de si se trata de uno o varios consumidores los que estén asociados a
+las instalaciones de generación.
+
+                                                                                                                   5
+4.- Novedades Real Decreto-Ley 15/2018 y Real Decreto 244/2019.
+4.1 Resumen de novedades no relativas a la tramitación
+Eliminación de la limitación de la potencia instalada a la contratada
+Balance de la energía excedentaria con el consumo. Mecanismo simplificado de compensación
+Posibilidad de autoconsumo compartido
+Revisión peajes
+La energía autoconsumida de origen renovable, cogeneración o residuos estará exenta de todo
+tipo de cargos y peajes (excepto que salga a distribución o transporte en generación próxima). Los
+excedentes de las instalaciones de generación asociadas al autoconsumo estarán sometidos al mismo
+tratamiento que la energía producida por el resto de las instalaciones de producción, al igual que los déficits de
+energía que los autoconsumidores adquieran a través de la red de transporte o distribución estarán sometidos
+al mismo tratamiento que los del resto de consumidores.
+Revisión del régimen sancionador:
+Se ajusta a una cuantía más proporcional, eliminado el carácter de "grave".
+Modificación obligaciones de registros:
+
+                                                                                                                   6
+4.2 Esquema de tramitación
+
+                                              SIN EXCEDENTES                                                                            CON EXCEDENTES
+
+Potencia              <=100kW                                     >100kW                                         <=100kW                                     >100kW
+                                                                            Observaciones                                                                    Observaciones
+    Punto de  Aplica  Observaciones           Aplica                                                     Aplica  Observaciones                       Aplica
+    acceso y
+    conexión                                  NO                                                         SI Excepto <=15kW en suelo urbanizado SI
+                                                                                                                             (Disp. Ad. 2ª)
+
+Legalización en SI    suministro en BT PUES*                                          autorizaciones no          suministro en BT PUES                       suministro en BT no permitidas ITC-
+    industria         suministro en AT PUES                       suministro en BT incluidas en RD                                                                               BT-40
+                                                   SI                                                    SI                                          SI
+                                              NO                                      1955/2000                                                              suministro en AT autorizaciones RD
+                                                                                                                 suministro en AT autorizaciones RD                              1955/2000
+                                                                  suministro en AT autorizaciones RD                                 1955/2000
+                                                                                      1955/2000
+
+     CTA                                                                                                 SI      <100kW en BT oficio                 SI
+
+Modificación          De oficio a la distribuidora                                                       SI Los comunicados en PUES, de oficio a SI
+ Contrato de SI                                               SI                                                            la distribuidora
+
+   Acceso                                                    NO                                          NO SI en caso art.10.3 RD244/2019 NO SI en caso art.10.3 RD244/2019
+
+Contador de NO
+ Generación
+
+                                                  Resumen tramitación en Industria
+
+                                                                  <=100kW                                        >100kW
+
+  Suministro del                              Sin excedentes      PUES*                                          Autorización, pero no en el ámbito del RD
+consumidor en BT                                                                                                 1955/2000
+
+  Suministro del               Con excedentes                     PUES                                           no permitidas en la ITC-BT-40
+consumidor en AT
+                                              Sin excedentes      PUES                                           RD1955/2000
+
+                               Con excedentes                     RD1955/2000 RD1955/2000
+
+Notas:
+* <=10kW en aisladas se tramitan por TECI
+
+1.- La potencia considerada ha sido la instalada de producción. Es preciso tener en cuenta que la potencia
+instalada podrá superar la potencia contratada.
+
+2.- Inspección inicial por Organismo de Control Acreditado (OCA): Cuando se trate de instalaciones que se
+consideren que estén ubicados en locales mojados, como por ejemplo en el caso de instalaciones
+fotovoltaicas, deberán de pasar una inspección inicial por OCA cuando la potencia supere los
+25kW.
+
+3.- En ningún caso se debe de considerar una ampliación de una instalación existente como una nueva, de tal
+manera que, no puede existir más de una instalación asociada a un único CUPs de un mismo titular.
+
+                                                                                                                                                                            7
+                                                              CONSEJERÍA DE HACIENDA, INDUSTRIA Y ENERGÍA
+
+                                                                             Secretaría General de Industria, Energía y Minas
+
+5.- TRAMITACIÓN DE INSTALACIONES.
+A continuación, se indican los trámites relativos a la normativa en materia de industria y energía, sin
+perjuicio de los trámites municipales que sean necesarios.
+Con carácter previo, se indica que, conforme a la normativa de aplicación citada anteriormente, aquellas
+instalaciones de potencia de hasta 100 kW y conexión en baja tensión, están exentas de las autorizaciones
+administrativas y sólo requieren la inscripción en TECI/PUES. Para el resto, puede ser preciso tramitar las 3
+autorizaciones reguladas en la normativa básica sectorial eléctrica con su correspondiente depósito de
+garantía.
+Cuando se trate de instalaciones que se consideren que estén ubicados en locales mojados, como por ejemplo
+en el caso de instalaciones fotovoltaicas, deberán de pasar una inspección inicial por OCA cuando
+la potencia supere los 25kW.
+A continuación se detallan los trámites necesarios, dividiendo en los siguientes 3 bloques:
+
+                                                                                                                   8
+5.1.- TRAMITACIÓN ADMINISTRATIVA INSTALACIONES SIN EXCEDENTES O CON EXCEDENTES
+DE POTENCIA MENOR O IGUAL A 15kW EN SUELO URBANIZADO.
+
+5.1.1.- Depósito de garantía
+Exentas.
+5.1.2.- Solicitud del punto de acceso y conexión
+Exentas. (Disposición adicional segunda del Real Decreto Ley 15/2018, de 5 de octubre)
+5.1.3.- Legalización ante el órgano autonómico competente en industria y energía.
+Conforme al artículo 9.6 de la Ley 24/2013, de 26 de diciembre, en su redacción dada por el Real Decreto Ley
+15/2018, de 5 de octubre:
+
+        "Las instalaciones en modalidad de suministro con autoconsumo sin excedentes de hasta 100 kW se
+someterán exclusivamente a los reglamentos técnicos correspondientes. En particular, las instalaciones de
+suministro con autoconsumo conectadas en baja tensión se ejecutarán de acuerdo a lo establecido en el
+Reglamento Electrotécnico de Baja Tensión."
+En Andalucía, para aquellas instalaciones en Baja Tensión de hasta 100kW con suministro en Baja
+Tensión, será suficiente con su registro como instalación de generación en el aplicativo PUES.
+En el caso de tener suministro en Baja Tensión y más de 100kW de autoconsumo deberá emitirse
+resolución expresa de autorización (previa, de construcción y de explotación) por parte del órgano competente
+en base a la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones
+Públicas.
+Para aquellas cuyo suministro sea en Alta Tensión será de aplicación lo previsto en el Real Decreto
+1955/2000, de 1 de diciembre.
+5.1.4.- Contrato técnico de acceso
+Exentas.
+En el caso de potencia menor o igual a 15kW en suelo urbanizado con excedentes, habrá que cumplir lo
+especificado en el artículo 9. Puesta en Marcha de la ITC-BT-40: "se deberá presentar el oportuno
+proyecto a la empresa distribuidora de energía eléctrica de aquellas partes que afecten a las
+condiciones de acoplamiento y seguridad del suministro eléctrico."
+5.1.5.- Suscripción o adaptación del contrato de acceso de suministro
+Exentas.
+5.1.6.-Registro administrativo de instalaciones de producción de energía eléctrica (PRETOR).
+Para instalaciones sin excedentes están exentas.
+Las instalaciones con excedentes que se acojan al mecanismo de compensación de excedentes no tendrán que
+inscribirse en este registro, pero aquellas que opten por la venta de la electricidad sí deberán estar inscritas
+como instalaciones de producción de energía eléctrica, pero no tendrán que realizar ningún trámite especial ya
+que se hará su inscripción de oficio por el ministerio en base a la información remitida por las CCAA.
+
+                                                                                                                   9
+5.1.7.- Registro administrativo de autoconsumo de energía eléctrica.
+Conforme al artículo 9.4 de la Ley 24/2013, de 26 de diciembre, en su redacción dada por el Real Decreto Ley
+15/2018, de 5 de octubre: "Para aquellos sujetos consumidores conectados a baja tensión, en los que la
+instalación generadora sea de baja tensión y la potencia instalada de generación sea menor de 100 kW que
+realicen autoconsumo, la inscripción se llevará a cabo de oficio por las Comunidades Autónomas y Ciudades
+de Ceuta y Melilla en sus respectivos registros a partir de la información remitida a las mismas en virtud del
+Reglamento Electrotécnico de Baja Tensión."
+Para el resto de instalaciones sin excedentes con potencias mayores de 100 kW o aquellas que no sean en BT
+tendrán que presentar solicitud de inscripción.
+5.1.8.- Mecanismo de compensación simplificada.
+En el caso de potencia menor o igual a 15kW en suelo urbanizado con excedentes, el Real Decreto
+244/2019, establece el mecanismo de compensación simplificada entre los déficits de los consumidores y los
+excedentes de sus instalaciones de producción asociadas.
+
+Los consumidores asociados a una instalación de autoconsumo colectivo sin excedentes podrán
+acogerse también al mecanismo de compensación. En este caso no será necesario el contrato de
+compensación de excedentes pero sí un acuerdo de reparto de la energía.
+Los participantes deberán acordar un criterio de reparto, que podrá ser el más conveniente para todos y que
+deben comunicar a la empresa distribuidora, bien directamente o bien a través de la comercializadora,
+solicitando la aplicación del mismo. Ese reparto podrá realizarse con los criterios que más se acomoden a las
+necesidades de los consumidores, con la única restricción de que deben utilizarse coeficientes de reparto fijos,
+y que la suma de esos coeficientes debe ser 1.
+En caso de que no se comunique el acuerdo, se utilizará el criterio de reparto establecido en el anexo II del RD
+244/2019 de 5 de abril.
+5.1.9.- Inspección inicial por OCA.
+Cuando se trate de instalaciones que se consideren que estén ubicados en locales mojados (apartado 4.1. la
+ITC-BT-05), como por ejemplo en el caso de instalaciones fotovoltaicas, deberán de pasar una inspección
+inicial por OCA cuando la potencia supere los 25kW.
+
+                                                                                                                  10
+5.2.- TRAMITACIÓN ADMINISTRATIVA INSTALACIONES CON EXCEDENTES, EXCEPTO LAS DE
+MENOS DE 15 KW EN SUELO URBANIZADO
+
+(*) Estarán exentas de obtener permisos de acceso y conexión para generación las instalaciones de
+autoconsumo siguientes:
+a) Las acogidas a la modalidad sin excedentes.
+b) Aquellas con potencia de producción igual o inferior a 15 kW que se ubiquen en suelo urbanizado que
+cuente con las dotaciones y servicios requeridos por la legislación urbanística.
+(**) Para las instalaciones con 10 < P <= 100 kW y para las instalaciones de potencia no superior a 1000kW de
+las tecnologías contempladas en la categoría a) y de los subgrupos b.6, b.7 y b.8 del artículo 2 del derogado
+Real Decreto 661/2007 o que se conecten a las líneas de tensión no superior a 36 kV
+
+5.2.1.- Depósito de garantía
+En los casos en los que sea necesaria depositar una garantía, esto es para instalaciones con excedentes cuya
+potencia sea mayor de 15 kW en suelo urbanizado o 10kW en el resto, el solicitante antes de realizar la solicitud
+de acceso a la red de distribución deberá presentar, ante el órgano competente para otorgar la autorización de
+
+                                                                                                                  11
+la instalación, resguardo acreditativo de haber depositado dicha garantía. La cuantía de la misma equivaldrá a
+40/kW de potencia instalados.
+
+5.2.2.- Solicitud del punto de acceso y conexión
+Para las instalaciones de potencia superior a 100kW o instalaciones de potencia superior a 1000kW de las
+tecnologías contempladas en la categoría a) y de los subgrupos b.6, b.7 y b.8 del artículo 2 del Real Decreto
+661/2007 o que se conecten a las líneas de tensión superior a 36 kV y b6, b7 y b8, se aplica lo previsto en el
+Real Decreto 1955/2000, de 1 de diciembre. Para el resto, es decir, para las que entran en el ámbito de
+aplicación del Real Decreto 1699/2011:
+1.- Solicitud de punto de acceso y conexión, aportando la documentación establecida en el artículo 4, del Real
+Decreto 1699/2011, de 18 de noviembre.
+a) Nombre y medio de contacto del titular.
+b) Ubicación concreta de la instalación de generación, con referencia catastral.
+c) Esquema unifilar de la instalación.
+d) Punto propuesto para realizar la conexión.
+e) Propietario del inmueble donde se ubica la instalación.
+f) Declaración responsable del propietario del inmueble dando su conformidad a la solicitud de punto de
+conexión si fuera diferente del solicitante.
+g) Descripción de la instalación, tecnología utilizada y características técnicas.
+h) Justificante de haber depositado ante el órgano de la administración competente para otorgar la autorización
+de la instalación, una garantía económica por una cuantía equivalente a 40 /kW instalados. Esta cuantía viene
+definida en el Real Decreto 1074/2015, de 27 de noviembre.
+2.- La empresa distribuidora notifica en el plazo de 1 mes la propuesta de condiciones de acceso y conexión.
+En caso de no efectuar la notificación en dicho plazo, deniegue el acceso y conexión, o el promotor no esté
+
+                                                                                                                  12
+conforme con las condiciones propuestas, se podrán interponer las correspondientes reclamaciones, que serán
+resueltas por la administración competente.
+3.- Comunicación a la compañía por parte del promotor de la aceptación de la propuesta de condiciones de
+acceso y conexión. La propuesta tendrá una vigencia de 3 meses.
+4.- En 15 días para el caso de conexión en BT, y 1 mes para AT, la empresa distribuidora remitirá al promotor
+un pliego de condiciones técnicas y un presupuesto económico.
+5.- Comunicación a la compañía por parte del promotor de la aceptación del pliego de condiciones técnicas y
+presupuesto económico. Resolución discrepancias en su caso.
+
+5.2.3.- Solicitud autorización administrativa de la instalación o legalización ante industria.
+Se divide este apartado en dos, en función de la potencia.
+5.2.3.1. Instalación de potencia que no supere los 100kW.
+a) En el caso de baja tensión no hace falta la autorización administrativa previa, solo la comunicación de la
+puesta en servicio según lo establecido en la Orden de 5 de marzo de 2013 (PUES).
+La documentación a presentar para realizar este trámite es la siguiente:
+Potencia <= 10kW:
+· Memoria técnica de diseño (MTD)
+· Certificado de instalación con el correspondiente anexo de información al usuario
+· Punto de acceso y conexión otorgado por compañía distribuidora y comunicación a la misma conforme ITC-
+BT-40.9
+· Certificado de adecuación al Real Decreto 1699/2011, de 18 de noviembre, emitido por el instalador o técnico
+competente según corresponda.
+10kW<potencia<=100kW:
+· Proyecto de instalación firmado por técnico competente.
+· Certificado de instalación con el correspondiente anexo de información al usuario.
+· Certificado de dirección de obra firmado por técnico titulado competente.
+· Punto de acceso y conexión otorgado por la empresa distribuidora y comunicación a la misma conforme ITC-
+BT-40.9
+· Certificado de adecuación al Real Decreto 1699/2011, de 18 de noviembre, emitido por el instalador o técnico
+competente según corresponda.
+· En los casos establecido en el apartado 4.1. la ITC-BT-05, certificado de inspección inicial favorable expedido
+por Organismo de Control habilitado (fotovoltaica > 25kW).
+· En los casos en los que haga falta garantía, el depósito correspondiente.
+b) En el caso de conexión en alta tensión aplica lo previsto en el Real Decreto 1955/2000, de 1 de diciembre.
+
+                                                                                                                  13
+5.2.3.2. Instalación de potencia superior a 100kW o instalaciones de potencia superior a
+1000kW de las tecnologías contempladas en la categoría a) y de los subgrupos b.6, b.7 y b.8 del
+artículo 2 del Real Decreto 661/2007 o que se conecten a las líneas de tensión superior a 36 kV
+y b6, b7 y b8.
+Este tipo de instalaciones requieren de autorización administrativa previa según lo establecido en el Real
+Decreto 1955/2000, de 1 de diciembre.
+
+5.2.4.- Solicitud formalización del contrato técnico de acceso, conexión y primera verificación
+
+Una vez obtenidas las autorizaciones correspondientes, el siguiente paso será el de la suscripción del contrato
+
+técnico de acceso a la red de la compañía distribuidora, y su conexión y primera verificación.
+
+5.2.4.1.- Procedimiento Normal
+
+Para las instalaciones de potencia superior a 100kW o instalaciones de potencia superior a 1000kW de las
+
+tecnologías contempladas en la categoría a) y de los subgrupos b.6, b.7 y b.8 del artículo 2 del Real Decreto
+
+661/2007 o que se conecten a las líneas de tensión superior a 36 kV y b6, b7 y b8, se aplica lo previsto en el
+
+Real Decreto 1955/2000, de 1 de diciembre.
+
+Para el resto, es decir, para las que entran en el ámbito de aplicación del Real Decreto 1699/2011:
+
+1.- Solicitud suscripción del contrato técnico de acceso: el/los consumidores solicitarán a la empresa
+
+distribuidora la suscripción del contrato técnico de acceso a la red, para lo cual será necesaria la presentación
+
+del certificado de superación de las pruebas de la instalación, y que se haya producido la aceptación de las
+
+condiciones técnicas y económicas de conexión.
+
+El/los titulares de una instalación de producción deberá suscribir un contrato técnico de acceso con la empresa
+
+distribuidora para sus servicios auxiliares de producción directamente o a través de una empresa
+
+comercializadora, o modificar el existente, de acuerdo con la normativa de aplicación. La fecha de alta o de
+
+modificación del contrato de acceso del consumidor y del productor deberán ser la misma. No obstante, los
+
+sujetos podrán formalizar un contrato técnico de acceso conjunto para los servicios auxiliares y para el consumo
+
+asociado si se cumplen los siguiente requisitos:
+
+La suma de las potencias instaladas de las instalaciones de producción no sea superior a 100kW.
+
+·          Dispongan de una configuración de medida siguiente: Un equipo de medida bidireccional que mida la
+
+energía neta generada.
+
+·          Un equipo de medida bidireccional ubicado en el punto frontera de la instalación
+
+·          Potestativamente, un equipo de medida que registre la energía consumida total por el consumidor
+
+asociado.
+
+2.- Suscripción del contrato: el titular y la empresa distribuidora suscribirán, en el plazo máximo de un mes, el
+
+contrato o contratos por el/los que se regirán las relaciones técnicas entre ambos según el modelo de contrato
+
+tipo recogido en el anexo III del Real Decreto 1699/2011, de 18 de noviembre.
+
+                                                                                                     14
+En caso de que la empresa no notifique en plazo, o deniegue la conexión el promotor podrá interponer las
+correspondientes reclamaciones, que serán resueltas por la administración competente.
+3.- Solicitud de la conexión a la red: el promotor de la instalación solicitará a la empresa distribuidora la
+conexión a la red de distribución. Esta solicitud la podrá realizar junto con la de suscripción del contrato técnico
+con el distribuidor, o en cualquier momento posterior a la firma del mismo. La empresa distribuidora tendrá un
+mes de plazo para efectuar la conexión a la red.
+4.- Primera verificación: efectuada la conexión la empresa distribuidora podrá realizar en cualquier momento
+una primera verificación en aquellos elementos que afecten a la regularidad y seguridad de suministro. El titular
+de la instalación quedará exento de dicha verificación si remite a la Distribuidora certificado de la empresa
+instaladora en el que se acredite el cumplimiento de lo dispuesto en el Reglamento de Baja tensión o el
+Reglamento de Alta tensión según corresponda.
+5.2.4.2.- Procedimiento abreviado (potencia <=10kW y conexión en BT)
+1.- Una vez realizada la instalación, el titular remitirá a la empresa distribuidora, solicitud de conexión de la
+instalación, acompañada del contrato técnico de acceso establecido en el anexo III del Real Decreto 1699/2011,
+de 18 de noviembre, debidamente cumplimentado y firmado, y el certificado de instalación debidamente
+diligenciado por el órgano de la Administración competente.
+2.- La empresa distribuidora dispondrá de un plazo de 10 días hábiles para formalizar el contrato técnico de
+acceso, verificar la instalación y realizar la conexión de la instalación de producción a la red de distribución
+existente. El titular de la instalación quedará exento de dicha verificación si remite a la Distribuidora certificado
+de la empresa instaladora en el que se acredite el cumplimiento de lo dispuesto en el Reglamento de Baja
+tensión o el Reglamento de Alta tensión según corresponda.
+5.2.5.- Suscripción o adaptación del contrato de acceso de suministro
+El consumidor y el productor, para los servicios auxiliares, podrán adquirir la energía, bien como consumidores
+directos en el mercado de producción o bien a través de una empresa comercializadora. En este último caso, el
+contrato de suministro podrá ser en mercado libre o en cualquier de las modalidades previstas en el Real
+Decreto 216/2014, de 28 de marzo, por el que se establece la metodología de cálculo de los precios voluntarios
+para el pequeño consumidor de energía eléctrica y su régimen jurídico de contratación. Los contratos que se
+suscriban son con una empresa comercializadora.
+
+5.2.6.- Inscripción Registro administrativo de instalaciones de producción eléctrica
+En el caso de las instalaciones con excedentes y potencia mayor de 100kW, es necesaria la inscripción en el
+Registro administrativo de instalaciones de producción eléctrica, según lo establecido en los artículos 39 y 40
+del Real Decreto 413/2014, de 6 de junio.
+El titular solicita la inscripción ante el órgano competente en materia de energía.
+La solicitud de inscripción previa se acompañará, al menos, de:
+
+                                                                                                                  15
+a) La autorización de explotación provisional para pruebas.
+b) El contrato técnico con la empresa distribuidora o, en su caso, contrato técnico de acceso a la red de
+transporte, a los que se refiere el artículo 5 de este Real Decreto.
+c) El certificado emitido por el encargado de la lectura, que acredite el cumplimiento de lo dispuesto en el
+Reglamento unificado de puntos de medida del sistema eléctrico, aprobado por el Real Decreto 1110/2007, de
+24 de agosto, con detalle del Código de la Instalación de producción a efectos de Liquidación (CIL).
+d) El informe del gestor de la red de transporte, o del gestor de la red de distribución en su caso, que acredite
+la adecuada cumplimentación de los procedimientos de acceso y conexión y el cumplimiento de los requisitos
+de información, técnicos y operativos establecidos en los procedimientos de operación, incluyendo la
+adscripción a un centro de control de generación con los requisitos establecidos en el presente Real Decreto.
+La inscripción de la instalación en el registro de instalaciones de producción de energía eléctrica con carácter
+previo permitirá el funcionamiento en pruebas de la misma.
+A la hora de realizar la inscripción definitiva en el registro, será requisito necesario que la instalación disponga
+de autorización de explotación definitiva.
+En lo relativo a las inscripciones reguladas en el Real Decreto 413/2014, el órgano competente para otorgar la
+autorización administrativa de la instalación procederá a la notificación de la inscripción al solicitante y a la
+empresa distribuidora o transportista.
+5.2.7.- Inscripción Registro administrativo de autoconsumo de energía eléctrica
+Para el seguimiento de la actividad de autoconsumo de energía eléctrica, desde el punto de vista económico, y
+de su incidencia en el cumplimiento de los objetivos de energías renovables y en la operación del sistema, se
+crea en el Ministerio para la Transición Ecológica el registro administrativo de autoconsumo de energía eléctrica
+que será telemático, declarativo y de acceso gratuito.
+Para aquellos sujetos consumidores conectados a baja tensión, en los que la instalación generadora sea de baja
+tensión y la potencia instalada de generación sea menor de 100 kW que realicen autoconsumo, la inscripción
+se llevará a cabo de oficio.
+
+5.2.8.- Mecanismo de compensación simplificada
+
+El Real Decreto 244/2019 por el que se regulan las condiciones administrativas, técnicas y económicas del
+
+autoconsumo de energía eléctrica, establece el mecanismo de compensación simplificada entre los déficits de
+
+los consumidores y los excedentes de sus instalaciones de producción asociadas.
+
+Los consumidores asociados a instalaciones de producción en autoconsumo, tanto individual como colectivo,
+
+que realicen autoconsumo con excedentes, pueden acogerse de forma voluntaria al mecanismo de
+
+compensación simplificada siempre que se cumplan las siguientes condiciones:
+
+·  La instalación generadora es de fuente renovable.
+
+·  La potencia de la instalación de producción es igual o inferior a 100 kW.
+
+                                                                                 16
+·  La instalación no tenga otorgado un régimen retributivo adicional específico.
+
+·  Si se ha suscrito un contrato de suministro para los servicios auxiliares ese contrato debe ser único
+
+para el consumo y para los servicios auxiliares con una empresa comercializadora.
+
+No será necesario suscribir contrato para los servicios auxiliares si:
+
+i. Las instalaciones de producción se conectan en red interior.
+
+ii. La potencia instalada es menor de 100kW.
+
+iii. La energía consumida por los servicios auxiliares es, en cómputo anual, menos del 1% de la energía neta
+
+generada por la instalación.
+
+Para que los contratos de consumo y de servicios auxiliares puedan unificarse, es necesario que:
+
+a) Las instalaciones de producción estén conectadas en la red interior del consumidor.
+
+b) El consumidor y el titular de las instalaciones de producción sean la misma persona física o jurídica.
+
+·  Se haya firmado un contrato de compensación de excedentes de autoconsumo entre productor y
+
+consumidor, aun en el caso de que productor y consumidor sean la misma persona física o jurídica.
+
+Para la aplicación del mecanismo de compensación simplificada, los consumidores acogidos a dicho
+
+mecanismo, deberán remitir directamente a la empresa distribuidora, o a través de su comercializadora, el
+
+mismo contrato, o en su caso acuerdo, de compensación de excedentes entre todos los sujetos participantes,
+
+solicitando la aplicación del mismo.
+
+5.2.9.- Venta de los excedentes
+Los titulares de las instalaciones con excedentes pueden vender su energía excedentaria al mercado de
+producción eléctrica. De acuerdo con el establecido al artículo 53 del Real decreto 413/2014, de 6 de junio, los
+titulares de estas instalaciones de producción podrán operar directamente o a través de un representante a los
+efectos de su participación en el mercado de producción y de los cobros y pagos de peajes, del régimen
+retributivo específico y, en su caso, de los cargos. En ambos casos, deberán darse de alta como agentes de
+mercado, en concreto, como productores.
+
+Nota: Instalaciones de cogeneración:
+Según se establece en la disposición adicional primera del Real Decreto 900/2015, de 9 de octubre:
+Los titulares de las instalaciones de producción de cogeneración de energía eléctrica, podrán optar por:
+
+          a) Vender toda su energía neta generada: en este caso, el titular de la generación de energía eléctrica
+y el consumidor deberán disponer de dos contratos de acceso independientes, uno para los consumos de
+servicios auxiliares otro para el consumidor asociado.
+
+          b) Acogerse a las modalidades de autoconsumo con excedentes.
+La permanencia en una modalidad de venta será, al menos, de un año.
+
+                                                                                                                  17
+5.3.- TRAMITACIÓN ADMINISTRATIVA INSTALACIONES GENERADORAS AISLADAS
+  5.3.1.- Depósito de garantía
+  Exentas.
+  5.3.2.- Solicitud del punto de acceso y conexión
+  Exentas.
+  5.3.3.- Legalización ante el órgano autonómico competente en industria y energía.
+  Para instalaciones de baja tensión cuya potencia de generación sea menor o igual a 10kW la tramitación está
+  regulada por lo establecido en la Orden de 24 de octubre de 2005, por la que se regula el procedimiento
+  electrónico para la puesta en servicio de determinadas instalaciones de Baja Tensión y la tramitación se
+  realizará a través de TECI.
+  En el caso de que sea mayor de 10kW y menor de 100kW la puesta en servicio de este tipo de instalaciones
+  en baja tensión está regulada por lo establecido en la Orden de 5 de marzo de 2013 (Orden PUES).
+  5.3.4.- Inspección inicial por OCA.
+  Cuando se trate de instalaciones que se consideren que estén ubicados en locales mojados (apartado 4.1. la
+  ITC-BT-05), como por ejemplo en el caso de instalaciones fotovoltaicas, deberán de pasar una inspección
+  inicial por OCA cuando la potencia supere los 25kW.
+  5.3.5.- Contrato técnico de acceso
+  Exentas.
+  5.3.6.- Suscripción o adaptación del contrato de acceso de suministro
+  Exentas.
+  5.3.7.-Registro administrativo de instalaciones de producción de energía eléctrica (PRETOR).
+  Exentas.
+  5.3.8.- Registro administrativo de autoconsumo de energía eléctrica.
+
+   Exentas
+
+                                                                                                                    18
+6.- INSTALACIONES EXISTENTES ANTERIORES AL R.D. 244/2019, DE 5 DE ABRIL.
+Según la disposición transitoria primera los sujetos acogidos a la modalidad de autoconsumo existentes al
+amparo de lo regulado en el Real Decreto 900/2015, de 9 de octubre deben de adaptarse, en un plazo no
+superior a 6 meses, a las nuevas modalidades de autoconsumo recogidas en el R.D. 244/2019, de 5 de abril.
+De tal manera que la adaptación se corresponda con el siguiente esquema:
+
+                                                                                                                  19
+

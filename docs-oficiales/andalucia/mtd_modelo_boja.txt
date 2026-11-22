@@ -1,0 +1,338 @@
+          Núm. 121 página 88  Boletín Oficial de la Junta de Andalucía  24 de junio 2015
+
+00072175                                     3. Otras disposiciones
+
+          Consejería de Economía, Innovación, Ciencia y Empleo
+
+                         Resolución de 17 de junio de 2015, de la Dirección General de Industria, Energía y Minas, por
+                  la que se aprueba el modelo de la Memoria Técnica de Diseño de instalación eléctrica de baja tensión.
+
+                                                       ANTECEDENTES DE HECHO
+
+                  Primero. El Real Decreto 842/2002, de 2 de agosto, por el que se aprueba el Reglamento electrotécnico
+          para baja tensión (en adelante REBT), establece en su artículo 18 que previamente a la ejecución de una
+          instalación deberá elaborarse una documentación técnica que defina las características de la misma. Dicha
+          documentación tomará la forma de Proyecto o Memoria Técnica de Diseño (en adelante MTD), según lo
+          establecido en la correspondiente Instrucción Técnica Complementaria (en adelante ITC), que acompaña al
+          Reglamento.
+
+                  Segundo. En concreto, en el apartado 3 de la ITC-BT-04 se describen las instalaciones de baja tensión
+          para cuya ejecución es precisa elaboración de un proyecto de ejecución. En el apartado 4 de la misma ITC
+          se establece que requerirán MTD todas las instalaciones, sean nuevas, ampliaciones o modificaciones de las
+          mismas, que no estén incluidas en los grupos indicados en el apartado 3. Por otra parte, el apartado 2.2 de la
+          citada Instrucción determina que la MTD se redactará sobre impresos, según modelo determinado por el órgano
+          competente de la Comunidad Autónoma y que en ella se incluirán, al menos y entre otros, los siguientes datos:
+
+                  a) Los referentes al propietario.
+                  b) Identificación de la persona que firma la memoria y justificación de su competencia.
+                  c) Emplazamiento de la instalación.
+                  d) Uso al que se destina.
+                  e) Relación nominal de los receptores que se prevea instalar y su potencia.
+                  f) Cálculos justificativos de las características de la línea general de alimentación, derivaciones individuales
+          y líneas secundarias, sus elementos de protección y sus puntos de utilización.
+                  g) Pequeña memoria descriptiva.
+                  h) Esquema unifilar de la instalación y características de los dispositivos de corte y protección adoptados,
+          puntos de utilización y secciones de los conductores.
+                  i) Croquis de su trazado.
+
+                  Tercero. Mediante Resolución de 1 de diciembre de 2003, esta Dirección General de Industria, Energía
+          y Minas aprobó, de acuerdo con la habilitación incluida en el apartado 2.2 de la ITC citada, el modelo de MTD
+          para instalaciones de baja tensión.
+
+                  Cuarto. La entrada en vigor del Real Decreto 560/2010, de 7 de mayo, por el que se modifican
+          diversas normas reglamentarias en materia de seguridad industrial para adecuarlas a la Ley 17/2009, de 23
+          de noviembre, sobre el libre acceso a las actividades de servicios y su ejercicio, y a la Ley 25/2009, de 22 de
+          diciembre, de modificación de diversas leyes para su adaptación a la Ley sobre el libre acceso a las actividades
+          de servicios y su ejercicio, ha supuesto un cambio en la nomenclatura empleada en el REBT para referirse a
+          los agentes intervinientes a la hora de ejecutar una instalación, pasando a denominarse «empresa instaladora»
+          e «instalador» a lo que antes se denominaba «instalador autorizado» y «titular del Certificado de Cualificación
+          Individual», respectivamente.
+
+                  Quinto. Asimismo, la entrada en vigor del Real Decreto 1890/2008, de 14 de noviembre, por el que
+          se aprueba el Reglamento de eficiencia energética en instalaciones de alumbrado exterior y sus Instrucciones
+          técnicas complementarias EA-01 a EA-07, a tenor de lo expresado en el artículo 10 del Reglamento y en su ITC-
+          EA-05, hace necesario extender la documentación e información a aportar para la puesta en servicio de dichas
+          instalaciones de alumbrado exterior. En este sentido, será necesario aportar adicional e inseparablemente a la
+          misma, los siguientes documentos:
+
+                  a) Memoria Técnica de Diseño complementaria cuyo contenido cumpla lo prescrito en el apartado 1.2
+          de la ITC-EA-05 del Reglamento de eficiencia energética en instalaciones de alumbrado exterior, la cual deberá
+24 de junio 2015  Boletín Oficial de la Junta de Andalucía  Núm. 121 página 89
+
+ir firmada por la misma persona que firme la Memoria Técnica de Diseño para instalaciones eléctricas de baja
+tensión, y
+
+        b) Certificado de Verificación inicial según lo prescrito en el apartado 2.3 de la ITC-EA-05.
+        En relación con lo anterior, la MTD de la instalación eléctrica ha de complementarse con la información
+adicional requerida por la ITC-EA-05, apartado 1.2.
+
+        Sexto. Recientemente, el Real Decreto 1053/2014, de 12 de diciembre, ha introducido una modificación
+en el apartado 3 de la ITC-BT-04 en relación con el tipo de instalaciones de baja tensión para cuya ejecución se
+precisa proyecto de ejecución.
+
+                                            FUNDAMENTOS DE DERECHO
+
+        Primero. Las competencias autonómicas en materia de energía se encuentran establecidas en el Título II,
+Capítulo II, artículo 49, del Estatuto de Autonomía para Andalucía. Esta Dirección General de Industria, Energía
+y Minas es, dentro de la Junta de Andalucía y de acuerdo con el Decreto de la Presidenta 4/2013, de 9 de
+septiembre, de la Presidencia y sobre reestructuración de Consejerías, y el Decreto 149/2012, de 5 de junio, por
+el que se regula la estructura orgánica de la Consejería de Economía, Innovación, Ciencia y Empleo, el órgano
+al que se atribuyen las competencias en materia de régimen energético eléctrico y autorización de instalaciones
+energéticas, de conformidad con lo establecido en el artículo 14.2.h) e i) del citado Decreto 149/2012, de 5 de
+junio.
+
+        Segundo. Según establece el apartado 2.2 de la ITC-BT-04 del Real Decreto 842/2002, de 2 de agosto,
+la MTD se redactará sobre impresos, según modelo determinado por el órgano competente de la Comunidad
+Autónoma.
+
+        Habida cuenta de la necesidad de modificar el modelo aprobado mediante Resolución de 1 de diciembre
+de 2003, en virtud de los antecedentes expuestos, y en uso de la habilitación prevista en el apartado 2.2 de la
+ITC-BT-04, esta Dirección General de Industria, Energía y Minas
+
+                                                   R ESUEL V E
+
+        Primero. Aprobar el modelo de Memoria Técnica de Diseño para instalaciones eléctricas de baja tensión
+que se adjunta como Anexo a esta Resolución para aquellas instalaciones que se ejecuten al amparo del
+Reglamento electrotécnico para baja tensión, aprobado por Real Decreto 842/2002, de 2 de agosto, que no
+necesiten proyecto de ejecución.
+
+        Segundo. Dejar sin efecto la Resolución de 1 de diciembre de 2003, de la Dirección General de Industria,
+Energía y Minas, por la que se aprueba el modelo de memoria técnica de diseño de instalaciones eléctricas de
+baja tensión.
+
+        Tercero. Publicar la presente Resolución y su Anexo en el Boletín Oficial de la Junta de Andalucía. La
+presente Resolución producirá efectos el día siguiente al de su publicación.
+
+        Contra la presente Resolución, que no pone fin a la vía administrativa, se podrá interponer recurso
+de alzada, ante el Excmo. Sr. Consejero de Economía, Innovación, Ciencia y Empleo, en el plazo de un (1)
+mes contado a partir del día siguiente al de su publicación, de conformidad con lo establecido en los artículos
+114 y 115 de la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y
+del Procedimiento Administrativo Común, y con el artículo 115.1 de la Ley 9/2007, de 22 de octubre, de la
+Administración de la Junta de Andalucía.
+
+        Sevilla, 17 de junio de 2015.- La Directora General, María José Asensio Coto.
+
+                                                                                                                  00072175
+          Núm. 121 página 90               Boletín Oficial de la Junta de Andalucía                                        24 de junio 2015
+
+                                                                                
+                        
+                        !"#$#%%#
+
+          & '                                                                &  '
+
+                        
+
+          6,882FDGHF.!F6IJHDF3268                                                                                          H2LH2F 
+                                                                                                                           3,
+          F.23282F 9-1 #
+                                                                                                                           H2LH2F 
+          8F36826                             ,FB2H326  "8MLFHF               3FF83"JH23F
+
+          ,DH"6H"  #
+
+                                         (   
+
+          .,86I6.2H"F7                                  HN.F !8FO:            ,F"68 D3686    ,2DF ,:"6
+
+          8F36826                             ,FB2H326                        3J2;F,FD"68
+
+          "2,F2HD"68632JH 2"35!"5 P4*&#       :DF68O:DD"2H67                                                                        D:,L232 #7
+
+          2HD"68632JH   H'                 6            .)
+
+                                            
+
+          (                                     H2LH2F 7
+
+          HF.!G6,882FD82HD"686F7
+
+          HF.!F6IJHDF326886.,D62HD"686F67               H2LH2F 7
+
+          (                                         H2LH2F 7                                   HN.F
+                                                        3*,*                                                      "8MLFHF
+          HF.!G6,882FD8"M3H23F7
+                                                                              HQ3F8;26F
+          F.232826FH3688,86I6
+          8F36826
+          3F8;2FFL23268
+
+                                                                                           
+
+                                           L 2  !""  
+
+               !(                                                         .           .?
+
+          .F68267                                        
+
+                        .& . .4 .  .< .= .>
+
+00072175
+24 de junio 2015                Boletín Oficial de la Junta de Andalucía                                                                                                                                                      Núm. 121 página 91
+
+               
+
+)              
+
+             63F."26D:!"RH6 .FH"6CD:,L23268                       H23EFH,6
+    63F."26    6M6                                                          2H"HD26                                                                                                                                           2H"HD26 
+
+                                                                            HF.2H68                                                                                                                                            L:D2!8D
+
+#                  
+
+                                                      3FH:3"F868SH6;H68682.H"632JH                                                                                                                                            ,F"H326,B2D"6F2HD"6866 TU#
+H'6 **********************************************************************************************************.  3  ********************************************************************************************************
+
+.  6         ************************************************************************************************************D)    #******************************************
+
+*             
+
+3F8F3632JHH      3F8F3632JHH    H H6.62F HN.F"F"68                                            2H":,"F                                                                                                                         2H"HD26
+LF.6             LF.6                                                                         ;H68  
+                                8F368                             3FH"6FD                                                                                                                                                               
+2H2B2:68         3FH3H"66                                                                     .6H2F!6                                                                                                                         HF.2H68
+
+"                    
+
+   '  $'         )
+         
+
+        +                                                                                 D2D"H326
+                                                                                              86"F.6"267
+"2,F83"FF                                     8SH6H863
+                                                            3  7                                                                      
+                                                            D
+
+       ,           -..*%/
+
+"2,F8F368                             D32,32JH88F368,HH326F.,86I6.2H"F3FH3663"SD"236DD,3268D
+
+             0         
+                       
+
+                             
+
+                            
+
+              
+
+                              
+
+              
+
+                           
+
+          
+
+                                                                                                                                                                                                                                                          00072175
+          Núm. 121 página 92                        Boletín Oficial de la Junta de Andalucía                                    24 de junio 2015
+
+                    .1                                                                    "2,F8R.,66G,F"H326  "2,FDF,F"  ,F"H326,B2D"6 TU#
+                                                                                                                                                   ,F"H326,B2D"6 TU#
+                                                   HQ8:.2H626D                                                            ,F"H326,B2D"6 TU#
+                                        2"35!"5?                                                                                                     ,F"H326,B2D"6 TU#
+                                                              "2,F 2"35!"54=#                                                                        ,F"H326,B2D"6 TU#
+                                                                                                                                                  ,F"H326,B2D"6 TU#
+                                                                                                                                                     ,F"H326,B2D"6 TU#
+                                               !BD32,32JH 2"35!"5 #
+                                                    !BD32,32JH 2"35!"54 #                                                                            ,F"H326,B2D"6 TU#
+                                                    !BD32,32JH 2"35!"54<#                                                                            ,F"H326,B2D"6 TU#
+                                                    !BD32,32JH 2"35!"5 #                                                                             ,F"H326,B2D"6 TU#
+                                                  !BD32,32JH 2"35!"5 &#                                                                            ,F"H326,B2D"6 TU#
+                                                                                                                                                     ,F"H326,B2D"6 TU#
+                                                                                                                                                  ,F"H326,B2D"6 TU#
+
+                                                                                                                                                       ,F"H326HF.2H68 TU#
+
+                                                  
+
+             
+
+                                            
+
+                                             !BD32,32JH 2"35!"5 #
+                                                    !BD32,32JH 2"35!"5 =#
+                                                    !BD32,32JH
+                                                    !BD32,32JH 2"35!"5<#
+                                                !BD32,32JH 2"35!"5<&#
+
+                                                  
+
+            
+
+                                                  
+
+            
+
+                                                  
+
+                                                
+
+                                               !BD32,32JH 2"35!"5<
+
+                                                  
+
+                  
+
+          3                                            HF.2H632JHD32,32JH
+
+               2   
+
+          .)                                       
+
+                                                  D ) ($  - ' - $ 
+
+                                                -34/                                 -5/                                  
+                                                                                                     $ -55#/            -/
+                                                                                                                                 - 6 /
+
+                 
+
+                 
+
+00072175
+24 de junio 2015  Boletín Oficial de la Junta de Andalucía  Núm. 121 página 93
+
+          
+
+            ((   -                                                   - 
+-
+                                                                                  
+                                                                        
+                                                          !  " 
+                                                                           #
+
+$             ! 
+
+3   (   :)  9 (++ 
+  ."*
+
+3   (    (    ' (  
+ - )      ."
+
+       "     
+
+             ! %
+
+    (  ( &?*D  ()   
+  )     &?& ' #- "3  * 5
+      ( "32 ()+ )  ,L ) 7
+
+        2)      2"3565< )    A   *
+
+        3 )' ))'        12"3565<*
+
+   
+  8-F (&<&???&4 ,   3 (  , 3 $$
+2'3-)         )  -(
+ '       )+   9*6)  -   +  
+)    $ )  $   +  -  ) 
+ '-   6 *
+
+  '  8-F (    +  )-   
+ ; 2  $-.*3 $$'3-*3C+V Q&)V  &?2
+3 D'*
+
+                                                                                     00072175
+

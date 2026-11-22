@@ -1,0 +1,489 @@
+                                                                             Consejería de Transformación Económica,
+                                                                             Industria, Conocimiento y Universidades
+                                                                             Secretaría General de Industria y Minas
+
+ Guía sobre la puesta en servicio de
+instalaciones de baja tensión para la
+
+   recarga de vehículos eléctricos
+
+             (Actualizada 27 de junio de 2022)
+
+                                                    1
+Contenido
+
+    1. Regulación normativa............................................................................................................................................ 3
+        1.1. Normativa sobre puntos de recarga..........................................................................................................................3
+        1.2 Dotaciones mínimas...................................................................................................................................................3
+        1.3 Imposibilidad de instalar puntos de recarga en locales con riesgo de incendio o explosión....................................3
+        1.4 Obligación de instalar puntos de recarga en viviendas unifamiliares........................................................................4
+        1.5 Esquemas de instalación para la recarga de vehículos eléctricos..............................................................................4
+
+    2. Necesidad de proyecto de la instalación................................................................................................................. 4
+        2.1 Instalaciones de puntos de recarga que necesitan proyecto.....................................................................................4
+        2.2 Instalaciones de puntos de recarga que necesitan memoria técnica de diseño (MTD)............................................6
+        2.3 Necesidad o no de reformar la instalación previamente existente...........................................................................6
+        2.4. Verificaciones, inspecciones iniciales e inspecciones periódicas de las instalaciones de puntos de recarga..........6
+
+    3. Necesidad de certificado de instalación eléctrica (CIE) de baja tensión...................................................................7
+        3.1 Regla general..............................................................................................................................................................7
+        3.2 Necesidad de un nuevo CUPS....................................................................................................................................8
+        3.3 Potencia instalada y potencia contratada..................................................................................................................8
+        3.4 Necesidad de CIE separado para los puntos de recarga............................................................................................9
+        3.5 Instalación de puntos de recarga en viviendas unifamiliares existentes...................................................................9
+
+    4. Tramitación telemática del registro de la instalación de puntos de recarga.............................................................9
+        4.1. Instalaciones que se tramitan por PUES e instalaciones que se tramitan por TECI..................................................9
+        4.2. Ampliaciones de instalaciones anteriores al tramitador PUES.................................................................................9
+
+    5. Empresas instaladoras......................................................................................................................................... 10
+        5.1 Tipo de empresa instaladora que puede realizar la instalación..............................................................................10
+        5.2 Alcance de la responsabilidad en el caso de ampliación de instalaciones existentes.............................................10
+
+    6. Algunos casos de instalaciones de puntos de recarga............................................................................................ 11
+        6.1 Ampliación de vivienda unifamiliar..........................................................................................................................11
+        6.2 Puntos de recarga en un centro comercial..............................................................................................................11
+        6.3 Puntos de recarga en el aparcamiento subterráneo de un edificio de viviendas....................................................12
+
+Esta guía sobre la puesta en servicio de instalaciones de baja tensión para la recarga de vehículos
+eléctricos, elaborada por el Servicio de Industria de la S.G. de Industria y Minas de la Junta de
+Andalucía, pretende únicamente facilitar la interpretación del Reglamento Electrotécnico de Baja
+Tensión, en relación con las aplicaciones informáticas para registrar estas instalaciones en la Junta
+de Andalucía; solamente el texto publicado en el BOE es jurídicamente vinculante.
+
+                                                                          2
+1. Regulación normativa
+
+1.1. Normativa sobre puntos de recarga
+
+Las instalaciones de baja tensión (BT) deben cumplir con el Reglamento electrotécnico para baja tensión (REBT), aprobado
+por Real Decreto 842/2002, de 2 de agosto. A las instalaciones para la recarga del vehículo eléctrico les aplica, en concreto,
+la instrucción complementaria específica de este reglamento la ITC-BT-52 (Instalaciones con fines especiales.
+Infraestructura para la recarga de vehículos eléctricos). Esta ITC-BT-52 fue añadida al REBT por el Real Decreto 1053/2014,
+de 12 de diciembre, y modificada por el Real Decreto 542/2020, de 26 de mayo, por el que se modifican y derogan
+diferentes disposiciones en materia de calidad y seguridad industrial, y por el Real Decreto 450/2022, de 14 de junio, por el
+que se modifica el Código Técnico de la Edificación, aprobado por el Real Decreto 314/2006, de 17 de marzo.
+
+Para puntos de recarga, además de la ITC-BT-52, son de aplicación, entre otras:
+
+     · ITC-BT-03, sobre empresas instaladoras de baja tensión
+     · ITC-BT-04, sobre documentación y puesta en servicio de las instalaciones
+     · ITC-BT-05, sobre verificaciones e inspecciones
+     · ITC-BT-28, sobre locales de pública concurrencia
+     · ITC-BT-29, sobre locales con riesgo de incendio o explosión
+
+El Ministerio de Industria, Comercio y Turismo publicó en 2017 una Guía Técnica de aplicación de la ITC-BT-52 en su página
+web sobre el REBT.
+
+1.2 Dotaciones mínimas
+
+Las dotaciones mínimas de este tipo de instalaciones se establecen entre otras normas en el Real Decreto 1053/2014, de
+12 de diciembre; en el Real Decreto-ley 29/2021, de 21 de diciembre, por el que se adoptan medidas urgentes en el
+ámbito energético para el fomento de la movilidad eléctrica, el autoconsumo y el despliegue de energías renovables; y en
+el Real Decreto 450/2022, de 14 de junio, por el que se modifica el Código Técnico de la Edificación, aprobado por el Real
+Decreto 314/2006, de 17 de marzo. En particular, este último real decreto introduce en el CTE, en el Documento Básico HE
+(Ahorro de energía), la Sección HE 6 (Dotaciones mínimas para la infraestructura de recarga de vehículos eléctricos).
+
+En este documento no se tratan en detalle las dotaciones mínimas de cada tipo de edificio o establecimiento, o su
+exigencia, al ser competencia de otros órganos administrativos. No obstante, deben preverse los circuitos y
+preinstalaciones que se establecen en el REBT y sus ITC.
+
+1.3 Imposibilidad de instalar puntos de recarga en locales con riesgo de incendio o explosión
+
+No se podrán instalar puntos de recarga en estacionamientos o aparcamientos cerrados que estén clasificados como
+locales de riesgo de incendio o explosión según la ITC-BT-29, ni se podrá realizar la operación de recarga con
+desprendimiento de gases en dichos aparcamientos.
+
+De acuerdo con la ITC-BT-29 los garajes son locales con riesgo de incendio o explosión, salvo en los casos siguientes:
+     · Garajes de uso privado para estacionamiento de 5 vehículos o menos.
+     · Aparcamientos al aire libre.
+     · Garajes desclasificados. Esto es, aquellos en lo que el proyectista ha justificado que no existe dicho riesgo.
+
+Cuando se pretenda instalar un punto de recarga en un garaje existente con ventilación forzada o con ventilación natural y
+más de 5 plazas de aparcamiento, el proyectista encargado de elaborar el proyecto o el redactor de la memoria técnica de
+
+                                                                          3
+diseño, revisarán el proyecto original de la instalación eléctrica del garaje para comprobar si este está desclasificado y si se
+siguen cumpliendo las condiciones de ventilación que permitieron esta desclasificación. En caso de que no se pueda
+comprobar que el garaje está desclasificado se realizará un proyecto de desclasificación según la ITC BT-29.
+
+1.4 Obligación de instalar puntos de recarga en viviendas unifamiliares
+
+De acuerdo con el apartado 3.1 de la ITC-BT-52, en las viviendas unifamiliares nuevas que dispongan de aparcamiento o
+zona prevista para poder albergar un vehículo eléctrico se instalará un circuito exclusivo para la recarga de vehículo
+eléctrico. Esto no implica que deba instalarse un punto de recarga concreto, sino que debe instalarse el denominado
+circuito C13, con sus canalizaciones, protecciones y cableado. Además, de acuerdo con el apartado 3.1 de la Sección HE 6
+del CTE, introducido en el nuevo Real Decreto 450/2022, "en los edificios de uso residencial privado se instalarán sistemas
+de conducción de cables que permitan el futuro suministro a estaciones de recarga para el 100 % de las plazas de
+aparcamiento.
+De acuerdo con el apartado 5.1 de la ITC-BT-10, para la previsión de cargas de viviendas unifamiliares dotadas de
+infraestructura para la recarga de vehículos eléctricos se considerará grado de electrificación elevado. Por lo tanto la
+potencia prevista de la instalación no será inferior a 9,2 kW.
+
+1.5 Esquemas de instalación para la recarga de vehículos eléctricos
+
+Las instalaciones nuevas para la alimentación de las estaciones de recarga, así como la modificación de instalaciones ya
+existentes, que se alimenten de la red de distribución de energía eléctrica, se realizarán según los esquemas de conexión
+descritos en el apartado 3 de la ITC-BT-52, y que se aclaran mediante las figuras que se dan a modo de ejemplos ilustrativos
+en dicha ITC.
+Si se desea utilizar otro tipo de configuración de instalación de puntos de recarga, diferente de los esquemas que establece
+la ITC-BT-52, deberá solicitarse la excepción, previamente a la ejecución de la instalación, a la Delegación Territorial con
+competencias en industria, de acuerdo con los artículos 23.3.b) y 24 del REBT.
+
+2. Necesidad de proyecto de la instalación
+
+2.1 Instalaciones de puntos de recarga que necesitan proyecto
+
+De acuerdo con la ITC-BT-04, apartado 3.1, necesitan proyecto las nuevas instalaciones siguientes:
+     · Las correspondientes a las infraestructuras para la recarga del vehículo eléctrico, P > 50 kW.
+     · Instalaciones de recarga situadas en el exterior, P > 10 kW.
+     · Todas las instalaciones que incluyan estaciones de recarga previstas para el modo de carga 4, sin límite de
+          potencia
+
+No obstante, dado que se pueden instalar puntos de recarga como parte de nuevas instalaciones, más generales, de baja
+tensión que los incluyan, como ampliaciones de instalaciones que no disponían de ellos, o como ampliaciones de
+instalaciones que ya disponían de puntos de recarga, así como puede darse el caso de modificaciones de importancia (sin
+ampliación) de instalaciones que contienen puntos de recarga se ha elaborado el diagrama de flujo de la figura 1.
+La casuística es amplia e incluye excepciones para las instalaciones de puntos de recarga en aparcamientos de edificios de
+viviendas existentes.
+
+                                                                          4
+Figura 1. Nuevas instalaciones de puntos de recarga, o sus ampliaciones o modificaciones, que necesitan proyecto o
+                                                     memoria técnica de diseño.
+
+                                                                      5
+2.2 Instalaciones de puntos de recarga que necesitan memoria técnica de diseño (MTD)
+
+En el caso de que la redacción de proyecto no sea necesaria, debe elaborarse una memoria técnica de diseño, redactada
+por empresa instaladora para la categoría de la instalación correspondiente o por técnico titulado competente.
+En Andalucía hay que emplear el modelo oficial aprobado por la Resolución de 17 de junio de 2015, de la Dirección
+General de Industria, Energía y Minas, por la que se aprueba el modelo de la Memoria Técnica de Diseño de instalación
+eléctrica de baja tensión.
+
+2.3 Necesidad o no de reformar la instalación previamente existente
+
+Cuando se amplían, modifican o reparan instalaciones que fueron ejecutadas de acuerdo a reglamentos electrotécnicos
+anteriores al REBT de 2002, este último reglamento solo afecta a la parte modificada, reparada o ampliada, y siempre y
+cuando se tomen las medidas necesarias para garantizar las condiciones de seguridad del conjunto de la instalación .
+Téngase en cuenta, no obstante, que la instalación de un punto de recarga en una instalación existente puede dar lugar a la
+necesidad de nuevas protecciones diferenciales o contra cortocircuitos o sobrecargas, así como la refuerzo de las
+instalaciones comunes de enlace con la red de distribución de baja tensión. En estos casos, la reforma afectará a la
+instalación previamente existente, aunque no sea necesario reformar el conjunto de la instalación.
+
+Como excepción, el REBT de 2002 se aplicará a las instalaciones ejecutadas de acuerdo a un reglamento anterior, cuando
+su estado, situación o características impliquen un riesgo grave para las personas o los bienes, o se produzcan
+perturbaciones importantes en el normal funcionamiento de otras instalaciones, a juicio del órgano competente de la
+Comunidad Autónoma.
+Nótese que, dada la potencia necesaria en las instalaciones de puntos de recarga, es muy posible que la ampliación afecte
+a las instalaciones de enlace con la empresa distribuidora, así como a las protecciones del conjunto de la instalación.
+
+2.4. Verificaciones, inspecciones iniciales e inspecciones periódicas de las instalaciones de puntos
+        de recarga
+
+Todas las nuevas instalaciones de baja tensión, o sus ampliaciones o modificaciones, deben ser verificadas, previamente a
+su puesta en servicio, por las empresas instaladoras que las ejecuten.
+Están sujetas a inspección inicial por organismo de control, previa a la puesta en marcha:
+
+     · Las instalaciones de las estaciones de recarga para el vehículo eléctrico, que requieren la elaboración de proyecto
+          para su ejecución. Por ejemplo, una instalación de puntos de recarga que tiene una potencia de 60 kW.
+
+     · Las instalaciones de los puntos de recarga que están incluidas en una instalación más general, que está sujeta a
+          inspección inicial. Por ejemplo, una instalación de puntos de recarga que tiene una potencia de 3.680 W situada
+          en el aparcamiento de un centro comercial.
+
+Están sujetas a inspecciones periódicas por organismos de control, cada cinco años, todas las instalaciones que precisaron
+de inspección inicial, previa a la puesta en marcha.
+
+                                                                          6
+3. Necesidad de certificado de instalación eléctrica (CIE) de baja tensión
+
+3.1 Regla general
+
+De acuerdo con el art. 18 del REBT las instalaciones eléctricas nuevas, y las modificaciones, reparaciones y ampliaciones de
+instalaciones existentes, deben ser realizadas por empresas instaladoras de BT.
+
+     · En el caso de instalaciones nuevas, o ampliaciones o modificaciones, dichas empresas deben elaborar
+          previamente un proyecto o memoria técnica de diseño y una vez terminada la ejecución y realizadas las
+          verificaciones pertinentes y, en su caso, la inspección inicial, la empresa instaladora emitirá un certificado
+          eléctrico de la instalación (CIE).
+          Dicho certificado, junto con la documentación técnica y, en su caso, el certificado de dirección de obra y el de
+          inspección inicial, deberá registrarse ante la Delegación territorial con competencias en industria de la provincia
+          donde radique la instalación mediante los aplicativos TECI o PUES (cuando hay proyecto o cuando hay dirección
+          de obra).
+
+     · En el caso de meras reparaciones, verificaciones a petición del titular, o mantenimiento de instalaciones, la
+          empresa instaladora que realice estas operaciones certificará al titular el cumplimiento reglamentario de la
+          actuación llevada a cabo. Estas certificaciones no se registrarán en los aplicativos TECI o PUES, no existiendo
+          modelo oficial de certificado.
+
+En el caso de la instalación se tramite por TECI el CIE será generado por el propio tramitador. En el caso de que la
+instalación se tramite a través de PUES, el CIE, de acuerdo con el modelo aprobado por la Junta de Andalucía, se redactará
+por la empresa instaladora, por ejemplo usando el PDF rellenable que se puede obtener de la página web de la Consejería
+de Transformación Económica, Industria, Conocimiento y Universidades. En Andalucía, el modelo oficial de CIE se establece
+en la Resolución de 17 de junio de 2015, de la Dirección General de Industria, Energía y Minas, por la que se aprueba el
+modelo del certificado de instalación eléctrica de baja tensión.
+
+Con objeto de conocer fácilmente la máxima potencia a contratar, el certificado de instalación eléctrica (CIE) debe recoger,
+la información actualizada correspondiente a la potencia máxima admisible de la totalidad de la instalación (esto es,
+potencia máxima admisible de la instalación aguas abajo del punto frontera entre empresa distribuidora y consumidor).
+
+Dado que la ITC-BT-52 establece que "la instalación para la recarga del vehículo eléctrico se podrá proyectar como una
+ampliación de la instalación de baja tensión ya existente o con una alimentación directa de la red de distribución mediante
+una instalación de enlace propia independiente de la ya existente". Por lo tanto, hay que tener en cuenta:
+
+     · Si la instalación del punto de recarga forma parte de una instalación eléctrica de un edificio.
+
+          Si la instalación de recarga forma parte de una instalación de BT, que la comprende, y que se está inscribiendo
+          como nueva, la potencia prevista en el CIE del conjunto de la instalación debe ser la de toda la instalación. Este
+          dato es necesario para que el titular pueda elegir la potencia a contratar con el comercializador hasta el valor
+          máximo de dicha potencia prevista.
+
+          Si la instalación de recarga es la ampliación de una instalación de BT existente, dentro del mismo punto de
+          suministro, la potencia prevista para el punto de recarga debe señalarse de manera independiente al del conjunto
+          de la instalación en el proyecto o MTD. El valor de la potencia instalada o prevista para el conjunto de la
+          instalación debe indicarse en el CIE, al objeto de que el titular de la instalación lo utilice para elegir su potencia a
+          contratar.
+
+                                                                          7
+· Si la instalación del punto de recarga es una instalación independiente, con su propio punto de suministro. Si la
+     instalación del punto de recarga tiene su propio contador y su propia instalación de enlace, como ocurre en los
+     Esquemas 3a y 3b (figuras 9 y 10) de la ITC-BT-52, el CIE tendrá como potencia prevista o instalada la de la
+     instalación de recarga.
+
+· Si se está ampliando una instalación individual o colectiva de puntos de recarga. La potencia prevista que debe
+     figurar en el CIE será la de la instalación en su conjunto, de manera que el CIE se puede emplear asimismo para
+     contratar la ampliación de potencia del suministro.
+
+3.2 Necesidad de un nuevo CUPS
+
+El Código Universal de Puntos de Suministro (CUPS) es un código que identifica cada punto de suministro de electricidad y
+de gas natural, asignado por las empresas distribuidoras. Está asociado con cada local (vivienda, negocio, industria, ...) o
+cada instalación independiente, de forma que en una misma dirección postal habrá tantos códigos como contratos de
+suministro haya. El CUPS no cambia cuando se cambia de empresa comercializadora o de modalidad de contrato de
+suministro o de tarifa. El CUPS figura en las tarifas de suministro y es importante para la realización de gestiones ante las
+empresas energéticas o la tramitación de instalaciones eléctricas.
+
+La tabla siguiente resume las distintas situaciones, atendiendo a las configuraciones de puntos de recarga de la ITC-BT-52.
+
+Esquema                       Aplicación                                 CUPS                N.º de estaciones        Ubicación de contador principal
+    1a                                                                                         de recarga por
+    1b   Conjuntos de edificación vertical u horizontal  1 por contador principal                                Centralización de contadores
+    1c   Conjuntos de edificación vertical u             1 por contador principal            contador principal  Nueva centralización para estaciones de
+    2    horizontal, en viviendas                                                                 más de 1       recarga, en armario o local independiente
+    3a                                                   1 por contador principal                                Centralización de contadores exclusiva
+    3b   Conjuntos de edificación vertical u horizontal  1, el de la vivienda (que sería el       más de 1       para estaciones de recarga
+    4a                                                   contador principal)
+         Edificios de viviendas en régimen de            1 por contador principal                 más de 1
+    4b   propiedad horizontal
+         Conjuntos de edificación vertical u             1 por contador principal            1                   Centralización de contadores
+         horizontal, en viviendas                        1, el de la vivienda unifamiliar
+         Conjuntos de edificación vertical u             (asociado al contador principal)    1 Extensión de la centralización de contadores de viviendas
+         horizontal, en viviendas                        1, el de la finca con suministro    1 Nueva centralización para estaciones de recarga, en armario o local independiente
+                                                         único (asociado al contador
+         Viviendas unifamiliares                         principal)                          sin límite          -
+
+         Fincas con suministro único                                                         sin límite          -
+
+3.3 Potencia instalada y potencia contratada
+
+La potencia instalada o prevista de una instalación de baja tensión, a veces denominada potencia admisible, es la máxima
+capaz de suministrar una instalación a los receptores conectados a ella. La potencia contratada es la máxima potencia que
+un usuario puede consumir de la red de distribución.
+
+La potencia instalada se establece en el CIE de la instalación. La potencia contratada se fija en el contrato de suministro del
+consumidor con la empresa comercializadora y tiene que ser menor o igual que la potencia prevista instalada para dicha
+instalación.
+
+                                                         8
+Por ejemplo, se puede reducir la potencia contratada para reducir el término fijo de la factura de la electricidad, pero no se
+puede contratar una potencia superior a la prevista para la instalación en el Certificado de la Instalación Eléctrica.
+
+3.4 Necesidad de CIE separado para los puntos de recarga
+
+En general no es necesario un CIE específico y separado para la instalación de puntos de recarga, cuando la instalación que
+se certifica incluye dichos puntos como una parte de una instalación más general que se está construyendo o ampliando.
+Pero sí hace falta un CIE en instalaciones de puntos de recarga en los siguientes casos:
+
+     · Se instalan puntos de recarga con su propio contador individual, que tiene asociado su propio CUPS. Veáse
+          apartado anterior de esta guía.
+
+     · Cuando la ampliación consiste únicamente en la instalación de puntos de recarga en una instalación existente.
+
+Como las modificaciones de las instalaciones de BT tienen que ser realizadas por empresas instaladoras en todos los casos
+debe emitirse el CIE correspondiente. La instalación se tramitará por TECI o por PUES según se indica en esta guía,
+atendiendo al modo de carga y a los límites de la potencia instalada en el punto de recarga.
+
+En el CIE de la modificación se hará constar la potencia total instalada o prevista que permitirá al titular, si así lo desea,
+ampliar la potencia que tiene contratada con la empresa suministradora.
+
+3.5 Instalación de puntos de recarga en viviendas unifamiliares existentes
+
+Lo habitual es que el titular de la vivienda tenga un único punto de suministro que comprende la instalación de la vivienda
+y el punto de recarga. Solo será necesario un CIE, que tendrá asociado un único CUPS.
+
+4. Tramitación telemática del registro de la instalación de puntos de recarga
+
+4.1. Instalaciones que se tramitan por PUES e instalaciones que se tramitan por TECI
+
+La "legalización" de las nuevas instalaciones, o sus modificaciones o ampliaciones se realiza mediante el registro de la
+comunicación de su puesta en marcha en los tramitadores PUES o TECI. Se tramitan por PUES las nuevas instalaciones
+eléctricas de puntos de recarga que necesitan proyecto técnico de ejecución, así como las ampliaciones y modificaciones
+para las que es necesario proyecto. Se tramitan por TECI las nuevas instalaciones, o sus modificaciones o ampliaciones,
+para las que no se requiere la elaboración de proyecto.
+
+No obstante, las ampliaciones o modificaciones de aquellas instalaciones que ya se han registrado en PUES, deben
+continuar usando este tramitador para el registro de las mismas, aunque no haga falta proyecto para su ejecución. Dicho
+caso estará contemplado en el documento de preguntas frecuentes sobre tramitación de instalaciones eléctricas en
+PUES que se encuentra en la página web de la Consejería.
+
+4.2. Ampliaciones de instalaciones anteriores al tramitador PUES
+
+En el caso de instalaciones legalizadas previamente a la puesta en marcha del tramitador PUES o en el caso de que la
+necesidad de proyecto surja como resultado de la ampliación, no se encontrará un expediente PUES previo. Dicho caso
+está contemplado en el documento siguiente, que se puede encontrar en la web de la Consejería:
+
+          Preguntas_frecuentes_sobre_el_tramitador_PUES_v08_Julio.2021.pdf.
+
+                                                                          9
+5. Empresas instaladoras
+
+5.1 Tipo de empresa instaladora que puede realizar la instalación
+
+Cuando la instalación de recarga precise proyecto este deberá ser redactado y firmado por técnico titulado competente,
+quien será directamente responsable de que el mismo se adapte a las disposiciones reglamentarias. En el caso de que la
+instalación de recarga forme parte de una instalación de baja tensión de mayor alcance, por ejemplo, la instalación
+completa de un edificio de viviendas con aparcamiento, es posible que la necesidad de proyecto surja no por la instalación
+de puntos de recarga, sino por las características de la instalación en la que está incluida.
+Las instalaciones serán realizadas por una empresa instaladora de la categoría que corresponda según el tipo de
+instalación. Por ejemplo, si la instalación de recarga está situada en un edificio cuyo proyecto de conjunto incluye locales
+con riesgo de incendio o explosión según la ITC-BT-29, la empresa instaladora deberá ser de la categoría especialista
+correspondiente.
+Dado que las instalaciones eléctricas de los locales con riesgo de incendio o explosión, según la ITC-BT-04, requieren de un
+proyecto, la clasificación (y por lo tanto la desclasificación) de los aparcamientos o garajes será realizada por un técnico
+titulado competente.
+
+5.2 Alcance de la responsabilidad en el caso de ampliación de instalaciones existentes
+
+La empresa instaladora ejecuta, modifica, amplía, mantiene o repara las instalaciones que les sean adjudicadas o
+confiadas, de conformidad con la normativa vigente y con la documentación de diseño de la instalación, por lo que, en
+general no es responsable del estado de una instalación previa, siempre que no necesite modificarla.
+No obstante lo anterior, las empresas instaladoras tienen la obligación de "notificar a la Administración competente los
+posibles incumplimientos reglamentarios de materiales o instalaciones, que observasen en el desempeño de su actividad.
+En caso de peligro manifiesto, darán cuenta inmediata de ello a los usuarios y, en su caso, a la empresa suministradora, y
+pondrá la circunstancia en conocimiento del Órgano competente de la Comunidad Autónoma en el plazo máximo de 24
+horas".
+Asimismo, es conveniente tener en cuenta que el art. 2.2.b) del REBT dice que dicho reglamento aplica "a las
+modificaciones, reparaciones y ampliaciones, sean o no de importancia, de las instalaciones existentes antes de su entrada
+en vigor, solo en lo que afecta a la parte modificada, reparada o ampliada, y siempre y cuando se tomen las medidas
+necesarias para garantizar las condiciones de seguridad del conjunto de la instalación ". El art. 2.3, dice, también que el
+REBT de 2002 aplica "a las instalaciones existentes antes de su entrada en vigor, cuando su estado, situación o
+características impliquen un riesgo grave para las personas o los bienes".
+
+                                                                          10
+6. Algunos casos de instalaciones de puntos de recarga
+
+Los siguientes ejemplos no pretenden abarcar el número de casos posibles que se pueden presentar
+en la práctica. Además, pueden darse otras circunstancias que no permitan aplicar directamente lo
+establecido en estos ejemplos.
+
+6.1 Ampliación de vivienda unifamiliar
+
+Se quiere instalar un punto de recarga de vehículo eléctrico en el garaje subterráneo de una vivienda unifamiliar
+existente con 7,5 kW de potencia instalada, que tiene dos plazas de aparcamiento, que no es del modo 4, y que tiene
+una potencia de 4,6 kW.
+
+     1. Clasificación del edificio o local. El garaje no tiene carácter de local de pública concurrencia. Al ser privado, con
+          menos de 5 plazas tampoco será local con riesgo de incendio o explosión.
+
+     2. Necesidad de proyecto o MTD. Al tratarse de una ampliación de una instalación hay que entrar en el grupo II de la
+          Figura 1, y se comprueba que, al no pertenecer a ninguno de los apartados 1) y 2) indicados será necesaria la
+          elaboración de una MTD. En efecto: no es un local de pública concurrencia; ni un garaje que requiera ventilación
+          forzada; la potencia de los puntos de recarga, que no son de modo 4 es menor de 50 kW; y en el conjunto de la
+          vivienda tampoco se superan los 50 kW.
+
+     3. Empresa instaladora y técnico titulado. La MTD puede ser redactada por técnico titulado competente o por
+          instalador de categoría básica. Le ejecución puede ser realizada por cualquier empresa instaladora de BT.
+
+     4. Dirección de obra y verificación inicial. No es necesaria la dirección facultativa de la obra, al no haber proyecto de
+          la instalación. La empresa instaladora debe realizar una verificación inicial de la instalación en todo caso.
+
+     5. Certificado de instalación eléctrica y registro de la instalación. En el CIE, se hará constar la potencia total de la
+          vivienda, 12,1 kW, aunque el propietario elegirá después la potencia a contratar de acuerdo con sus necesidades.
+          El registro de esta instalación se hará en el aplicativo TECI, donde estará registrada la instalación anterior de la
+          vivienda.
+
+     6. Inspección por organismo de control. Al no ser local de pública concurrencia, ni local con riesgo de incendio o
+          explosión, no será necesaria ni inspección inicial ni periódica.
+
+     7. Instalaciones preexistentes. Dada la potencia de la ampliación, es posible que sea necesario revisar las
+          instalaciones de enlace con la empresa distribuidora, así como a las protecciones del conjunto de la instalación.
+
+6.2 Puntos de recarga en un centro comercial
+
+Se quieren instalar puntos de recarga en el estacionamiento exterior de un centro comercial. Se trata de una instalación
+de puntos de recarga de 7,36 kW.
+
+     1. Clasificación del edificio o local. Como zona común de un centro comercial el estacionamiento tiene la condición
+          de local de pública concurrencia. No es zona con riesgo de incendio o explosión al estar la zona de
+          estacionamiento al aire libre.
+
+     2. Necesidad de proyecto o MTD. Al tratarse de una ampliación de una instalación hay que entrar en el grupo II de la
+          Figura 1, y se comprueba que, al ser local de pública concurrencia 1) será necesaria la elaboración de proyecto.
+
+     3. Empresa instaladora y técnico titulado. El proyecto será redactado por técnico titulado competente. La ejecución
+          puede ser realizada por cualquier empresa instaladora de BT.
+
+     4. Dirección de obra y verificación inicial. La dirección facultativa de la obra es necesaria al haber proyecto de la
+          ampliación. La empresa instaladora debe realizar una verificación inicial de la instalación antes de su puesta en
+          marcha.
+
+                                                                          11
+     5. Certificado de instalación eléctrica y registro de la instalación. En el CIE, se hará constar la nueva potencia total de
+          la instalación. El registro de esta instalación se hará en el aplicativo PUES, donde estará registrada la instalación
+          anterior del centro comercial.
+
+     6. Inspección por organismo de control. Al ser local de pública concurrencia, está sujeto a inspección inicial de la
+          ampliación realizada y a inspecciones periódicas, que se pueden realizar al conjunto de la instalación.
+
+     7. Instalaciones preexistentes. Es posible que sea necesario revisar las instalaciones de enlace con la empresa
+          distribuidora, así como a las protecciones del conjunto de la instalación.
+
+6.3 Puntos de recarga en el aparcamiento subterráneo de un edificio de viviendas
+
+Se quieren instalar puntos de recarga en el garaje subterráneo de un edificio de viviendas existente, que cuenta con 65
+plazas de estacionamiento. La potencia instalada previa para la instalación común del edificio es de 110 kW. Se trata de
+3 puntos de recarga, que no son del modo 4, que suman una potencia de 44,3 kW.
+
+     1. Clasificación del edificio o local. Podemos considerar que este aparcamiento no es local de pública concurrencia,
+          al ser usado solo por los residentes en el edificio. Si no cuenta con desclasificación como zona de incendios, será
+          condición indispensable la realización de un proyecto de desclasificación, realizado por técnico titulado
+          competente, y que se apliquen las medidas necesarias contenidas en el mismo. Supondremos que para la
+          desclasificación del garaje ha sido necesario instalar ventilación forzada.
+
+     2. Necesidad de proyecto o MTD. De acuerdo con el apartado II.1), de la Figura 1, la instalación de puntos de recarga
+          en estacionamientos existentes en edificios de viviendas están exceptuadas de proyecto en el caso de que no se
+          use el modo 4 de recarga y los puntos de recarga (en interior) no superen los 50 kW. Y esta excepción aplica
+          incluso en el caso de que se trate de garajes con ventilación forzada.
+
+     3. Empresa instaladora y técnico titulado. La MTD puede ser redactada por técnico titulado competente o por
+          instalador de categoría básica. Le ejecución puede ser realizada por cualquier empresa instaladora de BT.
+
+     4. Dirección de obra y verificación inicial. No es necesaria la dirección facultativa de la obra, al no haber proyecto de
+          la instalación. La empresa instaladora debe realizar una verificación inicial de la instalación en todo caso.
+
+     5. Certificado de instalación eléctrica y registro de la instalación. En el CIE de la instalación del edificio, se hará
+          constar la nueva potencia total de la instalación, en su caso. El registro de esta instalación se hará en el aplicativo
+          PUES, donde estará registrada la instalación anterior del edificio de viviendas. Si los puntos de recarga tienen
+          contadores principales individuales, será necesario emitir un CIE por cada punto de recarga, registrarlos y solicitar
+          el punto de suministro correspondiente a la empresa distribuidora.
+
+     6. Inspección por organismo de control. Al tratarse de una instalación de puntos de recarga que no necesita proyecto
+          para su ejecución, no es obligatoria la inspección inicial por organismo de control. Al no haber inspección inicial,
+          no son necesarias las inspecciones periódicas de los puntos de recarga. No obstante, si son objeto de inspecciones
+          periódicas, cada 10 años, las instalaciones comunes del edificio, al superar la potencia total instalada los 100 kW
+
+     7. Instalaciones preexistentes. Es posible que sea necesario revisar las instalaciones de enlace con la empresa
+          distribuidora, así como a las protecciones del conjunto de la instalación.
+
+                                                                          12
+
