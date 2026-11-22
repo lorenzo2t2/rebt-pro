@@ -361,3 +361,49 @@ th{background:var(--panel2)}
 .tv .tt{fill:var(--text);font:600 12px system-ui,sans-serif}.tv .ts{fill:var(--muted);font:11px system-ui,sans-serif}.tv .big{fill:var(--text);font:700 15px system-ui,sans-serif}.tv .wt{fill:#fff;font:700 11px system-ui,sans-serif;text-anchor:middle}
 .tv .tm{fill:var(--accent);font:600 11px system-ui,sans-serif}.tv .ln{stroke:var(--text);stroke-width:1.6;fill:none}.tv .ln.ac{stroke:var(--accent);stroke-width:1.8}.tv .dm{stroke:var(--accent);stroke-width:1.2;fill:none;stroke-dasharray:4 3}.tv .pc{stroke:var(--text);stroke-width:3}
 .gimg{display:block;width:100%;max-width:780px;height:auto;margin:0 auto;background:#fff;border-radius:6px;padding:4px}.gh{margin:16px 0 8px;color:var(--accent)}
+
+/* ================= Diseño v4: ordenado, por bloques (bento) ================= */
+h2{text-transform:none;letter-spacing:-.01em;font-size:16px;font-weight:700;color:var(--text);margin:34px 0 12px}
+h2::after{background:var(--line)}
+#view{max-width:1180px}
+.top{border-radius:22px;padding:30px 32px}
+.top .kick{text-transform:none;letter-spacing:.02em;font-size:13px;font-weight:600}
+.top h1{font-size:clamp(32px,4.6vw,48px)}
+.kpis{grid-template-columns:repeat(4,1fr);margin-top:14px}
+.kpis>div{padding:16px 18px;border-radius:16px}
+.kpis small{font-size:12.5px}
+.kpis strong{font-size:26px;margin:4px 0 10px}
+.tiles{gap:12px}
+.tile,a.card{transform:none!important;border-radius:16px;padding:16px;align-items:center;transition:border-color .15s,background .15s}
+.tile::after,a.card::after{display:none}
+.tile:hover,a.card:hover{box-shadow:none;border-color:var(--accent);background:var(--glass),var(--panel2)}
+.tile .ti{transform:none;width:42px;height:42px;border-radius:12px;box-shadow:none}
+.tile b,.tile span{transform:none}
+.tile>div:last-child{min-width:0;flex:1}
+.tile::before{content:"›";order:3;margin-left:auto;color:var(--muted);font-size:22px;line-height:1}
+.bento{grid-template-columns:repeat(4,1fr)}
+.bento .tile:nth-child(-n+2){grid-column:span 2;flex-direction:column;align-items:flex-start;justify-content:space-between;min-height:132px;padding:20px;background:linear-gradient(150deg,color-mix(in srgb,var(--brand) 22%,var(--panel)),var(--panel) 70%);border-color:color-mix(in srgb,var(--brand) 40%,var(--glassb))}
+.bento .tile:nth-child(-n+2)::before{display:none}
+.bento .tile:nth-child(-n+2) b{font-size:18px}
+.bento .tile:nth-child(-n+2) .ti{width:46px;height:46px}
+.chip{border-radius:10px}
+.btn,input,select,textarea,.opt,details,.note{border-radius:12px}
+#nav a{border-radius:10px;padding:9px 12px}
+#nav a.on{box-shadow:none;background:color-mix(in srgb,var(--brand) 20%,transparent);color:#fff}
+:root[data-theme="light"] #nav a.on{color:var(--brand)}
+:root[data-estilo="sobrio"] .bento .tile:nth-child(-n+2){background:var(--panel2)}
+@media (max-width:1000px){.bento{grid-template-columns:repeat(2,1fr)}.kpis{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:860px){.tile{flex-direction:row}.bento .tile:nth-child(-n+2){flex-direction:row;align-items:center;min-height:0;padding:14px;grid-column:span 2}.bento .tile:nth-child(-n+2) b{font-size:15px}.bento .tile:nth-child(-n+2) .ti{width:40px;height:40px}.bento .tile:nth-child(-n+2) span{display:block}.tiles{grid-template-columns:1fr 1fr}.tile::before{display:none}.top{padding:20px 18px}}
+@media (max-width:520px){.bento .tile:nth-child(n+3){grid-column:span 2}.tiles:not(.bento){grid-template-columns:1fr}}
+/* v4: anula la lista continua anterior y vuelve a tarjetas en cuadrícula */
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:12px;border:0;border-radius:0;overflow:visible;background:transparent;margin:8px 0 18px}
+.tiles.bento{grid-template-columns:repeat(4,1fr)}
+.tiles .tile{border:1px solid var(--glassb);border-bottom:1px solid var(--glassb);border-radius:16px;background:var(--glass),var(--panel);padding:16px;min-height:0;align-items:center}
+.tiles .tile:last-child{border-bottom:1px solid var(--glassb)}
+.tiles .tile::after{display:none}
+.tiles .tile:hover{background:var(--glass),var(--panel2);border-color:var(--accent)}
+.tiles .tile span{font-size:13px}
+.tiles.bento .tile:nth-child(-n+2){background:linear-gradient(150deg,color-mix(in srgb,var(--brand) 22%,var(--panel)),var(--panel) 70%);border-color:color-mix(in srgb,var(--brand) 40%,var(--glassb))}
+@media (max-width:1000px){.tiles.bento{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.tiles{grid-template-columns:1fr}.tiles.bento{grid-template-columns:1fr 1fr}.tiles.bento .tile:nth-child(n+3){grid-column:span 2}}
+.tiles.bento .tile:last-child{grid-column:1/-1}

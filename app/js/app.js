@@ -162,8 +162,15 @@
       <form class="sbox" id="hs" role="search">${ic('search')}<input id="hq" type="search" placeholder="¿Qué dice el REBT de…?" autocomplete="off" aria-label="Buscar en el REBT"></form></div>
       <canvas id="fx3d" aria-hidden="true"></canvas>
     </div>
+    <h2>Tu progreso</h2>
+    <div class="kpis">
+      <div><small>Temario revisado</small><strong>${p.done}/${p.total}</strong><div class="bar"><i style="width:${p.total ? p.done / p.total * 100 : 0}%"></i></div></div>
+      <div><small>Preguntas vistas</small><strong>${s.vistas}/${s.total}</strong><div class="bar"><i style="width:${s.vistas / s.total * 100}%"></i></div></div>
+      <div><small>Aciertos</small><strong>${s.ok + s.ko ? s.pct + ' %' : '—'}</strong><div class="bar"><i style="width:${s.pct}%"></i></div></div>
+      <div><small>Último simulacro</small><strong>${last ? fmt(last.nota, 1) + '/10' : '—'}</strong><div class="muted" style="font-size:12px">${last ? new Date(last.fecha).toLocaleDateString('es-ES') + ' · ' + last.n + ' preguntas' : 'Sin simulacros'}</div></div>
+    </div>
     <h2>Acceso rápido</h2>
-    <div class="tiles">
+    <div class="tiles bento">
       ${tile('#/rebt', 'book', 'REBT oficial', 'Texto completo del BOE con buscador.')}
       ${tile('#/calc/seccion', 'cable', 'Sección de cables', 'Intensidad, caída de tensión y protección.')}
       ${tile('#/guia', 'search', 'Guía REBT', 'Alturas, distancias y ubicación.')}
@@ -172,16 +179,9 @@
       ${tile('#/obras', 'house', 'Obras y clientes', 'Documentos, fotos y firma.')}
       ${tile('#/test/diario', 'check', 'Repaso diario', (diarioHecho() ? 'Hecho hoy. Racha: ' : '5 preguntas. Racha: ') + rachaDiaria() + ' días.')}
     </div>
-    <h2>Todo, por bloques</h2>
+    <h2>Todas las secciones</h2>
     <div class="tiles">${Object.entries(HUBS).map(([k, hb]) => tile('#/' + k, hb.i, hb.t, hb.d)).join('')}</div>
     ${(() => { const fv = store.get('favoritos', []), rc = store.get('recientes', []).filter(x => !fv.some(f => f[0] === x[0])).slice(0, 5); const ch = (a, ico) => a.map(x => `<a class="chip" href="${x[0]}">${ico} ${esc(x[1])}</a>`).join(''); return fv.length || rc.length ? `<h2>Favoritos y recientes</h2><div class="chips">${ch(fv, '★')}${ch(rc, '↺')}</div>` : ''; })()}
-    <h2>Tu actividad</h2>
-    <div class="kpis">
-      <div><small>Temario revisado</small><strong>${p.done}/${p.total}</strong><div class="bar"><i style="width:${p.total ? p.done / p.total * 100 : 0}%"></i></div></div>
-      <div><small>Preguntas vistas</small><strong>${s.vistas}/${s.total}</strong><div class="bar"><i style="width:${s.vistas / s.total * 100}%"></i></div></div>
-      <div><small>Aciertos</small><strong>${s.ok + s.ko ? s.pct + ' %' : '—'}</strong><div class="bar"><i style="width:${s.pct}%"></i></div></div>
-      <div><small>Último simulacro</small><strong>${last ? fmt(last.nota, 1) + '/10' : '—'}</strong><div class="muted" style="font-size:12px">${last ? new Date(last.fecha).toLocaleDateString('es-ES') + ' · ' + last.n + ' preguntas' : 'Sin simulacros'}</div></div>
-    </div>
     <p class="foot">Herramienta de apoyo. El texto oficial del REBT (BOE) y la normativa de tu comunidad autónoma prevalecen siempre. Verifica los resultados antes de ejecutar una instalación real.</p>`;
     if (window.REBTFx) REBTFx.mount($('#fx3d'));
     $('#hs').onsubmit = ev => { ev.preventDefault(); const v = $('#hq').value.trim(); try { sessionStorage.setItem('rebt.gq', v); } catch (x) { } location.hash = '#/guia'; };
