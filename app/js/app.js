@@ -22,6 +22,7 @@
 
   /* ---------- navegación ---------- */
   const P = {
+    cog: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/>',
     home: '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/>',
     book: '<path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2z"/><path d="M4 19V5M9 7h6"/>',
     calc: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h1M12 12h1M16 12h0M8 16h1M12 16h1M16 16h0"/>',
@@ -48,7 +49,7 @@
   const NAV = [
     ['#/', 'Inicio', 'home', ''],
     ['#/guia', 'Guía REBT', 'search', 'Consultar'], ['#/temario', 'Temario', 'book', 'Consultar'], ['#/ref', 'Tablas', 'table', 'Consultar'], ['#/andalucia', 'Docs Andalucía', 'file', 'Consultar'], ['#/docs', 'Documentación', 'file', 'Consultar'],
-    ['#/calc', 'Cálculos', 'calc', 'Herramientas'], ['#/esquemas', 'Esquemas', 'schema', 'Herramientas'], ['#/pruebas', 'Pruebas', 'flask', 'Herramientas'], ['#/crear', 'Crear documentos', 'doc', 'Herramientas'], ['#/utiles', 'Utilidades', 'tools', 'Herramientas'],
+    ['#/calc', 'Cálculos', 'calc', 'Herramientas'], ['#/esquemas', 'Esquemas', 'schema', 'Herramientas'], ['#/motores', 'Motores', 'cog', 'Herramientas'], ['#/simbolos', 'Simbología', 'schema', 'Consultar'], ['#/pruebas', 'Pruebas', 'flask', 'Herramientas'], ['#/crear', 'Crear documentos', 'doc', 'Herramientas'], ['#/utiles', 'Utilidades', 'tools', 'Herramientas'],
     ['#/test', 'Examen', 'check', 'Formación'], ['#/acceso', 'Acceso y examen', 'cap', 'Formación'],
     ['#/temas', 'Temas', 'palette', 'Aplicación'], ['#/actualizar', 'Actualizar', 'down', 'Aplicación'], ['#/fuentes', 'Fuentes', 'info', 'Aplicación'],
   ];
@@ -125,7 +126,8 @@
       ${tile('#/calc/caida', 'pulse', 'Caída de tensión', 'Comprobación por circuito y tramo.')}
       ${tile('#/calc/vivienda', 'house', 'Circuitos de vivienda', 'Electrificación, C1–C13, IGM y diferenciales.')}
       ${tile('#/calc/tierra', 'earth', 'Puesta a tierra', 'Resistencia, electrodos y protección.')}
-      ${tile('#/esquemas', 'schema', 'Esquemas unifilares', 'Editor con símbolos y plantillas.')}
+      ${tile('#/esquemas', 'schema', 'Esquemas', 'Unifilar, multifilar, mando, viviendas y más: ' + Object.keys(window.REBTSym || {}).length + ' símbolos.')}
+      ${tile('#/motores', 'cog', 'Motores', 'Cálculo, arranques con esquema, bornas y averías.')}
       ${tile('#/pruebas', 'flask', 'Pruebas y mediciones', 'Cómo se hace cada ensayo y qué se anota.')}
       ${tile('#/crear', 'doc', 'Crear documentos', 'Memoria, CIE, verificación, presupuesto.')}
       ${tile('#/utiles', 'tools', 'Utilidades', 'Código IP/IK, conversores, tablas rápidas.')}

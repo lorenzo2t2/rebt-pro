@@ -38,7 +38,12 @@
     bus: { n: 'Embarrado / barra', c: 'Tierra y otros', l: 'Cuadro', bus: true, d: e => { const w = e.w || 160; return `<path d="M${-w / 2} 0H${w / 2}" stroke-width="4"/>`; }, in: [0, 0], out: [0, 0] },
     txt: { n: 'Texto libre', c: 'Tierra y otros', l: 'Texto', txt: true, d: () => '', in: [0, 0], out: [0, 0] },
   };
+  Object.assign(SYM, window.REBTSymExtra || {});
+  const TIPOS = window.REBTTipos || {};
   const CATS = [...new Set(Object.values(SYM).map(s => s.c))];
+
+  const PRE = { red: '', gen: 'G', trafo: 'T', cgp: 'CGP', cont: 'CT', icp: 'ICP', igm: 'IGM', pia: 'Q', dif: 'ID', secc: 'Q', fus: 'F', spd: 'SPD', cont2: 'KM', term: 'F', sw: 'I', pul: 'S', motor: 'M', lamp: 'L', toma: 'TC', evse: 'EV', pv: 'PV', inv: 'INV', bat: 'BAT', tierra: 'PE' };
+  Object.keys(PRE).forEach(k => { if (SYM[k] && SYM[k].pre == null) SYM[k].pre = PRE[k]; });
 
   /* ---------------------------------------------------------------- geometría */
   const rotPt = (p, r) => { const a = (r || 0) * Math.PI / 2, c = Math.round(Math.cos(a)), s = Math.round(Math.sin(a)); return [p[0] * c - p[1] * s, p[0] * s + p[1] * c]; };
@@ -53,6 +58,9 @@
     if (p[0] === q[0] || p[1] === q[1]) return [p, q];
     const my = snap((p[1] + q[1]) / 2); return [p, [p[0], my], [q[0], my], q];
   }
+  /* Conexión multifilar: si un extremo es multipolar y el otro también o es un embarrado, se dibujan 3 líneas */
+  const tri = (m, w) => { const a = m.els.find(e => e.id === w.a), b = m.els.find(e => e.id === w.b); if (!a || !b) return false; const A = SYM[a.t], B = SYM[b.t]; return !!((A.m3 && (B.m3 || B.bus)) || (B.m3 && A.bus)); };
+  const triPts = (pts, o) => { const k = o * 0.3; return pts.map((p, i) => pts.length === 4 && (i === 1 || i === 2) ? [p[0] + o, p[1] + k] : [p[0] + o, p[1]]); };
   const wrap = (s, n) => { const out = []; let cur = ''; String(s).split(/\s+/).forEach(w => { if ((cur + ' ' + w).trim().length > n) { if (cur) out.push(cur); cur = w; } else cur = (cur + ' ' + w).trim(); }); if (cur) out.push(cur); return out; };
 
   /* ---------------------------------------------------------------- render SVG */
@@ -62,9 +70,11 @@
     m.wires.forEach(w => {
       const pts = wirePts(m, w); if (!pts) return;
       const d = 'M' + pts.map(p => p.join(' ')).join('L');
+      const tri3 = tri(m, w) && pts.length === 2 && pts[0][0] === pts[1][0];
+      const extra = tri3 ? [-14, 14].map(o => `<path d="M${triPts(pts, o).map(p => p.join(' ')).join('L')}" stroke="${sel && sel.k === 'w' && sel.id === w.id ? '#d97706' : '#111'}" stroke-width="1.6"/>`).join('') : '';
       const mid = pts.length === 4 ? [(pts[1][0] + pts[2][0]) / 2, pts[1][1]] : [(pts[0][0] + pts[1][0]) / 2, (pts[0][1] + pts[1][1]) / 2];
       const on = sel && sel.k === 'w' && sel.id === w.id;
-      g += `<g data-w="${w.id}"><path d="${d}" stroke="${on ? '#d97706' : '#111'}" stroke-width="${on ? 3 : 1.6}"/>${forExport ? '' : `<path d="${d}" stroke="transparent" stroke-width="12" style="cursor:pointer"/>`}${w.label ? `<text x="${mid[0] + 6}" y="${mid[1] - 4}" font-size="9" fill="#444" stroke="none" font-family="Arial,sans-serif" paint-order="stroke">${esc(w.label)}</text>` : ''}</g>`;
+      g += `<g data-w="${w.id}"><path fill="none" d="${d}" stroke="${on ? '#d97706' : '#111'}" stroke-width="${on ? 3 : 1.6}"/>${extra}${forExport ? '' : `<path fill="none" d="${d}" stroke="transparent" stroke-width="12" style="cursor:pointer"/>`}${w.label ? `<text x="${mid[0] + 6}" y="${mid[1] - 4}" font-size="9" fill="#444" stroke="none" font-family="Arial,sans-serif" paint-order="stroke">${esc(w.label)}</text>` : ''}</g>`;
     });
     m.els.forEach(e => {
       const S = SYM[e.t]; if (!S) return;
@@ -83,7 +93,7 @@
     });
     // cajetín
     const c = m.cajetin || {}; const cx = W - 360, cy = H - 90;
-    const cj = `<g font-family="Arial,sans-serif" stroke="#111" fill="none"><rect x="${cx}" y="${cy}" width="350" height="80" stroke-width="1.4" fill="#fff"/><path d="M${cx} ${cy + 26}H${cx + 350}M${cx + 230} ${cy + 26}V${cy + 80}M${cx} ${cy + 53}H${cx + 230}" stroke-width=".8"/><g stroke="none" fill="#111"><text x="${cx + 8}" y="${cy + 18}" font-size="13" font-weight="700">${esc(c.titulo || m.nombre || 'Esquema unifilar')}</text><text x="${cx + 8}" y="${cy + 44}" font-size="9">Titular: ${esc(c.titular || '')}</text><text x="${cx + 8}" y="${cy + 71}" font-size="9">Instalador: ${esc(c.instalador || '')}</text><text x="${cx + 238}" y="${cy + 44}" font-size="9">Fecha: ${esc(c.fecha || '')}</text><text x="${cx + 238}" y="${cy + 71}" font-size="9">Plano: ${esc(c.plano || '1')}</text></g></g>`;
+    const cj = `<g font-family="Arial,sans-serif" stroke="#111" fill="none"><rect x="${cx}" y="${cy}" width="350" height="80" stroke-width="1.4" fill="#fff"/><path d="M${cx} ${cy + 26}H${cx + 350}M${cx + 230} ${cy + 26}V${cy + 80}M${cx} ${cy + 53}H${cx + 230}" stroke-width=".8"/><g stroke="none" fill="#111"><text x="${cx + 8}" y="${cy + 18}" font-size="13" font-weight="700">${esc(c.titulo || m.nombre || 'Esquema unifilar')}</text><text x="${cx + 8}" y="${cy + 44}" font-size="9">Titular: ${esc(c.titular || '')}</text><text x="${cx + 8}" y="${cy + 71}" font-size="9">Instalador: ${esc(c.instalador || '')}</text><text x="${cx + 238}" y="${cy + 44}" font-size="9">Fecha: ${esc(c.fecha || '')}</text><text x="${cx + 238}" y="${cy + 71}" font-size="9">Plano: ${esc(c.plano || '1')}${c.rev ? ' · Rev. ' + esc(c.rev) : ''}</text><text x="${cx + 238}" y="${cy + 58}" font-size="9">Escala: ${esc(c.escala || 'S/E')} · ${esc(c.hoja || 'A4')}</text></g></g>`;
     return { body: g + cj };
   }
   function exportSVG(m) { return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="#fff"/>${svgOf(m, null, true).body}</svg>`; }
@@ -166,13 +176,23 @@
 
   /* ---------------------------------------------------------------- vistas */
   const icon = t => { const S = SYM[t]; return `<svg width="34" height="34" viewBox="-30 -36 60 72"><g stroke="#111" stroke-width="2.2" fill="none" stroke-linecap="round">${S.txt ? '<text x="-14" y="6" font-size="22" font-weight="700" stroke="none" fill="#111">Aa</text>' : S.d({ w: 50 })}</g></svg>`; };
+  window.REBTSym = SYM; window.REBTSymIcon = icon;
+  route(/^#\/simbolos$/, () => {
+    view.innerHTML = `<h1>Simbología</h1><p class="lead">Los símbolos disponibles en el editor de <a href="#/esquemas">Esquemas</a>, con su designación habitual (la letra que se pone en el esquema: KM1, F2, S1…) y para qué sirven. Son representaciones didácticas basadas en la práctica habitual y la serie UNE-EN 60617; para un plano oficial, consulta la norma.</p>
+    <input id="ss" type="search" placeholder="Buscar símbolo o designación…" aria-label="Buscar símbolo" style="width:100%;max-width:420px;margin-bottom:10px"><div id="sl"></div>`;
+    const draw = () => {
+      const q = ($('#ss').value || '').toLowerCase().trim();
+      $('#sl').innerHTML = CATS.map(c => { const it = Object.entries(SYM).filter(([, s]) => s.c === c && !s.txt && (!q || (s.n + ' ' + (s.pre || '') + ' ' + (s.u || '')).toLowerCase().includes(q))); return it.length ? `<h2>${c}</h2><div class="tiles" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">${it.map(([k, s]) => `<div class="card" style="display:flex;gap:12px;align-items:center"><div style="background:#fff;border-radius:8px;padding:4px;flex:none">${icon(k)}</div><div><b>${s.n}</b>${s.pre ? ` <span class="tag itc">${s.pre}</span>` : ''}${s.u ? `<p>${esc(s.u)}</p>` : ''}</div></div>`).join('')}</div>` : ''; }).join('') || '<p class="muted">Sin resultados.</p>';
+    };
+    $('#ss').oninput = draw; draw();
+  });
   route(/^#\/esquemas$/, () => {
     const a = list().sort((x, y) => y.mod - x.mod);
-    view.innerHTML = `<h1>Esquemas unifilares</h1><p class="lead">Dibuja esquemas eléctricos arrastrando símbolos, conéctalos con un clic y expórtalos a PDF, PNG o SVG. Empieza en blanco o desde una plantilla.</p>
-    <h2>Nuevo esquema</h2><div class="grid g2">
-    <button class="card" data-n="blank" style="text-align:left;cursor:pointer;font:inherit;color:inherit"><h3>📄 En blanco</h3><p>Lienzo vacío con todos los símbolos.</p></button>
+    view.innerHTML = `<h1>Esquemas</h1><p class="lead">Dibuja cualquier tipo de esquema eléctrico con más de ${Object.keys(SYM).length} símbolos: unifilar, multifilar, mando, instalación de viviendas, motores, tierra y generación. Expórtalos a PDF, PNG o SVG. Consulta todos los símbolos en <a href="#/simbolos">Simbología</a>.</p>
+    <h2>Nuevo esquema en blanco, por tipo</h2><div class="tiles">${Object.entries(TIPOS).map(([k, t]) => `<button class="tile" data-t="${k}" style="text-align:left;font:inherit;color:inherit;cursor:pointer"><div class="ti">${t.i}</div><div><b>${t.n}</b><span>${t.d}</span></div></button>`).join('')}</div>
+    <h2>Desde una plantilla</h2><div class="grid g2">
     <button class="card" data-n="viv" style="text-align:left;cursor:pointer;font:inherit;color:inherit"><h3>🏠 Vivienda (asistente)</h3><p>Enlace + cuadro con circuitos C1–C11 según el grado de electrificación.</p></button>
-    <button class="card" data-n="mot" style="text-align:left;cursor:pointer;font:inherit;color:inherit"><h3>⚙️ Arranque directo de motor</h3><p>Seccionador, fusibles, contactor, relé térmico y motor.</p></button>
+    <button class="card" data-n="mot" style="text-align:left;cursor:pointer;font:inherit;color:inherit"><h3>⚙️ Arranque directo de motor (unifilar)</h3><p>Seccionador, fusibles, contactor, relé térmico y motor. Más arranques completos (potencia + mando) en <a href="#/motores">Motores</a>.</p></button>
     <button class="card" data-n="fv" style="text-align:left;cursor:pointer;font:inherit;color:inherit"><h3>☀️ Autoconsumo fotovoltaico</h3><p>Campo FV, inversor, protecciones y conexión al cuadro.</p></button>
     <button class="card" data-n="ve" style="text-align:left;cursor:pointer;font:inherit;color:inherit"><h3>🔌 Recarga de vehículo eléctrico</h3><p>Circuito dedicado con diferencial 30 mA tipo A.</p></button></div>
     <div id="asist" class="card" hidden style="margin-top:14px"><h3>Asistente de vivienda</h3><div class="form"><div><label>Grado</label><select id="a_g"><option value="basica">Básica (C1–C5)</option><option value="elevada">Elevada (≥ 2 diferenciales)</option></select></div><div><label>ICP / IGM (A)</label><select id="a_i"><option>25</option><option>32</option><option>40</option></select></div><div class="full"><label>Circuitos adicionales</label><div class="chips" id="a_x">${['C6', 'C7', 'C8', 'C9', 'C10', 'C11'].map(c => `<button class="chip" data-x="${c}">${c}</button>`).join('')}</div></div></div><button class="btn pri" id="a_ok">Generar esquema</button></div>
@@ -184,12 +204,12 @@
     $$('[data-n]').forEach(b => b.onclick = () => {
       const k = b.dataset.n;
       if (k === 'viv') { $('#asist').hidden = false; $('#asist').scrollIntoView({ behavior: 'smooth' }); return; }
-      if (k === 'blank') create({ els: [], wires: [], cajetin: { titulo: 'Esquema unifilar', titular: '', instalador: (store.get('perfil', {}) || {}).instalador || '', fecha: new Date().toLocaleDateString('es-ES'), plano: '1' } }, 'Esquema nuevo');
-      if (k === 'mot') create(genMotor(), 'Motor trifásico');
-      if (k === 'fv') create(genFV(), 'Autoconsumo FV');
-      if (k === 've') create(genVE(), 'Recarga VE');
+      if (k === 'mot') create(Object.assign(genMotor(), { tipo: 'motor' }), 'Motor trifásico');
+      if (k === 'fv') create(Object.assign(genFV(), { tipo: 'fv' }), 'Autoconsumo FV');
+      if (k === 've') create(Object.assign(genVE(), { tipo: 'fv' }), 'Recarga VE');
     });
-    $('#a_ok').onclick = () => create(genVivienda({ grado: $('#a_g').value, icp: +$('#a_i').value, extra: [...sel] }), 'Vivienda ' + ($('#a_g').value === 'elevada' ? 'elevada' : 'básica'));
+    $$('[data-t]').forEach(b => b.onclick = () => { const t = TIPOS[b.dataset.t]; create({ tipo: b.dataset.t, els: [], wires: [], cajetin: { titulo: t.n, titular: '', instalador: (store.get('perfil', {}) || {}).instalador || '', fecha: new Date().toLocaleDateString('es-ES'), plano: '1', escala: 'S/E', hoja: 'A4' } }, t.n + ' (nuevo)'); });
+    $('#a_ok').onclick = () => create(Object.assign(genVivienda({ grado: $('#a_g').value, icp: +$('#a_i').value, extra: [...sel] }), { tipo: 'cuadro' }), 'Vivienda ' + ($('#a_g').value === 'elevada' ? 'elevada' : 'básica'));
     $$('[data-del]').forEach(b => b.onclick = () => { if (confirm('¿Borrar este esquema?')) { saveList(list().filter(x => x.id !== b.dataset.del)); A.go(); } });
     $$('[data-dup]').forEach(b => b.onclick = () => { const l = list(), o = l.find(x => x.id === b.dataset.dup), c = JSON.parse(JSON.stringify(o)); c.id = uid(); c.nombre += ' (copia)'; c.mod = Date.now(); l.push(c); saveList(l); A.go(); });
   });
@@ -203,13 +223,21 @@
     const snapshot = () => { hist.push(JSON.stringify({ els: m.els, wires: m.wires })); if (hist.length > 60) hist.shift(); };
     const undo = () => { const h = hist.pop(); if (!h) return; const o = JSON.parse(h); m.els = o.els; m.wires = o.wires; sel = null; draw(); panel(); save(); };
 
-    view.innerHTML = `<div class="row noprint" style="margin-bottom:10px"><a class="btn sm" href="#/esquemas">← Esquemas</a><input id="nm" value="${esc(m.nombre)}" style="flex:1;min-width:160px;font-weight:700;max-width:340px" aria-label="Nombre"><span class="sp"></span><button class="btn sm" id="pal-t">🧩 Símbolos</button><button class="btn sm" id="u">↶ Deshacer</button><button class="btn sm" id="png">PNG</button><button class="btn sm" id="svg">SVG</button><button class="btn sm pri" id="prn">🖨️ Imprimir / PDF</button></div>
+    view.innerHTML = `<div class="row noprint" style="margin-bottom:10px"><a class="btn sm" href="#/esquemas">← Esquemas</a><input id="nm" value="${esc(m.nombre)}" style="flex:1;min-width:160px;font-weight:700;max-width:340px" aria-label="Nombre"><span class="sp"></span><button class="btn sm" id="pal-t">🧩 Símbolos</button><button class="btn sm" id="u">↶ Deshacer</button><button class="btn sm" id="num" title="Asigna KM1, KM2, F1… según el tipo de símbolo">🔢 Numerar</button><button class="btn sm" id="png">PNG</button><button class="btn sm" id="svg">SVG</button><button class="btn sm pri" id="prn">🖨️ Imprimir / PDF</button></div>
     <div class="esq" id="esq">
-      <div class="pal card noprint" id="pal">${CATS.map(c => `<h4>${c}</h4>${Object.entries(SYM).filter(([, s]) => s.c === c).map(([k, s]) => `<button class="pb" data-add="${k}">${icon(k)}<span>${s.n}</span></button>`).join('')}`).join('')}</div>
+      <div class="pal card noprint" id="pal"><input id="psr" type="search" placeholder="Buscar símbolo…" aria-label="Buscar símbolo" style="width:100%;margin-bottom:6px"><div class="chips" style="margin:0 0 6px"><button class="chip on" id="pt1">Del tipo</button><button class="chip" id="pt2">Todos</button></div><div id="pbox"></div></div>
       <div><div class="tools noprint"><button class="btn sm on" data-m="sel">↖ Seleccionar</button><button class="btn sm" data-m="con">🔗 Conectar</button><button class="btn sm" id="zi">＋</button><button class="btn sm" id="zo">－</button><button class="btn sm" id="zf">Ajustar</button><span class="muted" id="hint" style="font-size:13px;align-self:center"></span></div>
       <div class="cv"><svg id="sch" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="gp" width="${GR * 2}" height="${GR * 2}" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#cfd6e3"/></pattern></defs><rect id="bg" width="${W}" height="${H}" fill="#fff"/><rect id="grid" width="${W}" height="${H}" fill="url(#gp)"/><g id="lay"></g></svg></div></div>
       <div class="pp card noprint" id="pp"></div></div>`;
     const svg = $('#sch'), lay = $('#lay');
+    let todos = !TIPOS[m.tipo];
+    const palette = () => {
+      const q = ($('#psr').value || '').toLowerCase().trim(), cats = todos || !TIPOS[m.tipo] ? CATS : TIPOS[m.tipo].cats.filter(c => CATS.includes(c));
+      $('#pbox').innerHTML = cats.map(c => { const it = Object.entries(SYM).filter(([, s]) => s.c === c && (!q || (s.n + ' ' + (s.u || '')).toLowerCase().includes(q))); return it.length ? `<h4>${c}</h4>${it.map(([k, s]) => `<button class="pb" data-add="${k}" title="${esc(s.u || '')}">${icon(k)}<span>${s.n}</span></button>`).join('')}` : ''; }).join('') || '<p class="muted mini">Sin resultados.</p>';
+      $('#pt1').classList.toggle('on', !todos); $('#pt2').classList.toggle('on', todos);
+      $$('[data-add]').forEach(b => b.onclick = () => addSym(b.dataset.add));
+    };
+    $('#pt1').onclick = () => { todos = false; palette(); }; $('#pt2').onclick = () => { todos = true; palette(); }; $('#psr').oninput = palette;
     const pt = ev => { const p = svg.createSVGPoint(); p.x = ev.clientX; p.y = ev.clientY; const q = p.matrixTransform(svg.getScreenCTM().inverse()); return [q.x, q.y]; };
     const setVB = () => svg.setAttribute('viewBox', `${vb.x} ${vb.y} ${vb.w} ${vb.h}`);
     const draw = () => { const r = svgOf(m, sel); lay.innerHTML = r.body; $('#grid').style.display = 'block'; $('#hint').textContent = mode === 'con' ? (conn ? 'Haz clic en el elemento de destino' : 'Haz clic en el elemento de origen') : ''; $$('[data-m]').forEach(b => b.classList.toggle('on', b.dataset.m === mode)); };
@@ -229,8 +257,9 @@
         p.innerHTML = `<h3>Conexión</h3>${sub('Cable / texto', `<input id="p_l" value="${esc(w.label || '')}" placeholder="Ej.: RZ1-K 3×6 mm²">`)}<button class="btn sm" id="p_x" style="color:var(--bad)">Eliminar conexión</button>`;
         $('#p_l').oninput = ev => { w.label = ev.target.value; draw(); save(); }; $('#p_x').onclick = delSel;
       } else {
-        p.innerHTML = `<h3>Cajetín</h3>${sub('Título', `<input id="c_t" value="${esc(c.titulo || '')}">`)}${sub('Titular', `<input id="c_ti" value="${esc(c.titular || '')}">`)}${sub('Instalador', `<input id="c_i" value="${esc(c.instalador || '')}">`)}${sub('Fecha', `<input id="c_f" value="${esc(c.fecha || '')}">`)}${sub('Nº de plano', `<input id="c_p" value="${esc(c.plano || '')}">`)}<p class="muted" style="font-size:12px">Toca un símbolo para editarlo. Usa «Conectar» y pulsa origen y destino para unirlos.</p>`;
-        [['c_t', 'titulo'], ['c_ti', 'titular'], ['c_i', 'instalador'], ['c_f', 'fecha'], ['c_p', 'plano']].forEach(([i, k]) => $('#' + i).oninput = ev => { c[k] = ev.target.value; draw(); save(); });
+        p.innerHTML = `<h3>Cajetín</h3>${sub('Título', `<input id="c_t" value="${esc(c.titulo || '')}">`)}${sub('Titular', `<input id="c_ti" value="${esc(c.titular || '')}">`)}${sub('Instalador', `<input id="c_i" value="${esc(c.instalador || '')}">`)}${sub('Fecha', `<input id="c_f" value="${esc(c.fecha || '')}">`)}${sub('Nº de plano', `<input id="c_p" value="${esc(c.plano || '')}">`)}${sub('Revisión', `<input id="c_r" value="${esc(c.rev || '')}" placeholder="A, B, 1…">`)}${sub('Escala', `<input id="c_e" value="${esc(c.escala || '')}" placeholder="S/E, 1:50…">`)}${sub('Hoja al imprimir', `<select id="c_h"><option ${c.hoja !== 'A3' ? 'selected' : ''}>A4</option><option ${c.hoja === 'A3' ? 'selected' : ''}>A3</option></select>`)}<p class="muted" style="font-size:12px">Toca un símbolo para editarlo. Usa «Conectar» y pulsa origen y destino para unirlos.</p>`;
+        [['c_t', 'titulo'], ['c_ti', 'titular'], ['c_i', 'instalador'], ['c_f', 'fecha'], ['c_p', 'plano'], ['c_r', 'rev'], ['c_e', 'escala']].forEach(([i, k]) => $('#' + i).oninput = ev => { c[k] = ev.target.value; draw(); save(); });
+        $('#c_h').onchange = ev => { c.hoja = ev.target.value; draw(); save(); };
       }
     };
     const delSel = () => { if (!sel) return; snapshot(); if (sel.k === 'e') { m.els = m.els.filter(e => e.id !== sel.id); m.wires = m.wires.filter(w => w.a !== sel.id && w.b !== sel.id); } else m.wires = m.wires.filter(w => w.id !== sel.id); sel = null; draw(); panel(); save(); };
@@ -240,10 +269,11 @@
     $('#u').onclick = undo;
     $('#pal-t').onclick = () => $('#esq').classList.toggle('showpal');
     $$('[data-m]').forEach(b => b.onclick = () => { mode = b.dataset.m; conn = null; draw(); });
-    $$('[data-add]').forEach(b => b.onclick = () => {
-      snapshot(); const k = b.dataset.add, S = SYM[k]; const c = [vb.x + vb.w / 2, vb.y + vb.h / 2]; const off = (m.els.length % 6) * 20;
+    const addSym = k => {
+      snapshot(); const S = SYM[k]; const c = [vb.x + vb.w / 2, vb.y + vb.h / 2]; const off = (m.els.length % 6) * 20;
       const e = { id: uid(), t: k, x: snap(c[0] + off - 60), y: snap(c[1] + off - 60), rot: 0, label: S.l, sub: '' }; if (S.bus) e.w = 160; m.els.push(e); sel = { k: 'e', id: e.id }; mode = 'sel'; draw(); panel(); save(); $('#esq').classList.remove('showpal');
-    });
+    };
+    palette();
     const zoom = f => { const cx = vb.x + vb.w / 2, cy = vb.y + vb.h / 2; vb.w = Math.max(200, Math.min(W * 1.6, vb.w * f)); vb.h = vb.w * H / W; vb.x = cx - vb.w / 2; vb.y = cy - vb.h / 2; setVB(); };
     $('#zi').onclick = () => zoom(.8); $('#zo').onclick = () => zoom(1.25); $('#zf').onclick = () => { vb = { x: 0, y: 0, w: W, h: H }; setVB(); };
     svg.addEventListener('wheel', ev => { ev.preventDefault(); const p = pt(ev), f = ev.deltaY > 0 ? 1.1 : .9; const nw = Math.max(200, Math.min(W * 1.6, vb.w * f)), k = nw / vb.w; vb.x = p[0] - (p[0] - vb.x) * k; vb.y = p[1] - (p[1] - vb.y) * k; vb.w = nw; vb.h = nw * H / W; setVB(); }, { passive: false });
@@ -289,6 +319,19 @@
     const fname = () => (m.nombre || 'esquema').replace(/[^\w\- ]+/g, '');
     $('#svg').onclick = () => dl(fname() + '.svg', exportSVG(m), 'image/svg+xml');
     $('#png').onclick = () => { const img = new Image(), url = URL.createObjectURL(new Blob([exportSVG(m)], { type: 'image/svg+xml' })); img.onload = () => { const c = document.createElement('canvas'); c.width = W * 2; c.height = H * 2; const x = c.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0, 0, c.width, c.height); x.drawImage(img, 0, 0, c.width, c.height); URL.revokeObjectURL(url); c.toBlob(b => { const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = fname() + '.png'; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500); }); }; img.src = url; };
-    $('#prn').onclick = () => { sel = null; vb = { x: 0, y: 0, w: W, h: H }; setVB(); draw(); document.title = m.nombre; setTimeout(() => window.print(), 50); };
+    $('#prn').onclick = () => {
+      sel = null; vb = { x: 0, y: 0, w: W, h: H }; setVB(); draw(); document.title = m.nombre;
+      const st = document.createElement('style'); st.textContent = '@page{size:' + (m.cajetin.hoja === 'A3' ? 'A3' : 'A4') + ' landscape;margin:8mm}'; document.head.appendChild(st);
+      window.addEventListener('afterprint', () => st.remove(), { once: true }); setTimeout(() => window.print(), 50);
+    };
+    $('#num').onclick = () => {
+      snapshot(); const cnt = {}; let n = 0;
+      m.els.slice().sort((a, b) => a.y - b.y || a.x - b.x).forEach(e => {
+        const S = SYM[e.t]; if (!S || !S.pre || S.txt || S.bus) return;
+        if (e.label && e.label !== S.l && !/^[A-Z]{1,4}\d*$/.test(e.label)) return;
+        cnt[S.pre] = (cnt[S.pre] || 0) + 1; e.label = S.pre + cnt[S.pre]; n++;
+      });
+      draw(); panel(); save(); $('#hint').textContent = n + ' símbolos numerados';
+    };
   });
 });
