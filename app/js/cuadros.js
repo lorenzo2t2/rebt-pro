@@ -358,12 +358,13 @@
     const sel = (k, l, opts, d) => `<div><label for="o_${k}">${l}</label><select id="o_${k}">${opts.map(([v, t]) => `<option value="${v}" ${String(g(k, d)) === String(v) ? 'selected' : ''}>${t}</option>`).join('')}</select></div>`;
     view.innerHTML = `<p class="mini"><a href="#/calcular">&larr; Calcular</a></p><h1>Cuadro de local</h1><p class="lead">Previsión de cargas del local (ITC-BT-10), circuitos, IGA, diferenciales, protecciones, emergencia, sobretensiones y materiales, con el cuadro dibujado.</p>
     <div class="form">${sel('tipo', 'Tipo de local', Object.entries(TIPOS).map(([k, t]) => [k, t[0]]), 'com')}${inp('sup', 'Superficie (m²)', 80)}${inp('pl', 'Plantas', 1)}${sel('sis', 'Alimentación', [['mono', 'Monofásica 230 V'], ['tri', 'Trifásica 400 V']], 'mono')}${sel('acom', 'Red de entrada', [['sub', 'Subterránea'], ['aer', 'Línea aérea']], 'sub')}
-    ${inp('pal', 'Potencia de alumbrado (W)', 1200)}${inp('nlum', 'Nº de luminarias', 30)}${inp('ntc', 'Nº de tomas de corriente 16 A', 16)}${inp('pcl', 'Climatización (W)', 3500)}${inp('pes', 'Otras cargas fijas (W): cámaras, hornos…', 0)}${inp('nem', 'Aparatos de emergencia', 4)}${inp('fs', 'Simultaneidad de la carga instalada (0–1)', 0.7)}</div>
+    ${inp('pal', 'Potencia de alumbrado (W)', 1200)}${inp('nlum', 'Nº de luminarias', 30)}${inp('ntc', 'Nº de tomas de corriente 16 A', 16)}${inp('pcl', 'Climatización (W)', 3500)}${inp('pes', 'Otras cargas fijas (W): cámaras, hornos…', 0)}${inp('nem', 'Aparatos de emergencia', 4)}${inp('pem', 'Potencia por aparato de emergencia (W, del fabricante)', 8)}${inp('ntcc', 'Tomas por circuito (reparto del proyectista)', 10)}${inp('fs', 'Simultaneidad de la carga instalada (0–1)', 1)}${inp('ra', 'Resistencia de puesta a tierra RA (Ω, medida)', 37)}${sel('U', 'Tensión de contacto límite U', [[50, '50 V (local seco)'], [24, '24 V (local húmedo o mojado)']], 50)}</div>
+    <div class="check" style="border:0;align-items:center"><input type="checkbox" id="o_div" ${g('div', false) ? 'checked' : ''}><label for="o_div" style="margin:0;font-size:14px">Dividir el diferencial por funciones (criterio de proyecto: el REBT no lo exige)</label></div>
     <div class="check" style="border:0;align-items:center"><input type="checkbox" id="o_desc" ${g('desc', false) ? 'checked' : ''}><label for="o_desc" style="margin:0;font-size:14px">Lámparas de descarga (cables al 180 %, ITC-BT-44)</label></div>
     <div id="co" aria-live="polite"></div>`;
     const go = () => {
       const t = TIPOS[$('#o_tipo').value];
-      const v = { tipo: $('#o_tipo').value, sup: n0($('#o_sup').value, 0), pl: Math.max(1, n0($('#o_pl').value, 1)), sis: $('#o_sis').value, acom: $('#o_acom').value, pal: n0($('#o_pal').value, 0), nlum: n0($('#o_nlum').value, 0), ntc: n0($('#o_ntc').value, 0), pcl: n0($('#o_pcl').value, 0), pes: n0($('#o_pes').value, 0), nem: n0($('#o_nem').value, 0), fs: Math.min(1, Math.max(0.1, n0($('#o_fs').value, 0.7))), desc: $('#o_desc').checked };
+      const v = { tipo: $('#o_tipo').value, sup: n0($('#o_sup').value, 0), pl: Math.max(1, n0($('#o_pl').value, 1)), sis: $('#o_sis').value, acom: $('#o_acom').value, pal: n0($('#o_pal').value, 0), nlum: n0($('#o_nlum').value, 0), ntc: n0($('#o_ntc').value, 0), pcl: n0($('#o_pcl').value, 0), pes: n0($('#o_pes').value, 0), nem: n0($('#o_nem').value, 0), pem: n0($('#o_pem').value, 8), ntcc: Math.max(1, n0($('#o_ntcc').value, 10)), fs: Math.min(1, Math.max(0.1, n0($('#o_fs').value, 1))), ra: n0($('#o_ra').value, 0), U: +$('#o_U').value, div: $('#o_div').checked, desc: $('#o_desc').checked };
       store.set('cuadro.loc', v);
       if (!(v.sup > 0)) { $('#co').innerHTML = '<p class="muted">Introduce la superficie.</p>'; return; }
       const tri = v.sis === 'tri', sis = tri ? 'tri' : 'mono', U = tri ? 400 : 230, k3 = tri ? Math.sqrt(3) : 1, L0 = Math.round(Math.sqrt(v.sup) * 1.4 + 4);
@@ -371,8 +372,8 @@
       /* alumbrado */
       const pal = v.pal * (v.desc ? 1.8 : 1), nAl = Math.max(v.pal > 0 ? 1 : 0, Math.ceil(pal / 2300));
       for (let i = 0; i < nAl; i++) add('AL' + (i + 1), 'Alumbrado general', pal / nAl, 'AL', 3, 1.5, 'mono', { luz: Math.ceil(v.nlum / nAl) });
-      if (v.nem > 0) add('EM', 'Alumbrado de emergencia', 1500, 'EM', 3, 1.5, 'mono', { em: v.nem });
-      const nTc = v.ntc > 0 ? Math.ceil(v.ntc / 10) : 0;
+      if (v.nem > 0) add('EM', 'Alumbrado de emergencia', v.nem * v.pem, 'EM', 3, 1.5, 'mono', { em: v.nem });
+      const nTc = v.ntc > 0 ? Math.ceil(v.ntc / v.ntcc) : 0;
       for (let i = 0; i < nTc; i++) add('TC' + (i + 1), 'Tomas de uso general', 3680, 'TC', 5, 2.5, 'mono', { tg: Math.ceil(v.ntc / nTc) });
       if (v.pcl > 0) { const t3 = tri && v.pcl > 5750; add('CL', 'Climatización', v.pcl, 'CL', 5, t3 ? 2.5 : 2.5, t3 ? 'tri3' : 'mono', { cl: 1 }); }
       if (v.pes > 0) { const t3 = tri && v.pes > 5750; add('OC', 'Otras cargas fijas', v.pes, 'CL', 5, 2.5, t3 ? 'tri3' : 'mono', { oc: 1 }); }
@@ -382,7 +383,8 @@
       const Pmin = Math.max(t[1] * v.sup * v.pl, t[2]), Pinst = cs.reduce((s, c) => s + c.P, 0), Pprev = Math.max(Pmin, Pinst * v.fs);
       const Itot = Pprev / (k3 * U), IGAn = up(PIA.concat([80, 100, 125]), Itot), maxPia = Math.max.apply(null, cs.map(c => c.In).concat([0])), IGA = Math.max(IGAn, maxPia), IDn = up(IDS.concat([125]), IGA);
       const nom = { AL: 'Alumbrado', EM: 'Emergencia', TC: 'Tomas', CL: 'Climatización y cargas' }, grupos = [];
-      ['AL', 'EM', 'TC', 'CL'].forEach((gk, i) => { const sl = cs.filter(c => c.grp === gk); if (sl.length) grupos.push({ id: 'D' + (grupos.length + 1), nombre: nom[gk], idIn: IDn, tipo: 'A', cs: sl }); });
+      if (v.div) ['AL', 'EM', 'TC', 'CL'].forEach((gk, i) => { const sl = cs.filter(c => c.grp === gk); if (sl.length) grupos.push({ id: 'D' + (grupos.length + 1), nombre: nom[gk], idIn: IDn, tipo: 'A', cs: sl }); });
+      else grupos.push({ id: 'D1', nombre: 'General', idIn: IDn, tipo: 'A', cs });
       const spd = v.acom === 'aer' ? 'Tipo 2' : '';
       const m = montar({ cs, sis, iga: { In: IGA }, grupos, spd });
       const pol = tri ? '4P' : '2P';
@@ -405,7 +407,9 @@
         `<li><b>Sobretensiones:</b> ${spd ? 'línea aérea: protección necesaria en el origen (ITC-BT-23, 3.2).' : 'red subterránea: situación natural, no exigida; recomendable con equipos sensibles (ITC-BT-23, 3.1).'}</li>`,
         pc ? '<li><b>Pública concurrencia (ITC-BT-28):</b> todos los locales de pública concurrencia deben tener alumbrado de emergencia, y las instalaciones y el cuadro deben estudiarse con el proyecto o la memoria técnica que corresponda.</li>' : '',
         v.desc ? '<li>Lámparas de descarga: se ha tomado 1,8 × la potencia para dimensionar los circuitos (ITC-BT-44).</li>' : '',
-        '<li><b>Criterio de proyecto, no del REBT:</b> un diferencial por función (alumbrado, emergencia, tomas, climatización) para que un fallo no deje todo sin luz, tomas con 10 por circuito y simultaneidad ' + fmt(v.fs, 2) + '. Cámbialos según tu caso.</li>'].join('');
+        `<li><b>Diferencial (ITC-BT-17, 1.2):</b> un diferencial general que proteja todos los circuitos contra contactos indirectos${v.div ? '; aquí lo has dividido por funciones, que es un criterio de proyecto no exigido (con diferenciales en serie debe haber selectividad)' : ''}. Su intensidad se toma igual o mayor que la del IGA para que soporte la corriente.</li>`,
+        (() => { const Ia = 0.03, ok = v.ra > 0 && v.ra * Ia <= v.U; return `<li><b>Esquema TT (ITC-BT-24, 4.1.2):</b> debe cumplirse RA × Ia ≤ U. Con 30 mA: ${fmt(v.ra, 1)} Ω × 0,03 A = ${fmt(v.ra * Ia, 2)} V frente a U = ${v.U} V → ${ok ? 'cumple' : '<b>no cumple, mejora la toma de tierra</b>'}. Con RA = ${fmt(v.ra, 1)} Ω la sensibilidad máxima admisible sería ${v.ra > 0 ? fmt(v.U / v.ra * 1000, 0) + ' mA' : '—'}.</li>`; })(),
+        '<li><b>Datos de proyecto, no fijados por el REBT:</b> reparto en circuitos (el REBT pide dividir según necesidades, ITC-BT-19 2.4: ' + v.ntcc + ' tomas por circuito y alumbrado hasta 2.300 W por circuito), potencia de cada aparato de emergencia (' + fmt(v.pem, 0) + ' W) y simultaneidad ' + fmt(v.fs, 2) + '. El mínimo de la previsión de carga (ITC-BT-10) usa simultaneidad 1.</li>'].join('');
       $('#co').innerHTML = `<div class="result"><div class="big">${fmt(Pprev / 1000, 2)} kW · IGA ${IGA} A ${pol}</div>
         <div class="kv"><div><b>Carga mínima ITC-BT-10</b><span>${fmt(Pmin, 0)} W</span></div><div><b>Carga instalada</b><span>${fmt(Pinst, 0)} W</span></div><div><b>Intensidad</b><span>${fmt(Itot, 1)} A</span></div><div><b>Diferenciales</b><span>${grupos.length} de 30 mA</span></div><div><b>Circuitos</b><span>${cs.length}</span></div></div></div>
       <h2>Cuadro simulado</h2><div class="card">${m.svg}<p class="muted mini">${m.total} módulos en ${m.filas} fila${m.filas > 1 ? 's' : ''} de 12. ${tri ? 'Los circuitos monofásicos se reparten entre fases: ' + cs.filter(c => c.fase).map(c => c.cod + ' en ' + c.fase).join(', ') + '.' : ''} Dibujo esquemático.</p></div>
@@ -414,6 +418,6 @@
       <h2>Materiales</h2>${tabla(['Material', 'Detalle', 'Cantidad'], mat)}${nota}`;
       publicar({ kind: 'loc', sis, iga: IGA, grupos, spd, cs, nombre: nom0[v.tipo] });
     };
-    $$('.form input,.form select,#o_desc').forEach(i => i.oninput = i.onchange = go); go();
+    $$('.form input,.form select,#o_desc,#o_div').forEach(i => i.oninput = i.onchange = go); go();
   });
 });

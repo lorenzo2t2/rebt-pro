@@ -1,5 +1,5 @@
 {
- "version": "1.12.1",
+ "version": "1.12.2",
  "minApk": 4,
  "files": {
   "apple-touch-icon.png": "aa69b88802e7",
@@ -13,7 +13,7 @@
   "js/andalucia.js": "ae5e8c3daac9",
   "js/app.js": "b5dc81cfa8f8",
   "js/calc.js": "2cc9630a99b3",
-  "js/cuadros.js": "0254fc6a10f8",
+  "js/cuadros.js": "08c863cc62b6",
   "js/docgen.js": "7f7457a7302a",
   "js/docs.js": "2f233c137d17",
   "js/esquemas.js": "a481283a3f79",
