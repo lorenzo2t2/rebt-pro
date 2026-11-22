@@ -1,0 +1,28 @@
+{
+ "version": "1.1.0",
+ "files": {
+  "apple-touch-icon.png": "aa69b88802e7",
+  "css/style.css": "9a171873637c",
+  "data/rebt.txt": "d1ef5d28541f",
+  "icon-192.png": "00ec0fe72877",
+  "icon-512.png": "0e3a1c0757a7",
+  "icon.svg": "bcf7b2336856",
+  "index.html": "14c2d04fede2",
+  "js/acceso.js": "e32a8b5d8d6d",
+  "js/app.js": "5e4f87e9768a",
+  "js/calc.js": "9e154e9b32f7",
+  "js/docgen.js": "1d65dc5c96b8",
+  "js/docs.js": "2f233c137d17",
+  "js/esquemas.js": "7dbe37ec1919",
+  "js/guia.js": "1833b0aa7bf2",
+  "js/guiaui.js": "f88e96af636f",
+  "js/native.js": "1a8ae00bbc8a",
+  "js/preguntas.js": "82637657b2a7",
+  "js/preguntas2.js": "75153f885476",
+  "js/pruebas.js": "14bf1ba1cd8d",
+  "js/temario.js": "e51a902822a4",
+  "js/update.js": "c96ec365013c",
+  "js/utiles.js": "c047f7c56c75",
+  "manifest.webmanifest": "2be337ecf93e"
+ }
+}

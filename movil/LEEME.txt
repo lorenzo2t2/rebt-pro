@@ -1,0 +1,10 @@
+REBT Pro en el móvil
+
+APK (Android) - igual que la Agenda familiar y MedLoM
+  REBT-Pro.apk (≈0,4 MB). Pásala al móvil e instálala (permite "orígenes desconocidos").
+  Funciona sin internet. Los archivos exportados (PDF/PNG/SVG/HTML) se guardan en Descargas.
+  Para regenerarla tras cambiar algo en app\:  ./compilar-apk.sh  (en la carpeta rebt)
+
+Web instalable (iPhone u otro)
+  Sube rebt-pro-movil.zip a https://app.netlify.com/drop, abre la dirección en el móvil
+  y "Añadir a pantalla de inicio".

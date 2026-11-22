@@ -1,0 +1,20 @@
+{
+  "name": "rebt-pro",
+  "version": "1.0.0",
+  "description": "REBT Pro - Preparación del examen y herramientas para instalador de baja tensión",
+  "main": "main.js",
+  "author": "REBT Pro",
+  "scripts": {
+    "prebuild": "node copiar-app.js",
+    "build": "electron-builder --win nsis --x64"
+  },
+  "build": {
+    "appId": "es.rebtpro.app",
+    "productName": "REBT Pro",
+    "files": ["main.js", "app/**/*"],
+    "directories": { "output": "dist" },
+    "win": { "target": "nsis", "icon": "icon.ico", "signAndEditExecutable": false },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true, "language": "3082" }
+  },
+  "devDependencies": { "electron": "^33.0.0", "electron-builder": "^25.1.8" }
+}
