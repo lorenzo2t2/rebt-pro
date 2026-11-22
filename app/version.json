@@ -1,5 +1,5 @@
 {
- "version": "1.2.0",
+ "version": "1.2.1",
  "minApk": 4,
  "files": {
   "apple-touch-icon.png": "aa69b88802e7",
@@ -9,7 +9,7 @@
   "icon-512.png": "0e3a1c0757a7",
   "icon.svg": "bcf7b2336856",
   "index.html": "14c2d04fede2",
-  "js/acceso.js": "6feab5832df3",
+  "js/acceso.js": "71931362913e",
   "js/app.js": "5e4f87e9768a",
   "js/calc.js": "9e154e9b32f7",
   "js/docgen.js": "1d65dc5c96b8",

@@ -29,8 +29,10 @@
       <li><b>PEAC</b> (acreditación de competencias): la convocan «los organismos de la Administración Pública» y lleva a certificados de profesionalidad (p. ej. ELEE0109).</li></ul>
       <p><b>Formato:</b> solo la página de ITDavante lo describe: prueba teórico-práctica de 2 partes, con 30 preguntas tipo test del REBT (se puede llevar el reglamento) más cuestiones teórico-prácticas, y una parte práctica de instalación, localización de averías y mediciones. No consta si es idéntica en MasterD.</p>
       <p><b>Requisitos citados:</b> mayor de edad, nacionalidad española o de la UE (o residencia en España) y leer y escribir en castellano.</p>
-      <p><b>Quién certifica y corrige: NO está dicho en ninguna página.</b> Hablan de «aulas homologadas» y «empresas que nos avalan» sin nombrar a nadie. Tampoco aparecen ENAC, el organismo emisor, la nota mínima, la duración ni el precio. Hay datos que se contradicen entre páginas (35 o 39 centros, fechas, si el curso es requisito). Pídelo por escrito a MasterD.</p>
-      <p><b>Mi inferencia (no confirmada):</b> si el certificado lo emite una entidad acreditada por ENAC, encaja en la vía 5; si es un certificado de profesionalidad, en la vía 2.</p>
+      <p><b>Quién certifica y corrige:</b> ninguna página de MasterD/Davante nombra a la entidad. Solo dicen que es «centro homologado oficialmente», que el examen se hace «en nuestras propias instalaciones homologadas» y que cumplen «los requisitos de una entidad acreditada por ENAC». Colaboran con la «Comunidad de Instaladores» (masterclass de trámites), pero no se dice que certifique ni evalúe.</p>
+      <p><b>Pista fuerte, no confirmada:</b> la entidad <b>Itansa Certificaciones</b> está acreditada por ENAC (n.º 12/C-PE022, UNE-EN ISO/IEC 17024) para el <b>CIBTB</b> y en su portada los PDF de convocatorias del CIBTB llevan en el nombre «MasterD» y «DAVANTE» (p. ej. Alcalá de Henares 25/11/2026, Madrid 26/11/2026, Valencia, Sevilla, Bilbao, Santander). Pero Itansa no cita a MasterD en ningún texto ni se describe ningún convenio, y sus centros de examen salen sin nombre de empresa. <b>Que MasterD se haya asociado con Itansa es una deducción mía, no un hecho verificado.</b></p>
+      <p><b>Sin datos:</b> precio, nota mínima, duración, nº de preguntas (el procedimiento de Itansa trata de un test más un examen de conocimientos prácticos y un examen práctico, pero no pude leer los detalles) y quiénes son los examinadores. Pregúntalo por escrito a MasterD y a Itansa.</p>
+      <p><b>Encaje legal (deducción):</b> un certificado CIBTB de una entidad acreditada por ENAC encaja en la vía 5; un certificado de profesionalidad (ELEE0109), en la vía 2. Confirma en tu comunidad que lo aceptan.</p>
     </div>
 
     <h2>Qué preguntar a la academia o a la entidad certificadora</h2>
@@ -55,6 +57,8 @@
     <ul>
       <li>${L('https://www.comunidad.madrid/industria/examenes-carnes-profesionales', 'Comunidad de Madrid · Exámenes y carnés profesionales')} (consultada en nov. 2026)</li>
       <li>${L('https://www.comunidad.madrid/docs/assets/2023/06/28/nota_informativa_pagina_web_rebt_28-06-2023.pdf', 'Madrid · Títulos de FP y certificados válidos, categoría básica (PDF)')}</li>
+      <li>${L('https://itansacertificaciones.com/certificacion.php?id=8', 'Itansa Certificaciones · CIBTB (acreditada ENAC)')}</li>
+      <li>${L('https://www.davante.es/cursos/mantenimiento-industrial/carnet-instalador-electricista', 'Davante · carnet instalador electricista')}</li>
       <li>${L('https://www.masterd.es/blog/consigue-el-carnet-de-instalador-electricista-homologado-por-industria', 'MasterD · carnet homologado por Industria')}</li>
       <li>${L('https://www.murcia.com/empresas/noticias/2024/09/06-los-cursos-de-masterd-ofrecen-preparacion-especializada-sobre-los-requisitos-para-obtener-el-carnet.asp', 'murcia.com · cursos MasterD (2024)')}</li>
       <li>${L('https://www.itdavante.es/certificados-profesionalidad', 'ITDavante · certificados y carnets')}</li>
