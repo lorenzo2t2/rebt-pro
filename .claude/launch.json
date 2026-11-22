@@ -1,1 +1,0 @@
-{"version":"0.0.1","configurations":[{"name":"rebt-app","runtimeExecutable":"python","runtimeArgs":["-m","http.server","5188","--directory","app"],"port":5188}]}

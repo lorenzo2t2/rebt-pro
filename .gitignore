@@ -8,3 +8,4 @@ android-app/app/src/main/assets/
 android-app/local.properties
 movil/*.zip
 *.log
+.claude/
