@@ -360,3 +360,4 @@ th{background:var(--panel2)}
 .tv .tb{fill:var(--panel2);stroke:var(--accent);stroke-width:1.4}.tv .tb.ok{stroke:var(--ok);fill:var(--okbg)}.tv .tb.warn{stroke:var(--warn);fill:var(--warnbg)}.tv .tb.bad{stroke:var(--bad);fill:var(--badbg)}
 .tv .tt{fill:var(--text);font:600 12px system-ui,sans-serif}.tv .ts{fill:var(--muted);font:11px system-ui,sans-serif}.tv .big{fill:var(--text);font:700 15px system-ui,sans-serif}.tv .wt{fill:#fff;font:700 11px system-ui,sans-serif;text-anchor:middle}
 .tv .tm{fill:var(--accent);font:600 11px system-ui,sans-serif}.tv .ln{stroke:var(--text);stroke-width:1.6;fill:none}.tv .ln.ac{stroke:var(--accent);stroke-width:1.8}.tv .dm{stroke:var(--accent);stroke-width:1.2;fill:none;stroke-dasharray:4 3}.tv .pc{stroke:var(--text);stroke-width:3}
+.gimg{display:block;width:100%;max-width:780px;height:auto;margin:0 auto;background:#fff;border-radius:6px;padding:4px}.gh{margin:16px 0 8px;color:var(--accent)}

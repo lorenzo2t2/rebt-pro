@@ -213,6 +213,26 @@
     L(100, 164, 600, 164) + [0, 5, 10, 15, 20].map(n => L(100 + n * 24, 160, 100 + n * 24, 168) + T(100 + n * 24, 182, n + '·In')).join(''), 'Curvas B, C y D'),
     'B: cargas resistivas largas · C: uso general doméstico/terciario · D: motores y transformadores con picos de arranque (los valores son de la norma UNE, no del REBT).')];
 
+
+  /* Figuras de las guías técnicas de aplicación del Ministerio de Industria (reproducción con atribución) */
+  const GV = 'https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Paginas/guia-tecnica-aplicacion.aspx';
+  const GI = (f, alt, guia) => `<figure class="fig"><img class="gimg" src="img/guias/${f}.png" alt="${alt}" loading="lazy"><p class="fignote">${alt}. Fuente: Ministerio de Industria, <a href="${GV}" target="_blank" rel="noopener">${guia}</a>. Guía no vinculante; reproducción de la figura original.</p></figure>`;
+  const G27 = 'Guía técnica BT-27 (ed. sep 2003, rev. 1)', G25 = 'Guía técnica BT-25 (ed. jul 2012, rev. 2)', G08 = 'Guía técnica BT-08 (ed. oct 2005, rev. 1)', G18 = 'Guía técnica BT-18 (ed. oct 2005, rev. 1)', G17 = 'Guía técnica BT-17 (ed. sep 2020, rev. 2)', G19 = 'Guía técnica BT-19 (ed. feb 2009, rev. 2)';
+  const ADD = (id, titulo, items) => { (F[id] = F[id] || []).push(`<h4 class="gh">${titulo}</h4>` + items.map(i => GI(i[0], i[1], i[2])).join('')); };
+  ADD('itc27', 'Figuras oficiales de los volúmenes (guía del Ministerio)', [
+    ['g27-f1-banera', 'Figura 1: bañera (planta y alzado)', G27], ['g27-f2-banera-pared', 'Figura 2: bañera con pared fija', G27], ['g27-f3-ducha', 'Figura 3: ducha', G27],
+    ['g27-f4-ducha-pared', 'Figura 4: ducha con pared fija', G27], ['g27-f5-ducha-sin-plato', 'Figura 5: ducha sin plato', G27], ['g27-f6-ducha-difusor-fijo', 'Figura 6: ducha sin plato con pared fija y difusor fijo', G27], ['g27-f7-cabina', 'Figura 7: cabina de ducha prefabricada', G27]]);
+  ADD('itc25b', 'Ejemplos de planos con los puntos de utilización (guía del Ministerio)', [
+    ['g25-fD-acceso', 'Figura D: acceso a la vivienda y vestíbulo', G25], ['g25-fE-salon', 'Figura E: sala de estar o salón', G25], ['g25-fF-dormitorio', 'Figura F: dormitorio', G25],
+    ['g25-fG-cocina', 'Figura G: cocina', G25], ['g25-fH-bano', 'Figura H: baño-aseo', G25], ['g25-fI-pasillo', 'Figura I: pasillo', G25]]);
+  ADD('itc08', 'Esquemas oficiales de distribución (guía del Ministerio)', [
+    ['g08-f1-tns', 'Figura 1: esquema TN-S', G08], ['g08-f2-tnc', 'Figura 2: esquema TN-C', G08], ['g08-f3-tncs', 'Figura 3: esquema TN-C-S', G08], ['g08-f4-tt', 'Figura 4: esquema TT', G08], ['g08-f5-it', 'Figura 5: esquema IT', G08]]);
+  ADD('itc18', 'Figuras oficiales de puesta a tierra (guía del Ministerio)', [
+    ['g18-f1-circuito-tierra', 'Figura 1: representación esquemática de un circuito de puesta a tierra', G18], ['g18-fB-tt-defecto', 'Figura B: puestas a tierra en un esquema TT', G18]]);
+  ADD('itc17', 'Figuras oficiales del cuadro (guía del Ministerio)', [
+    ['g17-fA-envolventes', 'Figura A: posiciones de montaje horizontal y vertical', G17], ['g17-fB-cuadro', 'Figura B: características y ejemplo de instalación del cuadro general de mando y protección', G17]]);
+  ADD('itc19', 'Identificación de conductores (guía del Ministerio)', [['g19-colores', 'Colores de los conductores', G19]]);
+
   window.TEMVIS = function (id) {
     const a = F[id];
     return a && a.length ? `<section class="tvis"><h3>Esquemas y dibujos</h3>${a.join('')}</section>` : '';
