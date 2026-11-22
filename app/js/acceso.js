@@ -21,11 +21,16 @@
     </ol>
     <p>Además, el instalador debe trabajar dentro de una <b>empresa instaladora de baja tensión habilitada</b>. Básica: atribuciones limitadas a lo del apartado 3.1 de la ITC-BT-03. Especialista: todo el Reglamento.</p>
 
-    <h2>MasterD</h2>
+    <h2>MasterD (MasterD | Davante)</h2>
     <div class="card">
-      <p><b>Lo que dicen sus fuentes</b> (artículo de Aprendemas, julio de 2022): MasterD se presenta como «centro oficial» / homologado para el carnet de instalador electricista; el alumno puede hacer las pruebas teóricas y prácticas en sus propios centros, además de la vía de examen en la comunidad; el curso incluye tutorías, clases prácticas y simulacros de examen; la certificación habilita para diseñar, realizar, verificar y firmar certificados de instalación en BT, fotovoltaica y recarga de VE; dicen tener 35 centros.</p>
-      <p><b>Lo que NO he podido comprobar</b>: qué significa «oficial» legalmente, qué entidad emite el certificado ni quién corrige las pruebas, formato, número de preguntas, nota mínima y precio.</p>
-      <p><b>Mi inferencia (no confirmada):</b> encajaría en la vía 5, certificación por entidad acreditada. Pregúntalo antes de dar nada por hecho.</p>
+      <p><b>Quién es:</b> hoy la web se presenta como «MasterD | Davante»; el Instituto Tecnológico Davante (antes itmasterd.es) es la marca del grupo para estos cursos. Ninguna página que he leído explica cuándo ni cómo cambió, ni habla de fusión o de un socio certificador concreto.</p>
+      <p><b>Dos vías que ofrecen:</b></p>
+      <ul><li><b>CIBTB</b> («Certificado en instalaciones de baja tensión, homologado por Industria»): prueba que combina teoría y práctica, hecha en sus aulas homologadas. Según una noticia de 2024 no depende de las convocatorias del Estado.</li>
+      <li><b>PEAC</b> (acreditación de competencias): la convocan «los organismos de la Administración Pública» y lleva a certificados de profesionalidad (p. ej. ELEE0109).</li></ul>
+      <p><b>Formato:</b> solo la página de ITDavante lo describe: prueba teórico-práctica de 2 partes, con 30 preguntas tipo test del REBT (se puede llevar el reglamento) más cuestiones teórico-prácticas, y una parte práctica de instalación, localización de averías y mediciones. No consta si es idéntica en MasterD.</p>
+      <p><b>Requisitos citados:</b> mayor de edad, nacionalidad española o de la UE (o residencia en España) y leer y escribir en castellano.</p>
+      <p><b>Quién certifica y corrige: NO está dicho en ninguna página.</b> Hablan de «aulas homologadas» y «empresas que nos avalan» sin nombrar a nadie. Tampoco aparecen ENAC, el organismo emisor, la nota mínima, la duración ni el precio. Hay datos que se contradicen entre páginas (35 o 39 centros, fechas, si el curso es requisito). Pídelo por escrito a MasterD.</p>
+      <p><b>Mi inferencia (no confirmada):</b> si el certificado lo emite una entidad acreditada por ENAC, encaja en la vía 5; si es un certificado de profesionalidad, en la vía 2.</p>
     </div>
 
     <h2>Qué preguntar a la academia o a la entidad certificadora</h2>
@@ -50,6 +55,9 @@
     <ul>
       <li>${L('https://www.comunidad.madrid/industria/examenes-carnes-profesionales', 'Comunidad de Madrid · Exámenes y carnés profesionales')} (consultada en nov. 2026)</li>
       <li>${L('https://www.comunidad.madrid/docs/assets/2023/06/28/nota_informativa_pagina_web_rebt_28-06-2023.pdf', 'Madrid · Títulos de FP y certificados válidos, categoría básica (PDF)')}</li>
+      <li>${L('https://www.masterd.es/blog/consigue-el-carnet-de-instalador-electricista-homologado-por-industria', 'MasterD · carnet homologado por Industria')}</li>
+      <li>${L('https://www.murcia.com/empresas/noticias/2024/09/06-los-cursos-de-masterd-ofrecen-preparacion-especializada-sobre-los-requisitos-para-obtener-el-carnet.asp', 'murcia.com · cursos MasterD (2024)')}</li>
+      <li>${L('https://www.itdavante.es/certificados-profesionalidad', 'ITDavante · certificados y carnets')}</li>
       <li>${L('https://www.aprendemas.com/es/blog/orientacion-academica/a-por-el-carnet-de-instalador-electricista-masterd-se-convierte-en-centro-oficial-para-conseguirlo-164830', 'Aprendemas · MasterD, centro oficial (2022)')}</li>
     </ul>
     <p class="mini">Esta información es orientativa y puede cambiar. Lo que vale es lo que publique tu comunidad autónoma.</p>`;

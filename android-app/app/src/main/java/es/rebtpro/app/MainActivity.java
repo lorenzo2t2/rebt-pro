@@ -110,7 +110,39 @@ public class MainActivity extends Activity {
         } catch (Exception ignored) { }
     }
 
+    private void instalarApk(String url) {
+        if (url == null || !url.startsWith("https://github.com/")) return;
+        if (Build.VERSION.SDK_INT >= 26 && !getPackageManager().canRequestPackageInstalls()) {
+            Toast.makeText(this, "Permite instalar apps desde REBT Pro y vuelve a pulsar Instalar", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(android.provider.Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, Uri.parse("package:" + getPackageName())));
+            return;
+        }
+        Toast.makeText(this, "Descargando la APK nueva…", Toast.LENGTH_SHORT).show();
+        new Thread(() -> {
+            try {
+                File dir = new File(getCacheDir(), "update");
+                dir.mkdirs();
+                File apk = new File(dir, "REBT-Pro.apk");
+                java.net.HttpURLConnection c = (java.net.HttpURLConnection) new java.net.URL(url).openConnection();
+                c.setConnectTimeout(15000); c.setReadTimeout(30000);
+                if (c.getResponseCode() != 200) throw new Exception("HTTP " + c.getResponseCode());
+                try (InputStream in = c.getInputStream(); OutputStream o = new java.io.FileOutputStream(apk)) {
+                    byte[] buf = new byte[16384]; int n;
+                    while ((n = in.read(buf)) > 0) o.write(buf, 0, n);
+                }
+                Uri u = androidx.core.content.FileProvider.getUriForFile(this, "es.rebtpro.app.files", apk);
+                Intent i = new Intent(Intent.ACTION_VIEW).setDataAndType(u, "application/vnd.android.package-archive").addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i);
+            } catch (Exception e) {
+                runOnUiThread(() -> Toast.makeText(MainActivity.this, "No se pudo descargar la APK: " + e.getMessage(), Toast.LENGTH_LONG).show());
+            }
+        }).start();
+    }
+
     class Bridge {
+        @JavascriptInterface
+        public void installApk(String url) { runOnUiThread(() -> instalarApk(url)); }
+
         @JavascriptInterface
         public int apkCode() { return MainActivity.this.apkCode(); }
 

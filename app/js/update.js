@@ -49,7 +49,7 @@
       try {
         const info = await comprobar();
         if (!info.cambios.length && info.remote.version === info.local.version) { out.innerHTML = '✅ Ya tienes la última versión (' + esc(info.local.version) + ').'; return; }
-        if (!info.apkOk) { out.innerHTML = `La versión ${esc(info.remote.version)} necesita una APK nueva: <a href="https://github.com/${repo()}/releases/latest" target="_blank" rel="noopener">descárgala aquí</a>.`; return; }
+        if (!info.apkOk) { const apk = 'https://github.com/' + repo() + '/releases/latest/download/REBT-Pro.apk'; out.innerHTML = 'La versión ' + esc(info.remote.version) + ' necesita una APK nueva. ' + (B && B.installApk ? '<p><button class="btn pri" id="uapk">Descargar e instalar APK</button></p>' : '<a href="' + apk + '">Descárgala aquí</a>.'); if (B && B.installApk) $('#uapk').onclick = () => B.installApk(apk); return; }
         out.innerHTML = `Hay una versión nueva: <b>${esc(info.remote.version)}</b> (${info.cambios.length} archivos). <p><button class="btn pri" id="ugo">${B && B.otaPut ? 'Instalar ahora' : 'Recargar con lo último'}</button></p><div id="ulog" class="mini"></div>`;
         $('#ugo').onclick = async () => {
           $('#ugo').disabled = true;
@@ -68,7 +68,7 @@
     if (Date.now() - last > 864e5) {
       set('rebt.ota.check', String(Date.now()));
       comprobar().then(i => {
-        if (i.cambios.length && i.apkOk) {
+        if (i.cambios.length || !i.apkOk) {
           const d = document.createElement('a');
           d.href = '#/actualizar'; d.textContent = '⬇️ Hay una actualización disponible (' + i.remote.version + ')';
           d.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99;background:#2563eb;color:#fff;text-align:center;padding:8px;font-size:14px;text-decoration:none';
