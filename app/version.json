@@ -1,16 +1,16 @@
 {
- "version": "1.4.0",
+ "version": "1.5.0",
  "minApk": 4,
  "files": {
   "apple-touch-icon.png": "aa69b88802e7",
-  "css/style.css": "e286f914d94c",
+  "css/style.css": "56dfe5430a02",
   "data/rebt.txt": "d1ef5d28541f",
   "icon-192.png": "00ec0fe72877",
   "icon-512.png": "0e3a1c0757a7",
   "icon.svg": "bcf7b2336856",
-  "index.html": "bc6552105bf6",
+  "index.html": "36a6fb7c92d6",
   "js/acceso.js": "71931362913e",
-  "js/app.js": "20099749f6cc",
+  "js/app.js": "51362c8557d4",
   "js/calc.js": "9e154e9b32f7",
   "js/docgen.js": "1d65dc5c96b8",
   "js/docs.js": "2f233c137d17",
@@ -23,6 +23,7 @@
   "js/preguntas2.js": "75153f885476",
   "js/pruebas.js": "14bf1ba1cd8d",
   "js/temario.js": "e51a902822a4",
+  "js/temas.js": "73a4104c8c9e",
   "js/update.js": "7baf10c133e1",
   "js/utiles.js": "c047f7c56c75",
   "manifest.webmanifest": "2be337ecf93e"

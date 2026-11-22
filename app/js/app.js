@@ -37,6 +37,7 @@
     cap: '<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>',
     down: '<path d="M12 4v12M7 11l5 5 5-5M4 20h16"/>',
     menu: '<path d="M4 7h16M4 12h16M4 17h16"/>',
+    palette: '<circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 000 18c1.5 0 2-1 1.5-2.2-.6-1.3.4-2.3 1.7-2.3H17a4 4 0 004-4 9 9 0 00-9-9z"/>',
     bolt: '<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
     pulse: '<path d="M3 12h4l2-6 4 12 2-6h6"/>',
     cable: '<circle cx="12" cy="12" r="4"/><path d="M2 12h6M16 12h6"/>',
@@ -49,7 +50,7 @@
     ['#/guia', 'Guía REBT', 'search', 'Consultar'], ['#/temario', 'Temario', 'book', 'Consultar'], ['#/ref', 'Tablas', 'table', 'Consultar'], ['#/docs', 'Documentación', 'file', 'Consultar'],
     ['#/calc', 'Cálculos', 'calc', 'Herramientas'], ['#/esquemas', 'Esquemas', 'schema', 'Herramientas'], ['#/pruebas', 'Pruebas', 'flask', 'Herramientas'], ['#/crear', 'Crear documentos', 'doc', 'Herramientas'], ['#/utiles', 'Utilidades', 'tools', 'Herramientas'],
     ['#/test', 'Examen', 'check', 'Formación'], ['#/acceso', 'Acceso y examen', 'cap', 'Formación'],
-    ['#/actualizar', 'Actualizar', 'down', 'Aplicación'], ['#/fuentes', 'Fuentes', 'info', 'Aplicación'],
+    ['#/temas', 'Temas', 'palette', 'Aplicación'], ['#/actualizar', 'Actualizar', 'down', 'Aplicación'], ['#/fuentes', 'Fuentes', 'info', 'Aplicación'],
   ];
   const TAB = ['Inicio', 'Guía REBT', 'Cálculos', 'Esquemas', 'Examen'];
   function renderNav(cur) {
@@ -66,7 +67,7 @@
       r.dataset.theme = next; store.set('theme', next);
     };
   }
-  const th = store.get('theme', '') || 'dark'; document.documentElement.dataset.theme = th;
+  document.documentElement.dataset.theme = store.get('theme', '') || 'dark'; document.documentElement.dataset.estilo = store.get('estilo', 'futurista');
 
 
   /* Quita emojis del contenido: la interfaz usa iconos de línea. */

@@ -282,3 +282,31 @@ th{background:var(--panel2)}
 :root[data-theme="light"] .logo,:root[data-theme="light"] #nav a:hover,:root[data-theme="light"] #nav a.on{color:var(--text)}
 :root[data-theme="light"] #nav .btn{border-color:var(--glassb);color:var(--sidetx)}
 :root[data-theme="light"] #nav{border-right-color:var(--glassb)}
+
+/* ===== Estilo Sobrio: anula efectos del estilo Futurista mediante variables ===== */
+:root[data-estilo="sobrio"]{--glass:linear-gradient(transparent,transparent);--glow:transparent;--bgfx:none;--grid:transparent;--shadow:0 1px 2px rgba(0,0,0,.18);--r:10px;--accent:var(--brand)}
+:root[data-estilo="sobrio"]:not([data-theme="light"]){--bg:#0c1015;--panel:#141a21;--panel2:#1b232c;--line:#27303b;--glassb:#27303b;--side:#0f1419;--side2:#1a222c;--brand2:#8db4ff}
+:root[data-estilo="sobrio"][data-theme="light"]{--bg:#f6f7f9;--panel:#fff;--panel2:#f0f2f5;--line:#dfe3e9;--glassb:#dfe3e9;--side:#0f1419;--side2:#1a222c;--sidetx:#c4ccd6;--sidemu:#7d8896;--shadow:0 1px 2px rgba(16,24,40,.05)}
+:root[data-estilo="sobrio"][data-theme="light"] .logo,:root[data-estilo="sobrio"][data-theme="light"] #nav a:hover,:root[data-estilo="sobrio"][data-theme="light"] #nav a.on{color:#fff}
+:root[data-estilo="sobrio"] body::before{display:none}
+:root[data-estilo="sobrio"] .card,:root[data-estilo="sobrio"] .q,:root[data-estilo="sobrio"] .result,:root[data-estilo="sobrio"] details,:root[data-estilo="sobrio"] .tw,:root[data-estilo="sobrio"] #nav{-webkit-backdrop-filter:none;backdrop-filter:none}
+:root[data-estilo="sobrio"] .tile,:root[data-estilo="sobrio"] a.card{transform:none!important;transition:border-color .12s}
+:root[data-estilo="sobrio"] .tile::after,:root[data-estilo="sobrio"] a.card::after{display:none}
+:root[data-estilo="sobrio"] .tile .ti{transform:none;box-shadow:none;background:color-mix(in srgb,var(--brand) 12%,transparent)}
+:root[data-estilo="sobrio"] .tile b,:root[data-estilo="sobrio"] .tile span{transform:none}
+:root[data-estilo="sobrio"] .tile:hover,:root[data-estilo="sobrio"] a.card:hover{box-shadow:none}
+:root[data-estilo="sobrio"] h1,:root[data-estilo="sobrio"] .stat,:root[data-estilo="sobrio"] .kpis strong{background:none;-webkit-text-fill-color:currentColor}
+:root[data-estilo="sobrio"] h2::after{display:none}
+:root[data-estilo="sobrio"] .btn.pri,:root[data-estilo="sobrio"] .chip.on{background:var(--brand);box-shadow:none}
+:root[data-estilo="sobrio"] .bar>i{background:var(--brand);box-shadow:none}
+:root[data-estilo="sobrio"] .logo i{background:var(--brand);box-shadow:none}
+:root[data-estilo="sobrio"] #nav a.on{box-shadow:inset 2px 0 0 var(--accent)}
+:root[data-estilo="sobrio"] input:focus,:root[data-estilo="sobrio"] select:focus,:root[data-estilo="sobrio"] textarea:focus{box-shadow:none;outline:2px solid var(--accent)}
+:root[data-estilo="sobrio"] .opt:hover:not([disabled]){box-shadow:none}
+:root[data-estilo="sobrio"] #view>*{animation:none}
+:root[data-estilo="sobrio"] #fx3d{display:none}
+:root[data-estilo="sobrio"] .top{display:block;background:none;border:0;box-shadow:none;padding:0 0 6px;border-radius:0}
+:root[data-estilo="sobrio"] .top::before{display:none}
+:root[data-estilo="sobrio"] .top h1{font-size:clamp(24px,3.4vw,30px)}
+.tema{display:block;width:100%}
+.tema[aria-pressed="true"]{border-color:var(--accent)!important;box-shadow:0 0 0 2px var(--glow)}
