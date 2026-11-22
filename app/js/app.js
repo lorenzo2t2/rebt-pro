@@ -57,16 +57,16 @@
     let g = '';
     $('#nav').innerHTML = '<div class="logo"><i>' + ic('bolt') + '</i><div>REBT Pro<small>Herramienta para instaladores BT</small></div></div>' +
       NAV.map(([h, t, i, grp]) => { let x = ''; if (grp !== g) { g = grp; if (grp) x = '<div class="ng">' + grp + '</div>'; } return x + '<a href="' + h + '" class="' + on(h) + '">' + ic(i) + t + '</a>'; }).join('') +
-      '<div class="sp"></div><button class="btn sm" id="theme">Tema claro / oscuro</button><div class="mini">Basado en el RD 842/2002 consolidado (BOE). Los datos orientativos no sustituyen al texto oficial.</div>';
+      '<div class="sp"></div><button class="btn sm" id="theme">Cambiar tema</button><div class="mini">Basado en el RD 842/2002 consolidado (BOE). Los datos orientativos no sustituyen al texto oficial.</div>';
     $('#tabbar').innerHTML = NAV.filter(n => TAB.includes(n[1])).map(([h, t, i]) => '<a href="' + h + '" class="' + on(h) + '">' + ic(i) + t.replace('Guía REBT', 'Guía') + '</a>').join('') + '<a href="#/mas" class="' + on('#/mas') + '">' + ic('menu') + 'Más</a>';
     const tb = $('#theme');
     if (tb) tb.onclick = () => {
       const r = document.documentElement; const cur = r.dataset.theme;
-      const next = cur === 'dark' ? 'light' : cur === 'light' ? '' : 'dark';
-      if (next) r.dataset.theme = next; else delete r.dataset.theme; store.set('theme', next);
+      const next = cur === 'light' ? 'dark' : 'light';
+      r.dataset.theme = next; store.set('theme', next);
     };
   }
-  const th = store.get('theme', ''); if (th) document.documentElement.dataset.theme = th;
+  const th = store.get('theme', '') || 'dark'; document.documentElement.dataset.theme = th;
 
 
   /* Quita emojis del contenido: la interfaz usa iconos de línea. */
@@ -114,8 +114,9 @@
     const tile = (h, i, t, d) => `<a class="tile" href="${h}"><div class="ti">${ic(i)}</div><div><b>${t}</b><span>${d}</span></div></a>`;
     view.innerHTML = `
     <div class="top">
-      <div><h1>REBT Pro</h1><p>Herramienta de aprendizaje y utilidades para el instalador en baja tensión: consulta del reglamento, cálculo, esquemas, documentación y práctica.</p></div>
-      <form class="sbox" id="hs" role="search">${ic('search')}<input id="hq" type="search" placeholder="¿Qué dice el REBT de…?" autocomplete="off" aria-label="Buscar en el REBT"></form>
+      <div><div class="kick">Baja tensión · REBT</div><h1>REBT Pro</h1><p>Herramienta de aprendizaje y utilidades para el instalador: consulta del reglamento, cálculo, esquemas, documentación y práctica.</p>
+      <form class="sbox" id="hs" role="search">${ic('search')}<input id="hq" type="search" placeholder="¿Qué dice el REBT de…?" autocomplete="off" aria-label="Buscar en el REBT"></form></div>
+      <canvas id="fx3d" aria-hidden="true"></canvas>
     </div>
     <h2>Herramientas</h2>
     <div class="tiles">
@@ -145,6 +146,7 @@
       <div><small>Último simulacro</small><strong>${last ? fmt(last.nota, 1) + '/10' : '—'}</strong><div class="muted" style="font-size:12px">${last ? new Date(last.fecha).toLocaleDateString('es-ES') + ' · ' + last.n + ' preguntas' : 'Sin simulacros'}</div></div>
     </div>
     <p class="foot">Herramienta de apoyo. El texto oficial del REBT (BOE) y la normativa de tu comunidad autónoma prevalecen siempre. Verifica los resultados antes de ejecutar una instalación real.</p>`;
+    if (window.REBTFx) REBTFx.mount($('#fx3d'));
     $('#hs').onsubmit = ev => { ev.preventDefault(); const v = $('#hq').value.trim(); try { sessionStorage.setItem('rebt.gq', v); } catch (x) { } location.hash = '#/guia'; };
   });
 
