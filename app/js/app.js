@@ -49,7 +49,7 @@
   const NAV = [
     ['#/', 'Inicio', 'home', ''],
     ['#/guia', 'Guía REBT', 'search', 'Consultar'], ['#/temario', 'Temario', 'book', 'Consultar'], ['#/ref', 'Tablas', 'table', 'Consultar'], ['#/andalucia', 'Docs Andalucía', 'file', 'Consultar'], ['#/docs', 'Documentación', 'file', 'Consultar'],
-    ['#/calc', 'Cálculos', 'calc', 'Herramientas'], ['#/esquemas', 'Esquemas', 'schema', 'Herramientas'], ['#/motores', 'Motores', 'cog', 'Herramientas'], ['#/simbolos', 'Simbología', 'schema', 'Consultar'], ['#/pruebas', 'Pruebas', 'flask', 'Herramientas'], ['#/crear', 'Crear documentos', 'doc', 'Herramientas'], ['#/utiles', 'Utilidades', 'tools', 'Herramientas'],
+    ['#/calc', 'Cálculos', 'calc', 'Herramientas'], ['#/esquemas', 'Esquemas', 'schema', 'Herramientas'], ['#/motores', 'Motores', 'cog', 'Herramientas'], ['#/tipicos', 'Esquemas típicos', 'schema', 'Herramientas'], ['#/protecciones', 'Protecciones', 'bolt', 'Herramientas'], ['#/presupuesto', 'Presupuestos', 'calc', 'Herramientas'], ['#/fv', 'Autoconsumo FV', 'bolt', 'Herramientas'], ['#/obras', 'Obras y clientes', 'house', 'Herramientas'], ['#/simbolos', 'Simbología', 'schema', 'Consultar'], ['#/pruebas', 'Pruebas', 'flask', 'Herramientas'], ['#/crear', 'Crear documentos', 'doc', 'Herramientas'], ['#/utiles', 'Utilidades', 'tools', 'Herramientas'],
     ['#/test', 'Examen', 'check', 'Formación'], ['#/acceso', 'Acceso y examen', 'cap', 'Formación'],
     ['#/temas', 'Temas', 'palette', 'Aplicación'], ['#/actualizar', 'Actualizar', 'down', 'Aplicación'], ['#/fuentes', 'Fuentes', 'info', 'Aplicación'],
   ];
@@ -90,10 +90,29 @@
     const h = location.hash || '#/';
     renderNav(h);
     stopTimer();
-    for (const [re, fn] of routes) { const m = h.match(re); if (m) { fn(...m.slice(1).map(decodeURIComponent)); window.scrollTo(0, 0); view.focus({ preventScroll: true }); return; } }
+    for (const [re, fn] of routes) { const m = h.match(re); if (m) { fn(...m.slice(1).map(decodeURIComponent)); window.scrollTo(0, 0); view.focus({ preventScroll: true }); decorar(h); return; } }
     view.innerHTML = '<h1>No encontrado</h1><p><a href="#/">Volver al inicio</a></p>';
   }
   window.addEventListener('hashchange', go);
+
+  /* Fecha de revisión de la normativa, favoritos y recientes en cada apartado */
+  const REBT_REV = 'REBT (RD 842/2002) en la versión consolidada incluida en la app: última modificación 3 de septiembre de 2025.';
+  const NORMA = [
+    [/^#\/(guia|temario|ref|docs|calc|motores|pruebas|protecciones)/, REBT_REV],
+    [/^#\/fv/, REBT_REV + ' Manual de autoconsumo de la Junta de Andalucía: julio de 2019.'],
+    [/^#\/andalucia/, 'Modelos oficiales de CIE y MTD: resoluciones de 17-06-2015. Guías de la Junta: PUES/TECI (30-06-2022) y recarga VE (27-06-2022). Consulta siempre la versión vigente.'],
+  ];
+  function decorar(h) {
+    const h1 = view.querySelector('h1'); if (!h1 || h === '#/' || h === '#/mas') return;
+    const titulo = h1.textContent.trim();
+    const fav = () => store.get('favoritos', []);
+    const b = document.createElement('button'); b.className = 'fav noprint'; b.type = 'button';
+    const pintar = () => { const on = fav().some(f => f[0] === h); b.textContent = on ? '★' : '☆'; b.setAttribute('aria-label', on ? 'Quitar de favoritos' : 'Añadir a favoritos'); b.setAttribute('aria-pressed', on); };
+    b.onclick = () => { const f = fav(), i = f.findIndex(x => x[0] === h); if (i >= 0) f.splice(i, 1); else f.unshift([h, titulo]); store.set('favoritos', f.slice(0, 20)); pintar(); };
+    pintar(); h1.appendChild(b);
+    const n = NORMA.find(x => x[0].test(h)); if (n) { const p = document.createElement('p'); p.className = 'rev mini muted'; p.textContent = 'Normativa: ' + n[1]; h1.insertAdjacentElement('afterend', p); }
+    if (!/^#\/(actualizar|temas)/.test(h)) { const rec = store.get('recientes', []).filter(x => x[0] !== h); rec.unshift([h, titulo]); store.set('recientes', rec.slice(0, 8)); }
+  }
 
   /* =====================================================================
      INICIO
@@ -102,6 +121,15 @@
     const done = store.get('estudiadas', {});
     const fs = allFichas();
     return { done: fs.filter(f => done[f.id]).length, total: fs.length };
+  }
+  const hoy = () => new Date().toISOString().slice(0, 10);
+  const diarioHist = () => store.get('diarioHist', []);
+  const diarioHecho = () => diarioHist().includes(hoy());
+  function rachaDiaria() {
+    const h = new Set(diarioHist()); let d = new Date(), n = 0;
+    if (!h.has(d.toISOString().slice(0, 10))) d.setDate(d.getDate() - 1);
+    while (h.has(d.toISOString().slice(0, 10))) { n++; d.setDate(d.getDate() - 1); }
+    return n;
   }
   function statsPreguntas() {
     const st = store.get('stats', {});
@@ -128,6 +156,10 @@
       ${tile('#/calc/tierra', 'earth', 'Puesta a tierra', 'Resistencia, electrodos y protección.')}
       ${tile('#/esquemas', 'schema', 'Esquemas', 'Unifilar, multifilar, mando, viviendas y más: ' + Object.keys(window.REBTSym || {}).length + ' símbolos.')}
       ${tile('#/motores', 'cog', 'Motores', 'Cálculo, arranques con esquema, bornas y averías.')}
+      ${tile('#/protecciones', 'bolt', 'Protecciones', 'Calibre, curva, poder de corte y selectividad.')}
+      ${tile('#/presupuesto', 'calc', 'Presupuestos', 'Cubicación por estancias o desde un esquema.')}
+      ${tile('#/obras', 'house', 'Obras y clientes', 'Esquemas, documentos, fotos y firma por obra.')}
+      ${tile('#/fv', 'bolt', 'Autoconsumo FV', 'Potencia, módulos, ahorro y cable.')}
       ${tile('#/pruebas', 'flask', 'Pruebas y mediciones', 'Cómo se hace cada ensayo y qué se anota.')}
       ${tile('#/crear', 'doc', 'Crear documentos', 'Memoria, CIE, verificación, presupuesto.')}
       ${tile('#/utiles', 'tools', 'Utilidades', 'Código IP/IK, conversores, tablas rápidas.')}
@@ -136,12 +168,14 @@
     <div class="tiles">
       ${tile('#/guia', 'search', 'Guía REBT', 'Alturas, distancias y ubicación por elemento.')}
       ${tile('#/temario', 'book', 'Temario', '7 unidades y todas las ITC-BT con datos clave.')}
+      ${tile('#/test/diario', 'check', 'Repaso diario', (diarioHecho() ? 'Hoy ya lo has hecho. Racha: ' : '5 preguntas al día. Racha: ') + rachaDiaria() + ' días.')}
       ${tile('#/test', 'check', 'Preparar el examen', 'Test por unidad, simulacros y repaso de fallos.')}
       ${tile('#/acceso', 'cap', 'Acceso y examen', 'Vías para obtener la habilitación.')}
       ${tile('#/ref', 'table', 'Tablas', 'Intensidades, tubos y valores de referencia.')}
       ${tile('#/andalucia', 'file', 'Documentación Andalucía', 'CIE, MTD, TECI/PUES y trámites de la Junta.')}
       ${tile('#/docs', 'file', 'Documentación', 'Flujo de trabajo y listas de comprobación.')}
     </div>
+    ${(() => { const fv = store.get('favoritos', []), rc = store.get('recientes', []).filter(x => !fv.some(f => f[0] === x[0])).slice(0, 5); const ch = (a, ico) => a.map(x => `<a class="chip" href="${x[0]}">${ico} ${esc(x[1])}</a>`).join(''); return fv.length || rc.length ? `<h2>Favoritos y recientes</h2><div class="chips">${ch(fv, '★')}${ch(rc, '↺')}</div>` : ''; })()}
     <h2>Tu actividad</h2>
     <div class="kpis">
       <div><small>Temario revisado</small><strong>${p.done}/${p.total}</strong><div class="bar"><i style="width:${p.total ? p.done / p.total * 100 : 0}%"></i></div></div>
@@ -433,6 +467,8 @@
     <h2>Modos</h2>
     <div class="grid g2">
       <a class="card" href="#/test/simulacro"><h3>⏱️ Simulacro de examen</h3><p>Preguntas aleatorias de todo el temario con cronómetro, penalización de fallos y nota sobre 10.</p></a>
+      <a class="card" href="#/test/diario"><h3>📅 Repaso diario</h3><p>5 preguntas al día con refuerzo de tus temas más flojos. Racha: ${rachaDiaria()} días.</p></a>
+      <a class="card" href="#/test/ponderado"><h3>⚖️ Simulacro ponderado</h3><p>Más preguntas de los temas que peor llevas.</p></a>
       <a class="card" href="#/test/repaso"><h3>🧠 Repaso inteligente</h3><p>Prioriza lo que has fallado o no has visto. ${fallos} pendientes de corregir.</p></a>
       <a class="card" href="#/test/problemas"><h3>🧮 Problemas prácticos</h3><p>Ejercicios de cálculo generados al azar con la solución paso a paso.</p></a>
       <a class="card" href="#/test/stats"><h3>📈 Estadísticas</h3><p>Rendimiento por unidad y historial de simulacros.</p></a>
@@ -454,6 +490,33 @@
     const pool = shuffle(QS).sort((a, b) => score(a) - score(b)).slice(0, 20);
     session = { mode: 'repaso', qs: pool.map(prep), i: 0, ok: 0, ko: 0 };
     renderQ();
+  });
+  /* Precisión por unidad: base para reforzar los temas más flojos */
+  function unidades() {
+    const st = store.get('stats', {}), r = {};
+    QS.forEach(q => { const x = r[q.u] = r[q.u] || { u: q.u, n: 0, ok: 0, ko: 0 }; x.n++; const s = st[q.id]; if (s) { x.ok += s.ok; x.ko += s.ko; } });
+    Object.values(r).forEach(x => { x.acc = x.ok + x.ko >= 3 ? x.ok / (x.ok + x.ko) : null; x.flojo = x.acc == null ? 1.5 : 1 + (1 - x.acc) * 2; });
+    return r;
+  }
+  function elegirPonderado(n) {
+    const un = unidades(), st = store.get('stats', {});
+    const pool = shuffle(QS).map(q => ({ q, w: un[q.u].flojo * (st[q.id] && st[q.id].box >= 3 ? 0.4 : st[q.id] && st[q.id].box === 0 && st[q.id].ko > 0 ? 2 : 1) }));
+    const out = [];
+    while (out.length < n && pool.length) { const t = pool.reduce((a, x) => a + x.w, 0); let r = Math.random() * t, i = 0; for (; i < pool.length - 1; i++) { r -= pool[i].w; if (r <= 0) break; } out.push(pool.splice(i, 1)[0].q); }
+    return out;
+  }
+  route(/^#\/test\/diario$/, () => {
+    const un = Object.values(unidades()).sort((a, b) => (a.acc == null ? .5 : a.acc) - (b.acc == null ? .5 : b.acc));
+    view.innerHTML = `<p><a href="#/test">← Examen</a></p><h1>Repaso diario</h1><p class="lead">Cinco preguntas cada día, elegidas con más peso en los temas donde fallas más. Mantén la racha.</p>
+    <div class="grid g3"><div class="card"><div class="muted">Racha</div><div class="stat">${rachaDiaria()} días</div></div><div class="card"><div class="muted">Hoy</div><div class="stat">${diarioHecho() ? 'Hecho ✔' : 'Pendiente'}</div></div></div>
+    <div class="row" style="margin:14px 0"><button class="btn pri" id="go">${diarioHecho() ? 'Hacer otras 5' : 'Empezar las 5 de hoy'}</button><a class="btn" href="#/test/ponderado">Simulacro ponderado</a></div>
+    <h2>Tus temas, de más flojo a más sólido</h2>${un.map(x => `<div style="margin:8px 0"><b>${x.u}</b> ${x.acc == null ? '<span class="muted">sin datos suficientes</span>' : Math.round(x.acc * 100) + ' % de acierto'}<div class="bar"><i style="width:${x.acc == null ? 0 : x.acc * 100}%"></i></div></div>`).join('')}`;
+    $('#go').onclick = () => { session = { mode: 'diario', qs: elegirPonderado(5).map(prep), i: 0, ok: 0, ko: 0 }; renderQ(); };
+  });
+  route(/^#\/test\/ponderado$/, () => {
+    view.innerHTML = `<p><a href="#/test">← Examen</a></p><h1>Simulacro ponderado por temas</h1><p class="lead">Mezcla preguntas de todos los temas dando más peso a los que peor llevas. Es un criterio propio de esta app, no el reparto de ningún examen oficial.</p>
+    <div class="form"><div><label for="pn">Nº de preguntas</label><select id="pn"><option>20</option><option selected>30</option><option>50</option></select></div></div><button class="btn pri" id="go">Comenzar</button>`;
+    $('#go').onclick = () => { const n = +$('#pn').value, mins = Math.round(n * 1.5); session = { mode: 'simulacro', qs: elegirPonderado(n).map(prep), i: 0, ok: 0, ko: 0, pen: 0.33, end: Date.now() + mins * 60000, mins, finished: false }; renderQ(); startTimer(); };
   });
   route(/^#\/test\/simulacro$/, () => {
     view.innerHTML = `<p><a href="#/test">← Examen</a></p><h1>Simulacro de examen</h1><p class="lead">El formato oficial lo marca tu centro examinador; aquí puedes configurarlo.</p>
@@ -509,6 +572,7 @@
     const n = s.qs.length; const blank = s.qs.filter(p => p.sel === null || p.sel === -1).length;
     const ok = s.qs.filter(p => p.sel !== null && p.sel !== -1 && p.sel === p.correctPos).length; const ko = n - ok - blank;
     const nota = s.mode === 'simulacro' ? Math.max(0, (ok - ko * (s.pen || 0)) / n * 10) : ok / n * 10;
+    if (s.mode === 'diario') { const h = diarioHist(); if (!h.includes(hoy())) { h.push(hoy()); store.set('diarioHist', h.slice(-400)); } }
     if (s.mode === 'simulacro') { const h = store.get('simulacros', []); h.push({ fecha: Date.now(), n, ok, ko, nota }); store.set('simulacros', h.slice(-30)); }
     const byU = {}; s.qs.forEach(p => { const u = p.q.u; byU[u] = byU[u] || { n: 0, ok: 0 }; byU[u].n++; if (p.sel === p.correctPos) byU[u].ok++; });
     const fails = s.qs.filter(p => p.sel !== p.correctPos);

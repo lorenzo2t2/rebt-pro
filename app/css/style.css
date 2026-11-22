@@ -310,3 +310,24 @@ th{background:var(--panel2)}
 :root[data-estilo="sobrio"] .top h1{font-size:clamp(24px,3.4vw,30px)}
 .tema{display:block;width:100%}
 .tema[aria-pressed="true"]{border-color:var(--accent)!important;box-shadow:0 0 0 2px var(--glow)}
+
+/* v1.8: favoritos, fecha de normativa, dossier, alto contraste y barra de una mano */
+.fav{background:none;border:0;color:var(--accent);font-size:.8em;cursor:pointer;margin-left:8px;padding:0 4px;vertical-align:middle;min-width:32px;min-height:32px}
+.rev{margin:-6px 0 12px}
+.paper-only,.dossier{display:none}
+.onehand{display:none}
+:root[data-contraste="1"]{--bg:#000;--panel:#000;--panel2:#111;--text:#fff;--muted:#e6e6e6;--line:#fff;--brand:#ffd400;--brand2:#ffd400;--accent:#ffd400;--ok:#38ff7a;--bad:#ff6b6b;--warn:#ffd400;--glass:linear-gradient(#000,#000);--glassb:#fff;--shadow:none;--bgfx:none;--grid:transparent;--side:#000;--side2:#222;--sidetx:#fff;--sidemu:#ddd;--glow:transparent}
+:root[data-contraste="1"][data-theme="light"]{--bg:#fff;--panel:#fff;--panel2:#f0f0f0;--text:#000;--muted:#111;--line:#000;--brand:#0000cc;--brand2:#0000cc;--accent:#0000cc;--ok:#005a1f;--bad:#a00000;--warn:#6b4a00;--glass:linear-gradient(#fff,#fff);--glassb:#000;--side:#fff;--side2:#e6e6e6;--sidetx:#000;--sidemu:#222}
+:root[data-contraste="1"] *{text-shadow:none!important}
+:root[data-contraste="1"] .card,:root[data-contraste="1"] .tile,:root[data-contraste="1"] details,:root[data-contraste="1"] .result,:root[data-contraste="1"] input,:root[data-contraste="1"] select,:root[data-contraste="1"] .chip{border-width:2px}
+:root[data-contraste="1"] .chip.on,:root[data-contraste="1"] .btn.pri{background:var(--brand);color:#000}
+:root[data-contraste="1"][data-theme="light"] .chip.on,:root[data-contraste="1"][data-theme="light"] .btn.pri{color:#fff}
+@media print{.dossier{display:block}.fav{display:none}.paper-only{display:block}}
+@media (max-width:1100px){
+  .onehand{display:flex;position:fixed;left:8px;right:8px;bottom:calc(74px + env(safe-area-inset-bottom));z-index:11;gap:6px;justify-content:space-between;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:6px;box-shadow:var(--shadow)}
+  .onehand button{flex:1;min-height:48px;font-size:20px;border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:10px;cursor:pointer}
+  .onehand .pad{display:grid;grid-template-columns:repeat(3,36px);grid-template-rows:repeat(2,26px);gap:3px;flex:none}
+  .onehand .pad button{min-height:0;font-size:14px;padding:0}
+  .onehand .pad .u{grid-column:2}
+  .esq{padding-bottom:70px}
+}

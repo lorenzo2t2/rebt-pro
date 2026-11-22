@@ -42,6 +42,7 @@
   add('swc', 'Conmutador de cruzamiento', 'Instalación', 'CR', 'CR', 'Se intercala entre dos conmutadores para gobernar desde 3 o más puntos.', () => SWB(3), V, [0, 4]);
   add('swp', 'Pulsador de luz', 'Instalación', 'P', 'P', 'Pulsador de luz; con telerruptor permite múltiples puntos.', () => `${lead(-30, -4)}<circle r="4" fill="#fff"/><path d="M3-3L13-13M13-13l-4-1M13-13l1 4"/>${T(-12, 4, 8)}P</text>`, V, [0, 4]);
   add('reg', 'Regulador de luz', 'Instalación', 'R', 'R', 'Dimmer para regular la intensidad luminosa.', () => SWB(1) + '<path d="M-12 8l8-10v10z" fill="#fff"/>', V, [0, 4]);
+  add('tel', 'Telerruptor (bobina)', 'Instalación', 'KE1', 'KE', 'Relé de impulsos: cada pulso de los pulsadores cambia el estado de la luz.', () => `${lead(-30, -8)}${lead(30, 8)}<rect x="-14" y="-8" width="28" height="16" fill="#fff"/><path d="M-14 0H14"/>`, V, O);
   add('pir', 'Detector de presencia', 'Instalación', 'DP', 'D', 'Detector de movimiento o presencia para encender luz o alarma.', () => `${lead(-30, -10)}<rect x="-12" y="-10" width="24" height="20" fill="#fff"/><path d="M-6 4a6 6 0 0 1 12 0M-3 4a3 3 0 0 1 6 0"/>`, V, [0, 10]);
   add('tomap', 'Toma de pared (schuko)', 'Instalación', 'TC', 'TC', 'Base de enchufe 16 A con toma de tierra.', () => `${lead(-30, -9)}<circle r="9" fill="#fff"/><path d="M-9 0H9M0 0V9"/>`, V, [0, 9]);
   add('tomas', 'Toma de suelo', 'Instalación', 'TS', 'TS', 'Base de enchufe empotrada en suelo (cajas de suelo).', () => `${lead(-30, -9)}<circle r="9" fill="#fff"/><path d="M-9 0H9M0 0V9"/><path d="M-12-12H12V12H-12Z" stroke-dasharray="3 2"/>`, V, [0, 12]);
@@ -106,7 +107,7 @@
     cuadro: { n: 'Unifilar de cuadro', i: '🧱', d: 'Acometida, protecciones y circuitos de un cuadro.', cats: ['Origen', 'Enlace', 'Protección', 'Maniobra', 'Receptores', 'Generación', 'Tierra y otros'] },
     multi: { n: 'Multifilar de potencia', i: '🔌', d: 'Tres fases dibujadas (L1, L2, L3).', cats: ['Multipolares', 'Origen', 'Motores', 'Líneas y tierra', 'Tierra y otros'] },
     mando: { n: 'Mando y control (circuito de mando)', i: '🕹️', d: 'Pulsadores, bobinas, contactos, temporizadores y señalización.', cats: ['Mando', 'Maniobra', 'Protección', 'Tierra y otros'] },
-    viv: { n: 'Instalación de viviendas y locales', i: '🏠', d: 'Luces, interruptores, conmutadores, tomas y puntos de red.', cats: ['Instalación', 'Enlace', 'Protección', 'Receptores', 'Tierra y otros'] },
+    viv: { n: 'Instalación de viviendas y locales', i: '🏠', d: 'Luces, interruptores, conmutadores, tomas y puntos de red.', cats: ['Instalación', 'Mando', 'Enlace', 'Protección', 'Receptores', 'Tierra y otros'] },
     motor: { n: 'Motores y arranques', i: '⚙️', d: 'Potencia + mando de motores.', cats: ['Motores', 'Multipolares', 'Mando', 'Maniobra', 'Protección'] },
     tierra: { n: 'Puesta a tierra y equipotencialidad', i: '⏚', d: 'Picas, bornes, líneas principales y equipotenciales.', cats: ['Líneas y tierra', 'Enlace', 'Tierra y otros', 'Instalación'] },
     fv: { n: 'Generación y recarga VE', i: '☀️', d: 'Campo FV, inversor, baterías, recarga.', cats: ['Generación', 'Receptores', 'Protección', 'Enlace', 'Tierra y otros'] },

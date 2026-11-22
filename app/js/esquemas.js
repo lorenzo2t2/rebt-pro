@@ -176,7 +176,7 @@
 
   /* ---------------------------------------------------------------- vistas */
   const icon = t => { const S = SYM[t]; return `<svg width="34" height="34" viewBox="-30 -36 60 72"><g stroke="#111" stroke-width="2.2" fill="none" stroke-linecap="round">${S.txt ? '<text x="-14" y="6" font-size="22" font-weight="700" stroke="none" fill="#111">Aa</text>' : S.d({ w: 50 })}</g></svg>`; };
-  window.REBTSym = SYM; window.REBTSymIcon = icon;
+  window.REBTSym = SYM; window.REBTSymIcon = icon; window.REBTEsqSVG = exportSVG;
   route(/^#\/simbolos$/, () => {
     view.innerHTML = `<h1>Simbología</h1><p class="lead">Los símbolos disponibles en el editor de <a href="#/esquemas">Esquemas</a>, con su designación habitual (la letra que se pone en el esquema: KM1, F2, S1…) y para qué sirven. Son representaciones didácticas basadas en la práctica habitual y la serie UNE-EN 60617; para un plano oficial, consulta la norma.</p>
     <input id="ss" type="search" placeholder="Buscar símbolo o designación…" aria-label="Buscar símbolo" style="width:100%;max-width:420px;margin-bottom:10px"><div id="sl"></div>`;
@@ -228,7 +228,9 @@
       <div class="pal card noprint" id="pal"><input id="psr" type="search" placeholder="Buscar símbolo…" aria-label="Buscar símbolo" style="width:100%;margin-bottom:6px"><div class="chips" style="margin:0 0 6px"><button class="chip on" id="pt1">Del tipo</button><button class="chip" id="pt2">Todos</button></div><div id="pbox"></div></div>
       <div><div class="tools noprint"><button class="btn sm on" data-m="sel">↖ Seleccionar</button><button class="btn sm" data-m="con">🔗 Conectar</button><button class="btn sm" id="zi">＋</button><button class="btn sm" id="zo">－</button><button class="btn sm" id="zf">Ajustar</button><span class="muted" id="hint" style="font-size:13px;align-self:center"></span></div>
       <div class="cv"><svg id="sch" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="gp" width="${GR * 2}" height="${GR * 2}" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#cfd6e3"/></pattern></defs><rect id="bg" width="${W}" height="${H}" fill="#fff"/><rect id="grid" width="${W}" height="${H}" fill="url(#gp)"/><g id="lay"></g></svg></div></div>
-      <div class="pp card noprint" id="pp"></div></div>`;
+      <div class="pp card noprint" id="pp"></div></div>
+    <div class="onehand noprint" id="oh" role="toolbar" aria-label="Acciones rápidas"><button id="oh_a" aria-label="Añadir símbolo">＋</button><button id="oh_c" aria-label="Conectar" style="font-size:13px;font-weight:700">Unir</button><button id="oh_r" aria-label="Girar">⟳</button><button id="oh_d" aria-label="Duplicar">⧉</button><button id="oh_x" aria-label="Eliminar" style="font-size:13px;font-weight:700">Borrar</button><button id="oh_u" aria-label="Deshacer">↶</button>
+      <div class="pad"><button class="u" id="oh_up" aria-label="Subir">▲</button><button id="oh_l" aria-label="Izquierda">◀</button><button id="oh_dn" aria-label="Bajar">▼</button><button id="oh_rt" aria-label="Derecha">▶</button></div></div>`;
     const svg = $('#sch'), lay = $('#lay');
     let todos = !TIPOS[m.tipo];
     const palette = () => {
@@ -266,6 +268,15 @@
     draw(); panel();
 
     $('#nm').oninput = e => { m.nombre = e.target.value; save(); };
+    /* Barra de una mano: todo al alcance del pulgar, con cruceta para mover el símbolo elegido */
+    const selEl = () => (sel && sel.k === 'e' ? m.els.find(x => x.id === sel.id) : null);
+    const nudge = (dx, dy) => { const e = selEl(); if (!e) return; snapshot(); e.x += dx; e.y += dy; draw(); save(); };
+    $('#oh_a').onclick = () => $('#esq').classList.toggle('showpal');
+    $('#oh_c').onclick = () => { mode = mode === 'con' ? 'sel' : 'con'; conn = null; draw(); };
+    $('#oh_r').onclick = () => { const e = selEl(); if (!e || SYM[e.t].bus || SYM[e.t].txt) return; snapshot(); e.rot = ((e.rot || 0) + 1) % 4; draw(); save(); };
+    $('#oh_d').onclick = () => { const e = selEl(); if (!e) return; snapshot(); const c2 = Object.assign({}, e, { id: uid(), x: e.x + 20, y: e.y + 20 }); m.els.push(c2); sel = { k: 'e', id: c2.id }; draw(); panel(); save(); };
+    $('#oh_x').onclick = delSel; $('#oh_u').onclick = undo;
+    $('#oh_up').onclick = () => nudge(0, -GR); $('#oh_dn').onclick = () => nudge(0, GR); $('#oh_l').onclick = () => nudge(-GR, 0); $('#oh_rt').onclick = () => nudge(GR, 0);
     $('#u').onclick = undo;
     $('#pal-t').onclick = () => $('#esq').classList.toggle('showpal');
     $$('[data-m]').forEach(b => b.onclick = () => { mode = b.dataset.m; conn = null; draw(); });

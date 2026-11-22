@@ -28,6 +28,7 @@
   function aplicar() {
     root.dataset.estilo = store.get('estilo', 'futurista');
     root.dataset.theme = store.get('theme', '') || 'dark';
+    if (store.get('contraste', false)) root.dataset.contraste = '1'; else root.removeAttribute('data-contraste');
   }
   aplicar();
 
@@ -42,8 +43,12 @@
       </button>`).join('')}</div>
     <h2>Modo</h2>
     <div class="chips">${MODOS.map(m => `<button class="chip ${modo === m.id ? 'on' : ''}" data-m="${m.id}">${m.t}</button>`).join('')}</div>
+    <h2>Alto contraste</h2>
+    <div class="chips"><button class="chip ${store.get('contraste', false) ? 'on' : ''}" id="hc" aria-pressed="${!!store.get('contraste', false)}">Alto contraste ${store.get('contraste', false) ? 'activado' : 'desactivado'}</button></div>
+    <p class="mini muted">Bordes y textos de máximo contraste y sin transparencias: pensado para leer la pantalla a pleno sol. Combínalo con el modo claro o el oscuro.</p>
     <p class="mini muted" style="margin-top:18px">El modo claro es útil a pleno sol en obra. El estilo sobrio consume menos batería porque no anima nada.</p>`;
     $$('.tema').forEach(b => b.onclick = () => { store.set('estilo', b.dataset.e); aplicar(); A.go(); });
+    $('#hc').onclick = () => { store.set('contraste', !store.get('contraste', false)); aplicar(); A.go(); };
     $$('[data-m]').forEach(b => b.onclick = () => { store.set('theme', b.dataset.m); aplicar(); A.go(); });
   });
 });
