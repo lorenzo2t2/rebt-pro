@@ -5,11 +5,24 @@
   const root = document.documentElement;
   const ESTILOS = [
     { id: 'futurista', t: 'Futurista', d: 'Cristal, profundidad 3D, brillos contenidos y la hélice trifásica animada del inicio.' },
+    { id: 'control', t: 'Control (opción A)', d: 'Denso y técnico: etiquetas en monoespaciada, cifras alineadas y mucha información a la vista.', pv: { ac: '#38bdf8', r: 6, mono: 1 } },
+    { id: 'consola', t: 'Consola (opción B)', d: 'Plano de ingeniería: rejilla fina, bordes cian y estética de panel de instrumentos.', pv: { ac: '#06b6d4', r: 4, grid: 1 } },
+    { id: 'limpia', t: 'Limpia (opción C)', d: 'Amplia y tranquila: esquinas redondeadas, menú con el activo en azul y más aire.', pv: { ac: '#2563eb', r: 12 } },
     { id: 'sobrio', t: 'Sobrio', d: 'Plano y limpio: sin efectos ni animaciones, máxima legibilidad y menos consumo de batería.' },
   ];
   const MODOS = [{ id: 'dark', t: 'Oscuro' }, { id: 'light', t: 'Claro' }];
   const preview = (id, modo) => {
     const dk = modo === 'dark';
+    const E = ESTILOS.find(x => x.id === id);
+    if (E && E.pv) {
+      const bg = dk ? '#0b0f17' : '#f4f6fa', pn = dk ? '#172235' : '#fff', bd = dk ? '#334155' : '#d6dce6', tx = dk ? '#cfd8e6' : '#27324a';
+      const grid = E.pv.grid && dk ? 'background-image:linear-gradient(rgba(51,65,85,.35) 1px,transparent 1px),linear-gradient(90deg,rgba(51,65,85,.35) 1px,transparent 1px);background-size:10px 10px;' : '';
+      const blk = `background:${pn};border:1px solid ${bd};border-radius:${E.pv.r}px;`;
+      return `<div style="background:${bg};${grid}border-radius:10px;padding:12px;height:124px;display:grid;gap:8px;grid-template-columns:44px 1fr;border:1px solid ${bd}">
+      <div style="${blk}display:grid;gap:6px;padding:6px;align-content:start"><i style="height:6px;border-radius:3px;background:${E.pv.ac};display:block"></i><i style="height:4px;border-radius:2px;background:${bd};display:block"></i><i style="height:4px;border-radius:2px;background:${bd};display:block"></i></div>
+      <div style="display:grid;gap:8px;grid-template-rows:34px 1fr"><div style="${blk}padding:6px 8px;color:${tx};font:700 11px ${E.pv.mono ? 'ui-monospace,Consolas,monospace' : 'system-ui'}">Elec-LoM<i style="float:right;width:34px;height:8px;border-radius:4px;background:${E.pv.ac};margin-top:2px"></i></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><div style="${blk}"></div><div style="${blk}border-color:${E.pv.ac}"></div></div></div></div>`;
+    }
     const bg = id === 'futurista' ? (dk ? 'radial-gradient(120px 70px at 85% 0,rgba(47,123,255,.35),transparent),#05080f' : 'radial-gradient(120px 70px at 85% 0,rgba(47,123,255,.2),transparent),#eef2f8') : (dk ? '#0c1015' : '#f6f7f9');
     const pn = id === 'futurista' ? (dk ? 'linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.02)),#0d1522' : '#fff') : (dk ? '#141a21' : '#fff');
     const bd = id === 'futurista' ? (dk ? 'rgba(140,175,255,.3)' : 'rgba(30,70,160,.18)') : (dk ? '#27303b' : '#dfe3e9');

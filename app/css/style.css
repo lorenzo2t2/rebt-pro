@@ -407,3 +407,48 @@ h2::after{background:var(--line)}
 @media (max-width:1000px){.tiles.bento{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.tiles{grid-template-columns:1fr}.tiles.bento{grid-template-columns:1fr 1fr}.tiles.bento .tile:nth-child(n+3){grid-column:span 2}}
 .tiles.bento .tile:last-child{grid-column:1/-1}
+
+/* ===== Estilos de Stitch: Control (A), Consola (B), Limpia (C) ===== */
+:root[data-estilo="control"],:root[data-estilo="consola"],:root[data-estilo="limpia"]{--glass:linear-gradient(transparent,transparent);--glow:transparent;--bgfx:none;--grid:transparent;--shadow:none;--r:8px;--brand:#2563eb;--brand2:#b4c5ff;--accent:#38bdf8;--mono:ui-monospace,"JetBrains Mono",Consolas,"Cascadia Mono",monospace}
+:root[data-estilo="control"]:not([data-theme="light"]),:root[data-estilo="consola"]:not([data-theme="light"]),:root[data-estilo="limpia"]:not([data-theme="light"]){--bg:#0b0f17;--panel:#172235;--panel2:#1e293b;--line:#334155;--glassb:#334155;--text:#f8fafc;--muted:#94a3b8;--side:#0b1220;--side2:rgba(37,99,235,.18);--sidetx:#cbd5e1;--sidemu:#64748b}
+:root[data-estilo="control"][data-theme="light"],:root[data-estilo="consola"][data-theme="light"],:root[data-estilo="limpia"][data-theme="light"]{--bg:#f4f6fa;--panel:#fff;--panel2:#eef1f6;--line:#d6dce6;--glassb:#d6dce6;--text:#0f172a;--muted:#566377;--side:#fff;--side2:rgba(37,99,235,.1);--sidetx:#26334a;--sidemu:#6b7a92;--brand2:#1d4ed8;--accent:#0a7fb0}
+:root[data-estilo="control"] body::before,:root[data-estilo="limpia"] body::before{display:none}
+:root[data-estilo="control"] #fx3d,:root[data-estilo="consola"] #fx3d,:root[data-estilo="limpia"] #fx3d{display:none}
+:root[data-estilo="control"] #view>*,:root[data-estilo="consola"] #view>*,:root[data-estilo="limpia"] #view>*{animation:none}
+:root[data-estilo="control"] .card,:root[data-estilo="control"] .q,:root[data-estilo="control"] .result,:root[data-estilo="control"] .tw,:root[data-estilo="control"] details,:root[data-estilo="control"] .kpis>div,:root[data-estilo="control"] .tiles .tile,:root[data-estilo="consola"] .card,:root[data-estilo="consola"] .q,:root[data-estilo="consola"] .result,:root[data-estilo="consola"] .tw,:root[data-estilo="consola"] details,:root[data-estilo="consola"] .kpis>div,:root[data-estilo="consola"] .tiles .tile,:root[data-estilo="limpia"] .card,:root[data-estilo="limpia"] .q,:root[data-estilo="limpia"] .result,:root[data-estilo="limpia"] .tw,:root[data-estilo="limpia"] details,:root[data-estilo="limpia"] .kpis>div,:root[data-estilo="limpia"] .tiles .tile{background:var(--panel);backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none;border-color:var(--line)}
+:root[data-estilo="control"] h1,:root[data-estilo="consola"] h1,:root[data-estilo="limpia"] h1,:root[data-estilo="control"] .kpis strong,:root[data-estilo="consola"] .kpis strong,:root[data-estilo="limpia"] .kpis strong,:root[data-estilo="control"] .stat,:root[data-estilo="consola"] .stat,:root[data-estilo="limpia"] .stat{background:none;-webkit-text-fill-color:currentColor;color:var(--text)}
+:root[data-estilo="control"] .btn.pri,:root[data-estilo="consola"] .btn.pri,:root[data-estilo="limpia"] .btn.pri,:root[data-estilo="control"] .chip.on,:root[data-estilo="consola"] .chip.on,:root[data-estilo="limpia"] .chip.on{background:#2563eb;color:#fff;box-shadow:none}
+:root[data-estilo="control"] .bar>i,:root[data-estilo="consola"] .bar>i,:root[data-estilo="limpia"] .bar>i{background:var(--accent);box-shadow:none}
+:root[data-estilo="control"] .logo i,:root[data-estilo="consola"] .logo i,:root[data-estilo="limpia"] .logo i{background:#2563eb;box-shadow:none}
+:root[data-estilo="control"] .top,:root[data-estilo="consola"] .top,:root[data-estilo="limpia"] .top{display:block;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px;box-shadow:none}
+:root[data-estilo="control"] .top::before,:root[data-estilo="consola"] .top::before,:root[data-estilo="limpia"] .top::before{display:none}
+:root[data-estilo="control"] .tile .ti,:root[data-estilo="consola"] .tile .ti,:root[data-estilo="limpia"] .tile .ti{background:var(--panel2);color:var(--accent);box-shadow:none;border-radius:8px}
+:root[data-estilo="control"] .tiles .tile:hover,:root[data-estilo="consola"] .tiles .tile:hover,:root[data-estilo="limpia"] .tiles .tile:hover{border-color:var(--accent);background:var(--panel2)}
+:root[data-estilo="control"] .tiles.bento .tile:nth-child(-n+2),:root[data-estilo="consola"] .tiles.bento .tile:nth-child(-n+2),:root[data-estilo="limpia"] .tiles.bento .tile:nth-child(-n+2){background:var(--panel);border-color:var(--line)}
+
+/* A · Control: denso, etiquetas técnicas en monoespaciada */
+:root[data-estilo="control"] h2,:root[data-estilo="control"] .kpis small,:root[data-estilo="control"] .tag,:root[data-estilo="control"] .ng,:root[data-estilo="control"] .top .kick,:root[data-estilo="control"] th{font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em;font-size:11.5px;font-weight:600;color:var(--muted)}
+:root[data-estilo="control"] .kpis strong,:root[data-estilo="control"] .stat{font-family:var(--mono);letter-spacing:-.03em}
+:root[data-estilo="control"] .tiles .tile{padding:12px 14px;border-radius:8px}
+:root[data-estilo="control"] .btn,:root[data-estilo="control"] input,:root[data-estilo="control"] select,:root[data-estilo="control"] textarea,:root[data-estilo="control"] .opt,:root[data-estilo="control"] details,:root[data-estilo="control"] .note,:root[data-estilo="control"] .chip{border-radius:6px}
+:root[data-estilo="control"] #nav a.on{background:var(--side2);box-shadow:inset 2px 0 0 var(--accent)}
+
+/* B · Consola: plano de ingeniería, rejilla fina y bordes cian */
+:root[data-estilo="consola"]:not([data-theme="light"]) body{background-image:linear-gradient(rgba(51,65,85,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(51,65,85,.22) 1px,transparent 1px);background-size:16px 16px;background-attachment:fixed}
+:root[data-estilo="consola"] h1,:root[data-estilo="consola"] .kpis strong,:root[data-estilo="consola"] .stat,:root[data-estilo="consola"] code,:root[data-estilo="consola"] .tag{font-family:var(--mono)}
+:root[data-estilo="consola"] h2,:root[data-estilo="consola"] .kpis small,:root[data-estilo="consola"] .ng{font-family:var(--mono);text-transform:uppercase;letter-spacing:.07em;font-size:11px;color:var(--accent)}
+:root[data-estilo="consola"] .tile,:root[data-estilo="consola"] .card,:root[data-estilo="consola"] .kpis>div,:root[data-estilo="consola"] .top{border-color:rgba(56,189,248,.28)}
+:root[data-estilo="consola"] .tiles .tile:hover,:root[data-estilo="consola"] a.card:hover{box-shadow:0 0 14px rgba(6,182,212,.18)}
+:root[data-estilo="consola"] .top{border-left:3px solid var(--accent)}
+:root[data-estilo="consola"] .btn,:root[data-estilo="consola"] input,:root[data-estilo="consola"] select,:root[data-estilo="consola"] textarea,:root[data-estilo="consola"] .opt,:root[data-estilo="consola"] details,:root[data-estilo="consola"] .chip{border-radius:4px}
+:root[data-estilo="consola"] #nav a.on{background:var(--side2);box-shadow:inset 2px 0 0 var(--accent)}
+
+/* C · Limpia: amplia, redondeada y tranquila */
+:root[data-estilo="limpia"]{--r:14px}
+:root[data-estilo="limpia"] .tiles .tile{padding:18px;border-radius:14px}
+:root[data-estilo="limpia"] h2{font-size:15px;font-weight:600;color:var(--muted)}
+:root[data-estilo="limpia"] .top{border-radius:18px;padding:30px 32px}
+:root[data-estilo="limpia"] #nav a{border-radius:10px}
+:root[data-estilo="limpia"] #nav a.on{background:#2563eb;color:#fff;box-shadow:none}
+:root[data-estilo="limpia"] #nav a.on .ic{color:#fff}
+:root[data-estilo="limpia"] .btn,:root[data-estilo="limpia"] input,:root[data-estilo="limpia"] select,:root[data-estilo="limpia"] textarea,:root[data-estilo="limpia"] .opt{border-radius:12px}
