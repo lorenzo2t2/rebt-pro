@@ -88,7 +88,7 @@
         sec('calc', 'Cálculos justificativos', [
           f('grado', 'Grado de electrificación (si es vivienda)', 'select', { o: ['No aplica', 'Básica (5750 W)', 'Elevada (9200 W)'] }), f('prev', 'Previsión de cargas', 'area', { ph: 'Detalle según ITC-BT-10: viviendas × coeficiente de simultaneidad, servicios generales, locales, garaje…' }),
           f('circ', 'Circuitos interiores', 'tabla', { cols: COL_CIRC, circ: true }),
-          f('lga', 'Línea general de alimentación y derivaciones individuales', 'area', { ph: 'Sección, longitud, caída de tensión (LGA 0,5 / 1 %; DI 0,5 / 1 / 1,5 %), tubo…' }),
+          f('lga', 'Línea general de alimentación y derivaciones individuales', 'area', { ph: 'Sección, longitud, caída de tensión (LGA: la fijada por la distribuidora; DI 0,5 / 1 / 1,5 %), tubo…' }),
           f('cc', 'Cortocircuito y poder de corte', 'area'), f('rho', 'Resistividad del terreno (Ω·m)', 'num'), f('elec', 'Electrodo', 'select', { o: ['Conductor enterrado (anillo)', 'Picas', 'Placas', 'Combinado'] }), f('rt', 'Resistencia de tierra estimada (Ω)', 'num'), f('uc', 'Tensión de contacto límite', 'select', { o: ['50 V', '24 V (local conductor)'] })]),
         sec('pliego', 'Pliego de condiciones', [
           f('mat', 'Materiales', 'area', { def: 'Todos los materiales cumplirán las normas UNE aplicables y el REBT, serán de primera calidad y dispondrán del marcado CE. Los conductores serán de cobre, con la tensión asignada y las características de propagación del incendio exigidas por la ITC-BT correspondiente.' }),

@@ -18,10 +18,10 @@
     {
       id: 'continuidad', ic: '🔗', n: 'Continuidad de conductores de protección y equipotencialidad', itc: 'UNE 20460-6-61 · ITC-BT-18 · ITC-BT-26',
       cuando: 'Previa a la puesta en servicio, con la instalación sin tensión.',
-      equipo: ['Medidor de continuidad (ohmímetro de baja resistencia) con corriente de ensayo ≥ 200 mA', 'Cables de prueba compensados'],
+      equipo: ['Medidor de continuidad (ohmímetro de baja resistencia); la corriente de ensayo la fija la norma UNE 20460-6-61, no el REBT', 'Cables de prueba compensados'],
       seg: SEG.slice(0, 1),
       pasos: ['Anula la resistencia de los cables de prueba (función “null”) uniendo las puntas.', 'Conecta una punta al borne principal de tierra (o al cuadro) y la otra al conductor de protección en el punto más alejado de cada circuito (último enchufe, masa metálica).', 'Mide cada circuito y anota el valor. Repite en las uniones equipotenciales del baño (tuberías, bañera, desagües) y en la cocina.', 'Si el valor es alto o inestable, revisa bornes sueltos o empalmes.'],
-      criterio: 'La resistencia debe ser muy baja (del orden de decenas de miliohmios hasta 1–2 Ω según longitud y sección) y estable. No hay valor único en el REBT: debe ser coherente con la sección y longitud del conductor medido.',
+      criterio: 'El REBT no fija un valor en ohmios: la continuidad debe quedar asegurada y la resistencia debe ser coherente con la sección y la longitud del conductor medido (ITC-BT-18 y ITC-BT-19, 2.3).',
       errores: ['No compensar los cables de prueba.', 'Medir con corriente demasiado baja (puede dar buena lectura con una unión defectuosa).'],
       reg: 'Informe de verificación → tabla de mediciones, columna “Cont. PE (Ω)”.',
     },
@@ -29,9 +29,9 @@
       id: 'aislamiento', ic: '🧱', n: 'Resistencia de aislamiento', itc: 'ITC-BT-19 §2.9', cuando: 'Antes de energizar y en inspecciones periódicas.',
       equipo: ['Medidor de aislamiento (megóhmetro) con tensión de ensayo seleccionable'],
       seg: SEG,
-      pasos: ['Con la instalación desconectada de la red, abre todos los interruptores del cuadro, desconecta receptores y deja cerrados los mecanismos de los circuitos (lámparas fuera).', 'Selecciona la tensión de ensayo según la tensión nominal: 250 V para MBTS/MBTP, 500 V hasta 500 V, 1000 V por encima de 500 V.', 'Mide entre cada conductor activo y tierra, con los conductores activos unidos entre sí si la instalación lo permite. Si no, mide también entre conductores activos.', 'Mantén la tensión hasta que la lectura se estabilice (unos 5–10 s) y anota el valor.', 'Descarga la instalación al terminar (los cables acumulan carga).'],
-      criterio: 'Mínimo: 0,25 MΩ (250 V, MBTS/MBTP), 0,5 MΩ (500 V, tensión nominal ≤ 500 V), 1 MΩ (1000 V, tensión nominal > 500 V). En una instalación bien hecha se miden decenas o cientos de MΩ.',
-      errores: ['Medir con receptores o lámparas conectados (el valor baja o se dañan).', 'No retirar protecciones contra sobretensiones.', 'Medir con tensión de ensayo equivocada.'],
+      pasos: ['La instalación debe estar desconectada de la fuente de alimentación y con los conductores, incluido el neutro, aislados de tierra. Si las masas de los receptores están unidas al neutro, quita esas conexiones durante la medida y restablécelas al terminar.', 'Usa un generador de corriente continua capaz de dar 1 mA a una carga igual a la resistencia mínima exigida, con la tensión de ensayo de la tabla: 250 V (MBTS/MBTP), 500 V (hasta 500 V) o 1000 V (más de 500 V).', 'Aislamiento respecto a tierra: polo positivo a tierra; en principio, receptores conectados con sus mandos en «paro»; interruptores cerrados y cortacircuitos como en servicio. Une todos los conductores, neutro incluido, en el origen de la instalación y conecta ahí el polo negativo. En los circuitos con dispositivos electrónicos, une entre sí fases y neutro durante la medida.', 'Aislamiento entre conductores: desconecta todos los receptores, deja interruptores y cortacircuitos en la misma posición y mide los conductores de dos en dos, incluido el neutro.', 'Si la instalación pasa de 100 m de canalización, fracciónala en partes de unos 100 m (seccionando, retirando fusibles o abriendo interruptores) y mide cada parte; si no se puede, el valor exigido es inversamente proporcional a la longitud total en hectómetros.', 'Si el valor sale por debajo del mínimo, la instalación se admite como correcta si cada receptor tiene al menos el valor de su norma UNE (o 0,5 MΩ) y, con los receptores desconectados, la instalación cumple el valor que le corresponde.'],
+      criterio: 'Mínimo: 0,25 MΩ (250 V, MBTS/MBTP), 0,5 MΩ (500 V, tensión nominal ≤ 500 V), 1 MΩ (1000 V, tensión nominal > 500 V), para cada tramo de 100 m (ITC-BT-19, 2.9). Las corrientes de fuga no deben superar la sensibilidad de los diferenciales instalados.',
+      errores: ['Medir entre conductores sin haber desconectado los receptores (el valor baja o se dañan).', 'No retirar o puentear los dispositivos electrónicos y de protección contra sobretensiones que puedan dañarse.', 'Medir con tensión de ensayo equivocada.'],
       reg: 'Informe de verificación → “Aislam. (MΩ)”. Evaluación automática en la herramienta de abajo.',
       herr: 'aisl',
     },
@@ -39,8 +39,8 @@
       id: 'rigidez', ic: '⚡', n: 'Rigidez dieléctrica', itc: 'ITC-BT-19 §2.9', cuando: 'Solo cuando se exija (ensayo de recepción); no es habitual en viviendas.',
       equipo: ['Equipo de ensayo dieléctrico (hipot) de tensión alterna a frecuencia industrial'],
       seg: SEG,
-      pasos: ['Con la instalación desconectada de la red y de los receptores, aplica la tensión de ensayo entre cada conductor activo y tierra, y entre activos, durante 1 minuto.', 'La tensión de ensayo es 2U + 1000 V a frecuencia industrial, con un mínimo de 1500 V (U = tensión máxima de servicio).', 'Observa que no se produzca descarga ni disrupción.'],
-      criterio: 'No debe haber perforación ni contorneamiento. Corriente de fuga durante el ensayo no superior a 1 mA por cada circuito ensayado, para cada nivel de tensión.',
+      pasos: ['Con la instalación desconectada de la red y de los receptores, aplica la tensión de ensayo entre cada conductor activo y tierra, y entre activos, durante 1 minuto.', 'La tensión de ensayo es 2U + 1000 V a frecuencia industrial, con un mínimo de 1500 V (U = tensión máxima de servicio en voltios).', 'Observa que no se produzca descarga ni disrupción. El ensayo no se realiza en locales con riesgo de incendio o explosión.'],
+      criterio: 'La instalación, con los receptores desconectados, resiste 1 minuto la tensión de ensayo (2U + 1000 V, mínimo 1500 V) sin perforación (ITC-BT-19, 2.9). Las corrientes de fuga no deben superar la sensibilidad de los diferenciales.',
       errores: ['Aplicar la tensión con receptores electrónicos conectados.', 'No señalizar la zona durante el ensayo.'],
       reg: 'Observaciones del informe.',
     },
@@ -55,11 +55,11 @@
       herr: 'tierra',
     },
     {
-      id: 'bucle', ic: '🔁', n: 'Impedancia del bucle de defecto (Zs)', itc: 'ITC-BT-24 · UNE 20460-4-41', cuando: 'Esquemas TN y, como comprobación, en TT.',
+      id: 'bucle', ic: '🔁', n: 'Impedancia del bucle de defecto (Zs)', itc: 'ITC-BT-24 (4.1.1, esquema TN)', cuando: 'Esquemas TN; en TT la condición es RA × Ia ≤ U (ITC-BT-24, 4.1.2).',
       equipo: ['Medidor de impedancia de bucle (puede ir integrado en el multifunción)'],
       seg: ['Esta medida se hace CON TENSIÓN: usa el equipo certificado y las puntas aisladas.'],
       pasos: ['Conecta el equipo en el último punto de cada circuito: entre fase y conductor de protección (bucle fase-PE) o fase-neutro para impedancia de línea.', 'Selecciona la tensión nominal y el tipo de medida (sin disparo de diferencial si el equipo lo permite).', 'Lee Zs y la corriente de cortocircuito prevista; anota ambos.', 'Compara Zs con el máximo admisible para el PIA del circuito: Zs ≤ U0 / Ia, donde Ia = corriente de disparo magnético (curva B: 5·In, C: 10·In, D: 20·In para el cálculo más desfavorable).'],
-      criterio: 'Zs · Ia ≤ U0 (230 V). Así el interruptor magnetotérmico abre dentro del tiempo máximo exigido (TN: 0,4 s para circuitos finales ≤ 32 A a 230 V; 5 s en distribución).',
+      criterio: 'Zs × Ia ≤ U0, siendo Ia la corriente que hace actuar la protección en el tiempo máximo de la ITC-BT-24 (esquema TN, tabla 1): 0,4 s con U0 = 230 V, 0,2 s con 400 V y 0,1 s por encima. Con diferencial, Ia es la corriente diferencial asignada. La norma UNE 20460-4-41 admite tiempos mayores en casos especiales.',
       errores: ['Medir con diferencial conectado sin función anti-disparo (lo dispara).', 'No sumar la resistencia de los empalmes defectuosos.'],
       reg: 'Informe de verificación → “Bucle Zs (Ω)”. La herramienta de abajo calcula el máximo.',
       herr: 'bucle',
@@ -68,8 +68,8 @@
       id: 'diferencial', ic: '🛡️', n: 'Disparo de interruptores diferenciales', itc: 'ITC-BT-24 · UNE-EN 61008 / 61009', cuando: 'En la puesta en servicio y periódicamente (botón de test al menos mensual).',
       equipo: ['Comprobador de diferenciales (RCD tester)'],
       seg: ['Ensayo con tensión. Avisa a los usuarios: se interrumpe el suministro del circuito.'],
-      pasos: ['Pulsa el botón de test del diferencial: debe disparar.', 'Conecta el comprobador a una toma del circuito protegido por el diferencial (fase, neutro y PE).', 'Selecciona IΔn (30 mA, 300 mA…) y la forma de onda (tipo AC, A).', 'Ensayo a 0,5 · IΔn: no debe disparar.', 'Ensayo a 1 · IΔn: debe disparar; anota el tiempo (máx. 300 ms para uso general).', 'Ensayo a 5 · IΔn: debe disparar en ≤ 40 ms (para diferenciales de uso general, tipo instantáneo).', 'Opcional: con la rampa, anota la corriente de disparo, que debe estar entre 0,5 y 1 · IΔn.'],
-      criterio: 'No dispara a 0,5·IΔn; dispara a IΔn en ≤ 300 ms (instantáneo); a 2·IΔn ≤ 150 ms; a 5·IΔn ≤ 40 ms. Corriente de disparo en rampa entre 0,5·IΔn y IΔn.',
+      pasos: ['Pulsa el botón de test del diferencial: debe disparar.', 'Conecta el comprobador a una toma del circuito protegido por el diferencial (fase, neutro y PE).', 'Selecciona IΔn (30 mA, 300 mA…) y la forma de onda (tipo AC, A).', 'Ensayo a 0,5 · IΔn: no debe disparar.', 'Ensayo a 1 · IΔn: debe disparar; anota el tiempo.', 'Compara los tiempos con los de la norma de producto del diferencial (UNE-EN 61008 / 61009) o con los del fabricante: el texto del REBT no los fija.', 'Opcional: con la rampa, anota la corriente de disparo, que debe estar entre 0,5 y 1 · IΔn.'],
+      criterio: 'No dispara a 0,5·IΔn y dispara a IΔn. Los tiempos máximos de disparo los fija la norma de producto UNE-EN 61008 / 61009, no el REBT. En TT debe cumplirse RA × IΔn ≤ U (ITC-BT-24, 4.1.2).',
       errores: ['Probar solo con el botón de test (no verifica la puesta a tierra ni el disparo real).', 'Probar un circuito con receptores alimentados (se dañan o falsean la medida).'],
       reg: 'Informe de verificación → “Disparo dif. (mA)” y “Tiempo (ms)”.',
     },
@@ -86,7 +86,7 @@
       id: 'caida', ic: '📉', n: 'Caída de tensión en carga', itc: 'ITC-BT-19 · ITC-BT-14 a 17', cuando: 'En instalaciones largas o cuando el proyecto lo exija.',
       equipo: ['Multímetro o analizador de redes', 'Carga conocida (resistencia de carga o consumo real)'],
       seg: ['Medida con tensión: puntas aisladas y categorías de medida adecuadas.'],
-      pasos: ['Mide la tensión en el cuadro con la instalación en vacío y anótala (U0).', 'Conecta la carga de ensayo o pon los receptores en marcha y mide de nuevo en el punto más alejado (U1).', 'Calcula ΔU(%) = (U0 − U1) / U0 · 100.', 'Compáralo con los límites de la ITC: 3 % viviendas e interior, 0,5–1,5 % en DI y LGA.'],
+      pasos: ['Mide la tensión en el cuadro con la instalación en vacío y anótala (U0).', 'Conecta la carga de ensayo o pon los receptores en marcha y mide de nuevo en el punto más alejado (U1).', 'Calcula ΔU(%) = (U0 − U1) / U0 · 100.', 'Compáralo con los límites de la ITC: 3 % en viviendas, 3 % alumbrado y 5 % resto en otros locales, 0,5–1,5 % en DI.'],
       criterio: 'ΔU ≤ límite de cada tramo (ver pestaña Tablas → Caídas de tensión máximas).',
       errores: ['Medir con cargas intermitentes que cambian la lectura.', 'No compensar la tensión de red variable (mide U0 y U1 casi a la vez).'],
       reg: 'Informe de verificación → CIE → “Caída de tensión máx. medida (%)”.',
@@ -104,7 +104,7 @@
       id: 'spd', ic: '☁️', n: 'Protección contra sobretensiones y alumbrado de emergencia', itc: 'ITC-BT-23 · ITC-BT-28', cuando: 'Cuando la instalación los incluya.',
       equipo: ['Luxómetro (emergencia)', 'Detector de estado de varistores o indicador del SPD'],
       seg: SEG.slice(0, 1),
-      pasos: ['SPD: comprueba que el indicador muestra estado correcto y que su protección asociada está bien calibrada.', 'Emergencia: corta el suministro normal, comprueba que se enciende en el tiempo requerido (≤ 5 s), que dura al menos 1 hora y mide el nivel de iluminación (1 lux en ejes de evacuación, 5 lux en cuadros y puntos de seguridad).', 'Restablece el suministro y comprueba que los equipos de emergencia se recargan.'],
+      pasos: ['SPD: comprueba que el indicador muestra estado correcto y que su protección asociada está bien calibrada.', 'Emergencia: corta el suministro normal, comprueba que se enciende y mide el nivel de iluminación (evacuación: 1 lux a nivel del suelo en el eje de los pasos principales, 5 lux en equipos manuales contra incendios y en cuadros de distribución del alumbrado) y comprueba que dura como mínimo una hora (ITC-BT-28, 3.1.1).', 'Restablece el suministro y comprueba que los equipos de emergencia se recargan.'],
       criterio: 'SPD operativo y correctamente protegido; alumbrado de emergencia con los niveles y tiempos exigidos.',
       errores: ['No probar la autonomía real.', 'No comprobar la protección asociada al SPD.'],
       reg: 'Informe de verificación → “Comprobaciones”.',
@@ -136,7 +136,7 @@
     <div class="grid g2">${PRUEBAS.map(p => `<a class="card" href="#/pruebas/${p.id}"><h3>${p.ic} ${esc(p.n)}</h3><p>${esc(p.itc)}</p></a>`).join('')}</div>
     <h2>Orden recomendado</h2>
     <ol><li>Inspección visual</li><li>Continuidad de PE y equipotencialidad</li><li>Aislamiento</li><li>Polaridad y secuencia de fases</li><li>Resistencia de tierra</li><li>Bucle de defecto (si procede)</li><li>Diferenciales y tensión de contacto</li><li>Caída de tensión y comprobaciones finales</li></ol>
-    <p class="muted">Los valores de esta sección están basados en el REBT (ITC-BT-19, ITC-BT-24…) y en UNE 20460-6-61; para el procedimiento exacto de tu equipo de medida consulta su manual.</p>`;
+    <p class="muted">Los valores límite de aislamiento, rigidez dieléctrica, tensión de contacto, resistencia de tierra (RA × Ia ≤ U), tiempos de corte en TN y alumbrado de emergencia son los del REBT. El procedimiento con cada equipo (picas auxiliares, comprobador de diferenciales, continuidad) es práctica habitual y la norma UNE 20460-6-61: consulta el manual de tu equipo.</p>`;
   });
 
   route(/^#\/pruebas\/([\w]+)$/, id => {

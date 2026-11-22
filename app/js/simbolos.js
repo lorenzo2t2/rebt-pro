@@ -8,7 +8,7 @@
   const NA = L + '<path d="M0 8L-9-8"/>';                  // contacto abierto
   const NC = L + '<path d="M0 8L-9-8M-9-8H0"/>';           // contacto cerrado
   const LK = (x) => `<path d="M-4 0H${x}" stroke-dasharray="2 2"/>`; // enlace mecánico
-  const lead = (a, b) => `<path d="M0${a}V${b}"/>`;
+  const lead = (a, b) => `<path d="M0 ${a}V${b}"/>`;
   const P3 = f => [-14, 0, 14].map(x => `<g transform="translate(${x} 0)">${f}</g>`).join('');
   const link3 = y => `<path d="M-14 ${y}H14" stroke-dasharray="2 2"/>`;
   const Q = {};

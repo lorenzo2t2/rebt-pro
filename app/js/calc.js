@@ -184,13 +184,11 @@
   const K_TERM = { 'Cu-PVC': 115, 'Cu-XLPE': 143, 'Al-PVC': 76, 'Al-XLPE': 94 };
 
   /* Puesta a tierra */
+  /* ITC-BT-18, tabla 4: valores medios aproximados (los únicos que da el REBT) */
   const RESISTIVIDAD = [
-    ['Terrenos pantanosos', '< 30'], ['Limo', '20 – 100'], ['Humus', '10 – 150'], ['Turba húmeda', '5 – 100'],
-    ['Arcilla plástica', '50'], ['Margas y arcillas compactas', '100 – 200'], ['Margas del Jurásico', '30 – 40'],
-    ['Arena arcillosa', '50 – 500'], ['Arena silícea', '200 – 3000'], ['Suelo pedregoso cubierto de césped', '300 – 500'],
-    ['Suelo pedregoso desnudo', '1500 – 3000'], ['Calizas blandas', '100 – 300'], ['Calizas compactas', '1000 – 5000'],
-    ['Calizas agrietadas', '500 – 1000'], ['Pizarras', '50 – 300'], ['Roca de mica y cuarzo', '800'],
-    ['Granitos y gres alterados', '1500 – 10000'], ['Granitos y gres muy alterados', '100 – 600'],
+    ['Terrenos cultivables y fértiles, terraplenes compactos y húmedos', '50'],
+    ['Terraplenes cultivables poco fértiles y otros terraplenes', '500'],
+    ['Suelos pedregosos desnudos, arenas secas permeables', '3.000'],
   ];
   function resistenciaElectrodo({ tipo, rho: r, L = 2, P = 4, n = 1 }) {
     let R;
