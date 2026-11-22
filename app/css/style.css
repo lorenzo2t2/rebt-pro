@@ -338,3 +338,18 @@ th{background:var(--panel2)}
 @media (max-width:860px){#fx3d{height:90px}.top{padding:14px 16px}.top .kick{margin-bottom:4px}}
 @media (max-width:520px){.top p{display:none}.top .sbox{margin-top:10px}}
 @media (max-width:600px){#view{padding-left:14px;padding-right:14px}#view,#view *{max-width:100%}#view pre,#view table{display:block;overflow-x:auto}.tile>div:last-child,.card{min-width:0}}
+/* Listas por filas */
+.tiles,.lrows{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--panel);margin:8px 0 18px}
+.tiles .tile,.lrow{display:flex;flex-direction:row;align-items:center;gap:12px;border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;background:transparent;transform:none!important;padding:12px 14px;min-height:56px;text-decoration:none;color:inherit;position:relative;overflow:visible}
+.tiles .tile:last-child,.lrow:last-child{border-bottom:0}
+.tiles .tile b{font-size:15px;margin:0}
+.tiles .tile span{display:block!important;font-size:13px;color:var(--muted)}
+.tiles .tile>div:last-child{min-width:0;flex:1}
+.tiles .tile::after{content:"›";position:static;inset:auto;opacity:1;background:none;margin-left:auto;font-size:24px;line-height:1;color:var(--muted)}
+.tiles .tile:hover,.lrow:hover{background:color-mix(in srgb,var(--brand) 8%,transparent);box-shadow:none}
+.lrow{flex-direction:column;align-items:stretch;gap:2px}
+.lrow .l1{font-weight:700;font-size:14.5px}.lrow .l2{color:var(--muted);font-size:13px;line-height:1.4}
+.rtext{margin:14px 0}.rtext p{margin:0 0 10px;line-height:1.55}.rtext .rh{margin:18px 0 6px;font-size:16px}
+.rtext mark,.lrow mark{background:var(--warnbg);color:var(--text);border-radius:3px}
+.rnav{display:flex;justify-content:space-between;gap:8px;margin:10px 0}
+@media (max-width:860px){#fx3d{display:none}.top{padding:16px}}

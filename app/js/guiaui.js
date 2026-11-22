@@ -17,7 +17,7 @@
     try { const s = sessionStorage.getItem('rebt.gq'); if (s !== null) { q = s; cat = ''; sessionStorage.removeItem('rebt.gq'); } } catch (x) { }
     view.innerHTML = `<h1>Guía: ¿qué dice el REBT de…?</h1><p class="lead">Escribe un elemento (interruptor, enchufe, cuadro, baño, tierra…) y mira qué exige el reglamento: alturas, distancias, ubicación, y la ITC de donde sale.</p>
     <input id="gq" type="search" placeholder="Ej.: interruptor, contador, cocina, piscina…" value="${esc(q)}" autocomplete="off" aria-label="Buscar elemento">
-    <div class="chips" id="gc"><button class="chip ${cat ? '' : 'on'}" data-c="">Todo</button>${CATS.map(c => `<button class="chip ${cat === c ? 'on' : ''}" data-c="${esc(c)}">${esc(c)}</button>`).join('')}</div>
+    <select id="gc" aria-label="Categoría"><option value="">Todas las categorías</option>${CATS.map(c => `<option value="${esc(c)}" ${cat === c ? 'selected' : ''}>${esc(c)}</option>`).join('')}</select>
     <div class="note">Marcado <b>REBT</b>: dato del texto consolidado. <b>Práctica / no REBT</b>: lo suelen exigir normas UNE/CTE o la costumbre, pero el REBT no lo fija.</div>
     <div id="gl"></div>
     <h2>Buscar en el texto completo del REBT</h2><div class="row"><input id="fq" type="search" placeholder="Palabras a buscar en todas las ITC" style="flex:1"><button class="btn pri" id="fb">Buscar</button></div><div id="fr"></div>`;
@@ -28,7 +28,7 @@
     };
     draw();
     $('#gq').oninput = e => { q = e.target.value; draw(); };
-    $$('#gc .chip').forEach(b => b.onclick = () => { cat = b.dataset.c; $$('#gc .chip').forEach(x => x.classList.toggle('on', x === b)); draw(); });
+    $('#gc').onchange = e => { cat = e.target.value; draw(); };
 
     let chunks = null;
     const load = () => chunks ? Promise.resolve(chunks) : fetch('data/rebt.txt').then(r => { if (!r.ok) throw 0; return r.text(); }).then(t => {

@@ -49,7 +49,7 @@
   /* Estructura: 5 bloques. Cada bloque tiene su página de entrada (#/consultar, #/calcular, #/documentar, #/aprender). */
   const HUBS = {
     consultar: { t: 'Consultar', i: 'book', d: 'El reglamento y las referencias, siempre a mano.', items: [
-      ['#/guia', 'search', 'Guía REBT', 'Alturas, distancias y ubicación por elemento.'], ['#/temario', 'book', 'Temario', '7 unidades y todas las ITC-BT con datos clave.'], ['#/ref', 'table', 'Tablas', 'Intensidades, tubos y valores de referencia.'],
+      ['#/rebt', 'book', 'REBT oficial', 'Texto completo del BOE: artículos e ITC con buscador.'], ['#/guia', 'search', 'Guía REBT', 'Alturas, distancias y ubicación por elemento.'], ['#/temario', 'book', 'Temario', '7 unidades y todas las ITC-BT con datos clave.'], ['#/ref', 'table', 'Tablas', 'Intensidades, tubos y valores de referencia.'],
       ['#/simbolos', 'schema', 'Simbología', 'Todos los símbolos eléctricos y su designación.'], ['#/pruebas', 'flask', 'Pruebas y mediciones', 'Cómo se hace cada ensayo y qué se anota.'], ['#/utiles', 'tools', 'Utilidades', 'Código IP/IK, conversores y tablas rápidas.'], ['#/andalucia', 'file', 'Normativa en Andalucía', 'TECI, PUES, CIE, MTD y trámites de la Junta.']] },
     calcular: { t: 'Calcular', i: 'calc', d: 'Secciones, protecciones, motores y fotovoltaica.', items: [
       ['#/calc', 'calc', 'Cálculos', 'Sección, caída de tensión, vivienda, tierra y más.'], ['#/protecciones', 'bolt', 'Protecciones', 'Calibre, curva, poder de corte y selectividad.'], ['#/motores', 'cog', 'Motores', 'Cálculo, arranques con esquema, bornas y averías.'], ['#/fv', 'bolt', 'Autoconsumo FV', 'Potencia, módulos, ahorro y cable.']] },
@@ -66,7 +66,7 @@
     .concat(HUBS.aprender.items.map(x => [x[0], x[2], x[1], 'Aprender']))
     .concat(AJUSTES.map(x => [x[0], x[2], x[1], 'Aplicación']));
   /* Pestañas inferiores del móvil: cada una agrupa las rutas de su bloque */
-  const TABS = [['#/', 'Inicio', 'home', ['#/']], ['#/consultar', 'Consultar', 'book', ['#/consultar', '#/guia', '#/temario', '#/ref', '#/simbolos', '#/pruebas', '#/utiles', '#/andalucia']], ['#/calcular', 'Calcular', 'calc', ['#/calcular', '#/calc', '#/protecciones', '#/motores', '#/fv']], ['#/esquemas', 'Esquemas', 'schema', ['#/esquemas', '#/tipicos']], ['#/documentar', 'Documentar', 'doc', ['#/documentar', '#/obras', '#/presupuesto', '#/crear', '#/docs']]];
+  const TABS = [['#/', 'Inicio', 'home', ['#/']], ['#/consultar', 'Consultar', 'book', ['#/consultar', '#/rebt', '#/guia', '#/temario', '#/ref', '#/simbolos', '#/pruebas', '#/utiles', '#/andalucia']], ['#/calcular', 'Calcular', 'calc', ['#/calcular', '#/calc', '#/protecciones', '#/motores', '#/fv']], ['#/esquemas', 'Esquemas', 'schema', ['#/esquemas', '#/tipicos']], ['#/documentar', 'Documentar', 'doc', ['#/documentar', '#/obras', '#/presupuesto', '#/crear', '#/docs']]];
   function renderNav(cur) {
     const on = h => (h === '#/' ? cur === '#/' || cur === '' : cur.startsWith(h)) ? 'on' : '';
     let g = '';
@@ -164,6 +164,7 @@
     </div>
     <h2>Acceso rápido</h2>
     <div class="tiles">
+      ${tile('#/rebt', 'book', 'REBT oficial', 'Texto completo del BOE con buscador.')}
       ${tile('#/calc/seccion', 'cable', 'Sección de cables', 'Intensidad, caída de tensión y protección.')}
       ${tile('#/guia', 'search', 'Guía REBT', 'Alturas, distancias y ubicación.')}
       ${tile('#/esquemas', 'schema', 'Esquemas', 'Dibuja y exporta esquemas.')}
