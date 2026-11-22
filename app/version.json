@@ -1,5 +1,5 @@
 {
- "version": "1.12.3",
+ "version": "1.12.4",
  "minApk": 4,
  "files": {
   "apple-touch-icon.png": "aa69b88802e7",
@@ -18,24 +18,24 @@
   "js/docs.js": "2f233c137d17",
   "js/esquemas.js": "a481283a3f79",
   "js/fx.js": "8b9187a21115",
-  "js/guia.js": "1833b0aa7bf2",
+  "js/guia.js": "b1c3de368f59",
   "js/guiaui.js": "f03cdb42dab1",
   "js/motores.js": "b7cf61def6d4",
   "js/native.js": "1a8ae00bbc8a",
   "js/obras.js": "8c82cd48ce59",
-  "js/preguntas.js": "31d91ce76ddf",
-  "js/preguntas2.js": "25b4df790b5d",
+  "js/preguntas.js": "360919d2c325",
+  "js/preguntas2.js": "d6aa9ed22aa6",
   "js/presupuesto.js": "597a6f501640",
   "js/protecciones.js": "bffce3fa9c7e",
   "js/pruebas.js": "b197c5d9d639",
   "js/reglamento.js": "b4e0664d5f62",
   "js/simbolos.js": "c9915f7ea69a",
   "js/solar.js": "8bb4ac358af6",
-  "js/temario.js": "1443d0fc21a6",
+  "js/temario.js": "d956bc8082c1",
   "js/temas.js": "7998be533cd4",
   "js/tipicos.js": "ae8b043e372f",
   "js/update.js": "7baf10c133e1",
-  "js/utiles.js": "c047f7c56c75",
+  "js/utiles.js": "8b3d1a13daa5",
   "manifest.webmanifest": "fa7797af9f07"
  }
 }

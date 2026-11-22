@@ -213,7 +213,7 @@ window.TEMARIO = [
         '<b>Conexiones:</b> siempre en cajas de empalme o bornes (no mediante empalmes sueltos). Las conexiones no deben ejercer esfuerzos sobre los conductores.',
         '<b>Conductor neutro:</b> misma sección que las fases salvo justificación (armónicos).',
         '<b>Resistencia mínima de aislamiento y sección mínima de PE</b>: ver tabla 2 (S ≤ 16 → S; 16–35 → 16; > 35 → S/2).',
-        '<b>Conductores en locales de pública concurrencia:</b> no propagadores del incendio y baja emisión de humos (ES07Z1-K AS).',
+        '<b>Conductores en locales de pública concurrencia:</b> no propagadores del incendio y emisión de humos y opacidad reducida (ITC-BT-28; el REBT remite a normas UNE).',
       ],
       clave: ['ΔU: 3 % viviendas; 3 % alumbrado y 5 % resto', 'Aislamiento 500 V → ≥ 0,5 MΩ', 'Rigidez: 2U + 1000 V, 1 min'] },
 
@@ -280,15 +280,14 @@ window.TEMARIO = [
 
     { id: 'itc27', itc: 'ITC-BT-27', titulo: 'Locales que contienen una bañera o ducha',
       puntos: [
-        '<b>Volumen 0:</b> interior de la bañera o plato de ducha. Solo aparatos MBTS ≤ 12 V CA / 30 V CC o aparatos fijos específicos, con IPX7.',
+        '<b>Volumen 0:</b> interior de la bañera o plato de ducha. Mecanismos no permitidos; solo aparatos fijos adecuados a ese volumen, con IPX7.',
         '<b>Volumen 1:</b> sobre el volumen 0 hasta <b>2,25 m</b> del suelo. IPX4 (IPX2 por encima del nivel del difusor fijo). Solo aparatos específicos (calentador de agua, bomba de ducha…); interruptores solo MBTS a 12 V.',
-        '<b>Volumen 2:</b> <b>0,6 m</b> alrededor del volumen 1 (altura 2,25 m; si el techo supera 2,25 m, hasta 3 m). IPX4. Pueden instalarse luminarias, ventiladores, calefactores fijos y tomas de afeitadoras con transformador de aislamiento.',
-        '<b>Volumen 3:</b> <b>2,4 m</b> más allá del volumen 2. IPX1 (IPX5 si hay chorros de agua para limpieza). Se permiten tomas con protección diferencial 30 mA, mecanismos, etc.',
+        '<b>Volumen 2:</b> <b>0,6 m</b> alrededor del volumen 1 (altura 2,25 m; si el techo supera 2,25 m, hasta 3 m). IPX4. Pueden instalarse luminarias, ventiladores y calefactores (con diferencial ≤ 30 mA, transformador de aislamiento o MBTS); mecanismos solo MBTS y bloques de afeitadora.',
+        '<b>Volumen 3:</b> <b>2,4 m</b> más allá del volumen 2. IPX5 solo en baños comunes con chorros de agua. Se permiten bases protegidas por transformador de aislamiento, MBTS o diferencial ≤ 30 mA.',
         '<b>Protección:</b> diferencial de alta sensibilidad ≤ <b>30 mA</b> · <b>conexión equipotencial local suplementaria</b> uniendo el PE con partes conductoras accesibles de clase I en volúmenes 1, 2 y 3 y con elementos conductores externos (tuberías metálicas de agua, gas, desagües, calefacción, partes metálicas del edificio).',
         'Los falsos techos y las mamparas no se consideran barreras para separar volúmenes.',
-        'Las bañeras y duchas metálicas son partes conductoras externas salvo que estén aisladas del edificio (≥ 100 kΩ).',
       ],
-      clave: ['Vol. 0 IPX7 · Vol. 1 y 2 IPX4 · Vol. 3 IPX1', 'Vol. 1: hasta 2,25 m · Vol. 2: +0,6 m · Vol. 3: +2,4 m', 'Equipotencial local + diferencial 30 mA'] },
+      clave: ['Vol. 0 IPX7 · Vol. 1 y 2 IPX4', 'Vol. 1: hasta 2,25 m · Vol. 2: +0,6 m · Vol. 3: +2,4 m', 'Equipotencial local + diferencial 30 mA'] },
 
     { id: 'itc19-garajes', itc: 'ITC-BT-29 / 10', titulo: 'Garajes y desclasificación',
       puntos: [
@@ -396,8 +395,8 @@ window.TEMARIO = [
         '<b>Suministros:</b> normal (red) + <b>complementarios</b> (socorro, reserva, duplicado) según aforo.',
         '<b>Alumbrado de emergencia:</b> de <b>seguridad</b> (evacuación, ambiente antipánico, zonas de alto riesgo) y de <b>reemplazamiento</b>. Entra en funcionamiento al producirse un fallo del alumbrado general.',
         '<b>Alumbrado de evacuación:</b> ≥ 1 lux a nivel del suelo en el eje de los pasos principales; ≥ 5 lux en equipos de protección contra incendios de uso manual y cuadros de alumbrado; relación máx./mín. < 40; autonomía ≥ 1 hora. Entra en servicio al faltar tensión o bajar del 70 % de la nominal (corte breve). Antipánico: ≥ 0,5 lux hasta 1 m de altura.',
-        '<b>Cables:</b> no propagadores del incendio, con emisión de humos y opacidad reducida y libres de halógenos (ES07Z1-K AS).',
-        '<b>Cuadros:</b> en lugar accesible solo a personal autorizado, con IGA y protección diferencial.',
+        '<b>Cables:</b> no propagadores del incendio, con emisión de humos y opacidad reducida (ITC-BT-28 remite a normas UNE para el tipo de cable).',
+        '<b>Cuadros de alumbrado de emergencia por fuente central:</b> en un cuadro único, fuera de la posible intervención del público, con voltímetro clase 2,5 como mínimo.',
         'Necesitan <b>proyecto</b> sin límite de potencia y <b>inspección inicial y periódica</b> (cada 5 años) por OCA.',
       ],
       clave: ['Emergencia: ≥ 1 lux, ≥ 5 lux en extintores/cuadros, 1 h', 'Proyecto + inspección cada 5 años'] },
@@ -416,7 +415,7 @@ window.TEMARIO = [
 
     { id: 'itc30', itc: 'ITC-BT-30', titulo: 'Locales de características especiales',
       puntos: [
-        '<b>Locales húmedos:</b> humedad relativa permanente > 70 % o condensación. Material IPX1 mínimo; canalizaciones con aislamiento adecuado; cajas estancas; protección contra la corrosión.',
+        '<b>Locales húmedos:</b> condensación en techo y paredes, manchas salinas o moho (el REBT no fija un % de humedad). Aparamenta y receptores de alumbrado IPX1 mínimo, cubiertas no metálicas; canalizaciones con aislamiento adecuado; cajas estancas; protección contra la corrosión.',
         '<b>Locales mojados:</b> con suelos, paredes o techos con agua (humedad ≈ 100 %). Protección IPX4 mínimo (IPX5 si hay chorros). Cuadros fuera o en envolvente estanca. Protección diferencial recomendada y, si hay tensión de seguridad, MBTS.',
         '<b>Locales con riesgo de corrosión:</b> materiales resistentes a la corrosión.',
         '<b>Locales polvorientos no combustibles:</b> IP5X; <b>con temperaturas elevadas (> 40 ºC) o muy bajas;</b> <b>con baterías de acumuladores</b> (ventilación, material antiácido) · <b>estaciones de servicio y garajes</b> (ver ITC-BT-29) · <b>locales de reunión con riesgo</b>…',
@@ -424,11 +423,11 @@ window.TEMARIO = [
         '<b>Instalaciones sin proyecto en locales húmedos/mojados:</b> proyecto si P > 10 kW (ver ITC-BT-04).',
         '<b>Inspección:</b> locales mojados con P > 25 kW.',
       ],
-      clave: ['Húmedo: > 70 % de humedad', 'Mojado: IPX4 mín.', 'Proyecto > 10 kW; inspección mojados > 25 kW'] },
+      clave: ['Húmedo: condensación, salinas o moho · IPX1', 'Mojado: IPX4 mín.', 'Proyecto > 10 kW; inspección mojados > 25 kW'] },
 
     { id: 'itc31', itc: 'ITC-BT-31', titulo: 'Piscinas y fuentes',
       puntos: [
-        '<b>Volumen 0:</b> interior del vaso. IPX8, solo MBTS ≤ 12 V CA / 30 V CC con transformador de seguridad fuera de los volúmenes 0, 1 y 2.',
+        '<b>Volumen 0:</b> interior del vaso. En fuentes IPX8 (apdo. 3.3); en piscinas solo MBTS ≤ 12 V CA / 30 V CC con transformador de seguridad fuera de los volúmenes 0, 1 y 2.',
         '<b>Volumen 1:</b> hasta <b>2 m</b> del borde del vaso y <b>2,5 m</b> de altura (también 1,5 m alrededor de trampolines y plataformas). IPX5; solo MBTS ≤ 12 V o aparatos protegidos con diferencial ≤ 30 mA.',
         '<b>Volumen 2:</b> <b>1,5 m</b> más allá del volumen 1, hasta 2,5 m de altura. Bases e interruptores permitidos si están protegidos por diferencial ≤ 30 mA o alimentados por transformador de aislamiento/MBTS.',
         '<b>Protección:</b> MBTS para luminarias subacuáticas; diferencial 30 mA para el resto; <b>conexión equipotencial local suplementaria</b> uniendo todas las partes metálicas.',
@@ -439,7 +438,7 @@ window.TEMARIO = [
 
     { id: 'itc36-37', itc: 'ITC-BT-36 / 37', titulo: 'Muy baja tensión y tensiones especiales',
       puntos: [
-        '<b>MBTS:</b> alimentada desde fuente de seguridad (transformador de seguridad según UNE-EN 61558-2-6) con separación de protección, sin conexión a tierra de partes activas ni masas. Máx. 50 V CA / 75 V CC (en volúmenes mojados: ≤ 12 V CA / 30 V CC).',
+        '<b>MBTS:</b> alimentada desde fuente de seguridad (p. ej. transformador de seguridad según UNE-EN 60742 / 61558-2-4) con separación de protección, sin conexión a tierra de partes activas ni masas. Máx. 50 V CA / 75 V CC (en volúmenes mojados: ≤ 12 V CA / 30 V CC).',
         '<b>MBTP:</b> como la MBTS, pero con circuito o masas a tierra. <b>MBTF:</b> fuentes sin la separación de protección (funcional).',
         '<b>Tensiones especiales (ITC-BT-37):</b> > 1000 V CA en circuitos para tubos de descarga, o instalaciones de tensión especial; requieren proyecto sin límite de potencia.',
         'Tomas de corriente de MBTS no intercambiables con las de otras tensiones.',
@@ -448,16 +447,16 @@ window.TEMARIO = [
 
     { id: 'itc32-35', itc: 'ITC-BT-32 a 35', titulo: 'Elevación, obras, ferias y agrícolas',
       puntos: [
-        '<b>ITC-BT-32 Máquinas de elevación y transporte:</b> alimentación independiente, aparatos de maniobra para cada máquina, protección diferencial y de sobreintensidades, alumbrado y toma de corriente en el hueco/cabina; proyecto si P > 5 kW.',
+        '<b>ITC-BT-32 Máquinas de elevación y transporte:</b> interruptor general <b>omnipolar</b> de accionamiento manual, accesible desde el suelo e identificado con rótulo indeleble; caída de tensión en el arranque del motor ≤ <b>5 %</b>; estructuras, motores y cubiertas metálicas a tierra; locales de accionamiento solo accesibles a personal cualificado; proyecto si P > 5 kW (ITC-BT-04).',
         '<b>ITC-BT-33 Obras:</b> cada base de toma o grupo de bases protegida por diferencial ≤ 30 mA (o alimentada a MBTS o por separación de circuitos); tensión límite convencional ≤ 24 V CA (60 V CC) en TT; cables de uso móvil tipo H07RN-F; proyecto para temporales de obras con P > 50 kW.',
-        '<b>ITC-BT-34 Ferias y stands:</b> alimentación desde cuadro con protección propia y diferencial; aparatos y cableado adecuados para uso temporal y acceso público; proyecto en locales abiertos temporales si P > 50 kW.',
+        '<b>ITC-BT-34 Ferias y stands:</b> equipos accesibles al público protegidos con diferencial ≤ <b>30 mA</b>; no se aceptan obstáculos ni emplazamientos no conductores como protección; alumbrado y tomas de menos de 32 A con diferencial ≤ 30 mA; para el corte de cables temporales se recomienda un diferencial ≤ 500 mA selectivo con los de los circuitos terminales; proyecto en locales abiertos temporales si P > 50 kW (ITC-BT-04).',
         '<b>ITC-BT-35 Establecimientos agrícolas y hortícolas</b> (donde hay animales: cuadras, establos, gallineros…): se aplica la UNE 20460-7-705 (protección diferencial, conexión equipotencial suplementaria, IP adecuado a la humedad y polvo).',
         '<b>ITC-BT-38 Quirófanos y salas de intervención:</b> esquema IT médico, transformador de aislamiento, vigilante de aislamiento, equipotencialidad, alimentación complementaria. Es de categoría especialista.',
-        '<b>ITC-BT-39 Cercas eléctricas para ganado:</b> energizador de impulsos, aisladores, señales de advertencia, no conectar a la red directamente.',
+        '<b>ITC-BT-39 Cercas eléctricas para ganado:</b> el alimentador conectado a red cumple UNE-EN 60335-2-76 y su circuito de alimentación las ITC-BT-22, 23 y 24; se coloca donde no quede cubierto por paja o heno; conductores separados de objetos metálicos ajenos; carteles de aviso, mínimo uno por cada alineación recta; separación normal de 2 m entre cercas de distinto alimentador.',
         '<b>ITC-BT-41 Caravanas y parques:</b> los receptores cumplen las directivas europeas aplicables y las prescripciones particulares son las de la UNE 20460-7-708 (el texto del REBT no da más valores). <b>ITC-BT-42 Puertos y marinas:</b> cada base de toma protegida con dispositivo individual contra sobreintensidades ≥ 16 A y con diferencial ≤ 30 mA, y un mismo dispositivo no protege más de una base.',
         '<b>ITC-BT-49 Muebles:</b> cables flexibles con goma (tipo H05RR-F) o PVC (H05VV-F) dentro del mueble; sección mínima 0,75 mm² (solo alumbrado, ≤ 10 m, sin bases), 1,5 mm² (sin bases) o 2,5 mm² (con bases); conexiones en cajas IP 3X con tapa que solo se abra con útil; en cuartos de baño, volúmenes de la ITC-BT-27. <b>ITC-BT-50 Saunas:</b> las prescripciones son las de la UNE 20460-7-703 (el REBT remite a ella).',
       ],
-      clave: ['Obras: 30 mA hasta 32 A', 'Quirófanos: IT médico (especialista)'] },
+      clave: ['Obras: bases con diferencial ≤ 30 mA · Ferias: tomas < 32 A con ≤ 30 mA', 'Quirófanos: IT médico (especialista)'] },
   ],
 },
 {
@@ -467,7 +466,7 @@ window.TEMARIO = [
       puntos: [
         'Todos los receptores se instalarán de manera que no puedan producir daños, y sus <b>masas</b> estarán puestas a tierra salvo clase II o alimentados a MBTS.',
         '<b>Clases de aparatos:</b> clase 0 (prohibida), clase I (puesta a tierra), clase II (doble aislamiento), clase III (MBTS).',
-        '<b>Corriente de arranque / compensación de factor de potencia:</b> se recomienda que el cos φ sea ≥ 0,9 en los receptores de descarga.',
+        '<b>Compensación del factor de potencia:</b> en receptores con lámparas de descarga es <b>obligatoria</b> hasta cos φ ≥ 0,9 (ITC-BT-44).',
         'Los receptores portátiles se conectarán a tomas de corriente con PE; los fijos con conductores bajo tubo o con cable.',
       ],
       clave: ['Clase I tierra · II doble aislamiento · III MBTS'] },
@@ -476,7 +475,7 @@ window.TEMARIO = [
       puntos: [
         '<b>Conductores en alimentación de lámparas de descarga:</b> prever <b>1,8 × la potencia en vatios</b> de las lámparas (por reactancias y armónicos).',
         '<b>Factor de potencia ≥ 0,9</b> (se compensa con condensadores).',
-        '<b>Portalámparas:</b> los de rosca (E27) con el casquillo al neutro; tensión > 250 V → condiciones especiales.',
+        '<b>Portalámparas:</b> con contacto central, el central a la fase y el exterior al neutro; si hay lámparas a distintas tensiones, se recomiendan portalámparas diferentes.',
         '<b>Rótulos luminosos de AT</b> (> 1000 V): instalaciones de tensiones especiales → proyecto; solo categoría especialista.',
         '<b>Luminarias:</b> con la clase y grado de protección adecuados al emplazamiento; fijación mecánica suficiente.',
         'Las luminarias suspendidas: cable con la sección y resistencia mecánica adecuadas.',
@@ -522,11 +521,10 @@ window.TEMARIO = [
         '<b>Tipos:</b> <b>aisladas</b> (sin conexión a la red), <b>asistidas</b> (el generador soporta la carga cuando la red falla, interconexión parcial) e <b>interconectadas</b> (en paralelo con la red, autoconsumo).',
         '<b>Potencia:</b> para P < 10 kW la instalación es de categoría básica; para P ≥ 10 kW es de <b>categoría especialista</b>.',
         '<b>Cableado:</b> el conductor debe soportar <b>125 % de la intensidad máxima del generador</b>; caída de tensión ≤ 1,5 % entre el generador y el punto de interconexión.',
-        '<b>Protecciones en interconectadas:</b> sobreintensidades, diferencial, relés de máxima/mínima tensión y frecuencia, <b>protección anti-isla</b> y <b>interruptor automático de interconexión (IAI)</b>.',
+        '<b>Protecciones mínimas (ITC-BT-40):</b> sobreintensidad; mínima tensión (< 0,5 s al llegar al <b>85 %</b>); sobretensión (< 0,5 s al <b>110 %</b>); frecuencia fuera de <b>49–51 Hz</b> durante más de 5 períodos; interruptor automático de interconexión.',
         '<b>Sistemas antivertido</b> para instalaciones sin excedentes: sensores de potencia en la acometida que impiden verter a red.',
-        '<b>Puesta a tierra:</b> la instalación de generación no puede alterar el esquema de la red; masas a tierra separada; conductores de CC con aislamiento ≥ 0,6/1 kV.',
-        '<b>Fotovoltaica de autoconsumo:</b> se rige además por el RD 244/2019 y las ITC-BT-40 y 52.',
-        '<b>Montaje y mantenimiento:</b> señalizar el generador, mantener el esquema unifilar a la vista, verificar anualmente protecciones.',
+        '<b>Puesta a tierra:</b> la instalación de generación no puede alterar el esquema de la red; la red de tierras de la generación es independiente de cualquier otra (generador aislado); en conexión a la red, las masas van a una tierra independiente de la del neutro de la red de distribución.',
+        '<b>Fotovoltaica de autoconsumo:</b> la normativa administrativa (p. ej. RD 244/2019) no está en el texto del REBT: confírmala en la fuente oficial.',
       ],
       clave: ['< 10 kW básica · ≥ 10 kW especialista', 'Cableado a 125 % Imáx', 'Anti-isla + antivertido'] },
   ],

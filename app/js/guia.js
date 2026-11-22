@@ -98,7 +98,7 @@ window.GUIA = [
       { tipo: 'rebt', t: 'Grados de protección: V0 <b>IPX7</b> · V1 <b>IPX4</b> · V2 <b>IPX4</b> (IPX2 por encima del nivel más alto de un difusor fijo) · V3 IPX5 solo en baños comunes con chorros.', s: 'ITC-BT-27 tabla 1' },
       { tipo: 'rebt', t: 'Ducha sin plato: V0 hasta 0,05 m sobre el suelo; con difusor fijo radio 0,6 m; con difusor móvil radio 1,2 m.', s: 'ITC-BT-27 §2.1.1' },
       { tipo: 'rebt', t: '<b>Conexión equipotencial local suplementaria</b> uniendo el PE con las masas de clase I en volúmenes 1, 2 y 3 y con tuberías metálicas de agua, gas, desagües, calefacción y partes metálicas del edificio.', s: 'ITC-BT-27 §2.2' },
-      { tipo: 'rebt', t: 'Falsos techos y mamparas <b>no</b> se consideran barreras. Bañeras y duchas metálicas: partes conductoras externas salvo aisladas (≥ 100 kΩ).', s: 'ITC-BT-27' },
+      { tipo: 'rebt', t: 'Falsos techos y mamparas <b>no</b> se consideran barreras.', s: 'ITC-BT-27' },
       { tipo: 'rebt', t: 'Cableado limitado al necesario para alimentar los aparatos fijos del volumen; calentadores, bombas de ducha: con diferencial ≤ 30 mA.', s: 'ITC-BT-27 tabla 1' },
       { tipo: 'rebt', t: 'Circuito C5 (baño): 16 A, 2,5 mm², hasta 6 tomas; mínimo 1 punto de luz, 1 interruptor y 1 base 16 A.', s: 'ITC-BT-25' },
     ] },
@@ -152,7 +152,7 @@ window.GUIA = [
   { id: 'piscina', n: 'Piscinas y fuentes', cat: 'Locales especiales', ic: '🏊', k: 'piscina fuente volumen 0 1 2 MBTS 12 V base toma IPX8',
     r: [
       { tipo: 'rebt', t: 'Volumen 1: hasta <b>2 m</b> del borde del recipiente y <b>2,5 m</b> de altura (y 1,5 m alrededor de trampolines/plataformas). Volumen 2: <b>1,5 m</b> más allá del volumen 1.', s: 'ITC-BT-31' },
-      { tipo: 'rebt', t: 'IP: volumen 0 <b>IPX8</b> · volumen 1 <b>IPX5</b>. Alumbrado subacuático solo MBTS ≤ 12 V CA / 30 V CC con transformador fuera de los volúmenes.', s: 'ITC-BT-31' },
+      { tipo: 'rebt', t: 'IP en <b>fuentes</b> (ITC-BT-31, 3.3): volumen 0 <b>IPX8</b> · volumen 1 <b>IPX5</b>. En piscinas el REBT no da cifra de IP en el texto. Alumbrado subacuático solo MBTS ≤ 12 V CA / 30 V CC con transformador fuera de los volúmenes.', s: 'ITC-BT-31' },
       { tipo: 'rebt', t: 'En volúmenes 0 y 1 no se admiten cajas de conexión (salvo condiciones). Bases en piscinas pequeñas: ≥ 1,25 m del volumen 0 y ≥ 0,3 m del suelo.', s: 'ITC-BT-31' },
       { tipo: 'rebt', t: 'Siempre proyecto; inspección inicial si P &gt; 10 kW y cada 5 años.', s: 'ITC-BT-04 / ITC-BT-05' },
     ] },

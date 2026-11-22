@@ -4,7 +4,7 @@
   const { route, esc, fmt, num, view, $, $$ } = A;
   const IP1 = ['Sin protección', 'Objetos sólidos ≥ 50 mm (dorso de la mano)', 'Objetos sólidos ≥ 12,5 mm (dedo)', 'Objetos sólidos ≥ 2,5 mm (herramientas, cables)', 'Objetos sólidos ≥ 1 mm (alambres)', 'Protegido contra el polvo (limitado)', 'Estanco al polvo'];
   const IP2 = ['Sin protección', 'Gotas de agua verticales', 'Gotas con inclinación de hasta 15º', 'Agua pulverizada hasta 60º', 'Proyecciones de agua en cualquier dirección', 'Chorros de agua', 'Chorros potentes', 'Inmersión temporal (hasta 1 m, 30 min)', 'Inmersión continua'];
-  const IK = ['0,14 J', '0,2 J', '0,35 J', '0,5 J', '0,7 J', '1 J', '2 J', '5 J', '10 J', '20 J'];
+  const IK = ['sin protección', '0,14 J', '0,2 J', '0,35 J', '0,5 J', '0,7 J', '1 J', '2 J', '5 J', '10 J', '20 J'];
   const AWG = [[18, 0.823], [16, 1.31], [14, 2.08], [12, 3.31], [10, 5.26], [8, 8.37], [6, 13.3], [4, 21.2], [2, 33.6], [1, 42.4], ['1/0', 53.5], ['2/0', 67.4], ['3/0', 85]];
   const POT = [['Bombilla LED', '5 – 15 W'], ['Televisor', '60 – 200 W'], ['Frigorífico', '100 – 200 W'], ['Lavadora', '2000 – 2300 W'], ['Lavavajillas', '1800 – 2500 W'], ['Horno', '2000 – 3500 W'], ['Placa de inducción (4 zonas)', '5000 – 7400 W'], ['Microondas', '800 – 1500 W'], ['Termo eléctrico', '1500 – 2500 W'], ['Secadora', '2000 – 3000 W'], ['Aire acondicionado split', '1000 – 3500 W'], ['Cargador de VE (monofásico)', '3,7 – 7,4 kW'], ['Plancha', '1000 – 2400 W'], ['Secador de pelo', '1000 – 2200 W']];
   route(/^#\/utiles$/, () => {

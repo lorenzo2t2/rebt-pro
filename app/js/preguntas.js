@@ -113,7 +113,7 @@
   q('U3', 'El volumen 1 de un baño llega hasta una altura de:', ['2,25 m', '2 m', '3 m', '1,8 m'], 0, 'Volumen 1: sobre el volumen 0 hasta 2,25 m sobre el suelo.', 'ITC-BT-27');
   q('U3', 'El volumen 2 se extiende alrededor del volumen 1:', ['0,6 m', '2,4 m', '1,2 m', '0,3 m'], 0, 'Volumen 2: 0,6 m más allá del volumen 1. Volumen 3: 2,4 m más allá del volumen 2.', 'ITC-BT-27');
   q('U3', 'El volumen 3 se extiende alrededor del volumen 2:', ['2,4 m', '0,6 m', '1,5 m', '3 m'], 0, 'Volumen 3: 2,4 m más allá del volumen 2.', 'ITC-BT-27');
-  q('U3', 'El grado de protección en el volumen 0 de un baño es:', ['IPX7', 'IPX4', 'IPX1', 'IPX5'], 0, 'V0 IPX7; V1 IPX4; V2 IPX4; V3 IPX1.', 'ITC-BT-27');
+  q('U3', 'El grado de protección en el volumen 0 de un baño es:', ['IPX7', 'IPX4', 'IPX1', 'IPX5'], 0, 'ITC-BT-27, tabla 1: V0 IPX7; V1 IPX4; V2 IPX4 (IPX5 en baños comunes con chorros).', 'ITC-BT-27');
   q('U3', 'El grado de protección mínimo en el volumen 1 de un baño es:', ['IPX4', 'IPX7', 'IPX1', 'IPX2'], 0, 'V1 y V2: IPX4.', 'ITC-BT-27');
   q('U3', 'En un baño se debe realizar:', ['Una conexión equipotencial local suplementaria', 'Una toma de tierra independiente', 'Una línea trifásica', 'Una conexión a gas'], 0, 'Se unirán el PE con las masas de clase I en volúmenes 1,2 y 3 y con elementos conductores externos.', 'ITC-BT-27');
   q('U3', 'En el volumen 1 de un baño solo se admiten interruptores de circuitos:', ['MBTS a 12 V', 'A 230 V con IPX7', 'A 24 V sin protección', 'Ninguno, ni MBTS'], 0, 'En el volumen 1 solo interruptores de circuitos MBTS alimentados a una tensión nominal de 12 V.', 'ITC-BT-27');
@@ -177,18 +177,18 @@
   q('U5', 'El modo de carga 3 del vehículo eléctrico implica:', ['Conexión directa con SAVE dedicado y comunicación piloto', 'Toma doméstica sin protecciones', 'Carga rápida en CC', 'Inducción'], 0, 'Modo 3: conexión directa del vehículo a la red mediante equipo de alimentación específico (SAVE).', 'ITC-BT-52');
   q('U5', 'El modo de carga 4 se refiere a:', ['Carga en corriente continua', 'Carga con toma doméstica', 'Carga solo en garajes', 'Carga inalámbrica'], 0, 'Modo 4: conexión indirecta con convertidor CA/CC (carga rápida CC).', 'ITC-BT-52');
   q('U5', 'Una toma monofásica de 16 A a 230 V suministra una potencia de, aproximadamente:', ['3,68 kW', '7,36 kW', '1,84 kW', '11 kW'], 0, 'P = 230 · 16 = 3680 W.', 'ITC-BT-52');
-  q('U5', 'Se considera local húmedo aquel con humedad relativa permanente superior a:', ['70 %', '50 %', '90 %', '100 %'], 0, 'Local húmedo (ITC-BT-30). El valor 70 % es el de la práctica/UNE; el REBT no lo fija con cifra.', 'ITC-BT-30');
+  q('U5', 'En un local húmedo, la aparamenta (cajas, interruptores, tomas) debe tener como mínimo el grado de protección:', ['IPX1 (caída vertical de gotas)', 'IPX4', 'IPX7', 'IP00'], 0, 'ITC-BT-30, 1.2: IPX1 (caída vertical de gotas de agua), con cubiertas y órganos de accionamiento no metálicos.', 'ITC-BT-30');
   q('U5', 'Los locales mojados con P > 25 kW requieren:', ['Inspección inicial por OCA', 'Nada', 'Solo MTD', 'Un contador dedicado'], 0, 'Inspección inicial para locales mojados con P > 25 kW.', 'ITC-BT-05');
   q('U5', 'En un local mojado la protección de los materiales será como mínimo:', ['IPX4', 'IPX1', 'IP20', 'IPX0'], 0, 'En locales mojados, IPX4 como mínimo (IPX5 si hay chorros).', 'ITC-BT-30');
   q('U5', 'En una piscina, el alumbrado subacuático debe alimentarse a:', ['MBTS no superior a 12 V CA', '230 V con diferencial', '48 V', '24 V CA con tierra'], 0, 'Solo MBTS ≤ 12 V CA (30 V CC).', 'ITC-BT-31');
   q('U5', 'El volumen 0 de una piscina es:', ['El interior del vaso', 'Hasta 2 m del borde', 'Hasta 1,5 m', 'El vestuario'], 0, 'V0: interior del recipiente. V1: hasta 2 m horizontal y 2,5 m de altura. V2: 1,5 m más.', 'ITC-BT-31');
-  q('U5', 'El grado de protección del volumen 0 de una piscina es:', ['IPX8', 'IPX7', 'IPX5', 'IPX4'], 0, 'V0 IPX8; V1 IPX5.', 'ITC-BT-31');
+  q('U5', 'El grado de protección mínimo del volumen 0 de una fuente (ITC-BT-31, 3.3) es:', ['IPX8', 'IPX7', 'IPX5', 'IPX4'], 0, 'ITC-BT-31, 3.3 (fuentes): volumen 0 IPX8; volumen 1 IPX5.', 'ITC-BT-31');
   q('U5', 'Las piscinas precisan inspección inicial por OCA cuando su potencia supera:', ['10 kW', '5 kW', '25 kW', '100 kW'], 0, 'Piscinas P > 10 kW.', 'ITC-BT-05');
   q('U5', 'Las instalaciones de tensiones especiales (ITC-BT-37) precisan proyecto:', ['Sin límite de potencia', 'Si P > 10 kW', 'Si P > 20 kW', 'Nunca'], 0, 'Las que utilicen tensiones especiales: sin límite.', 'ITC-BT-04');
   q('U5', 'En instalaciones de obras, las bases de toma de corriente se protegen con diferencial de, como máximo:', ['30 mA', '300 mA', '500 mA', '1 A'], 0, 'Cada base o grupo de bases protegida con diferencial ≤ 30 mA (o MBTS).', 'ITC-BT-33');
   q('U5', 'Una instalación temporal de obra con maquinaria precisa proyecto a partir de:', ['50 kW', '10 kW', '20 kW', '5 kW'], 0, 'Temporales de obras: P > 50 kW.', 'ITC-BT-04');
   q('U5', 'Los quirófanos utilizan un esquema:', ['IT (médico) con transformador de aislamiento', 'TT', 'TN-C', 'Sin protección diferencial'], 0, 'IT con transformador de aislamiento y vigilante de aislamiento.', 'ITC-BT-38');
-  q('U5', 'La instalación en caravanas usa tomas de:', ['16 A (CEE) con diferencial 30 mA', '32 A trifásicas', '10 A sin tierra', '63 A'], 0, 'Toma de 16 A y protección diferencial de 30 mA.', 'ITC-BT-41');
+  q('U5', 'En puertos y marinas para barcos de recreo, cada base de toma de corriente se protege con un diferencial de:', ['No más de 30 mA, y un mismo dispositivo no protege más de una base', '300 mA compartido por todas las bases', '500 mA selectivo', 'No lleva diferencial'], 0, 'ITC-BT-42, 4.3.2: bases UNE-EN 60309 de 230 V, 16 A, IP X6, con protección individual contra sobreintensidades ≥ 16 A y diferencial ≤ 30 mA, uno por base.', 'ITC-BT-42');
 
   /* ---------- U6: Receptores ---------- */
   q('U6', 'Los conductores que alimentan a un único motor deben dimensionarse para una intensidad de:', ['125 % de la intensidad a plena carga', '100 %', '150 %', '200 %'], 0, 'Un solo motor: 125 % de In.', 'ITC-BT-47');
